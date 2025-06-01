@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -157,7 +158,7 @@ export default function Careers() {
                   </svg>
                 </div>
                 <blockquote className="text-2xl md:text-3xl font-medium text-white mb-6 leading-relaxed">
-                  &quot;We reject the gates that stamp knowledge with a &apos;premium access&apos; seal.&quot;
+                  "We reject the gates that stamp knowledge with a 'premium access' seal."
                 </blockquote>
                 <cite className="text-white/80 font-medium">From Our Manifesto</cite>
               </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -185,8 +186,8 @@ export default function Contact() {
             <h1 className="text-5xl md:text-6xl font-bold mb-6 font-[family-name:var(--font-inter)]">
               Get in Touch
             </h1>
-            <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-              Whether you&apos;re interested in our mission, have a partnership proposal, or need support—we&apos;re here to listen and collaborate.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              We'd love to hear from you. Whether you have a question about our work, want to collaborate, or simply want to connect—we're here.
             </p>
           </div>
         </div>

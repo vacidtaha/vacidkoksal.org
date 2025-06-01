@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Management() {
@@ -10,8 +11,8 @@ export default function Management() {
             <h1 className="text-5xl font-bold mb-6 font-[family-name:var(--font-inter)] text-gray-900">
               Foundation Leadership
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              VK.com&apos;un liderlik ekibi, dünyanın en büyük zorluklarına çözüm arayan vizyoner düşünürlerden oluşur.
+            <p className="text-xl text-gray-600 font-[family-name:var(--font-inter)] max-w-3xl mx-auto leading-relaxed">
+              Visionary leadership shaping the future. Experienced founders united to solve humanity's greatest challenges.
             </p>
           </div>
 
@@ -27,11 +28,17 @@ export default function Management() {
               <h2 className="text-2xl font-bold mb-2 font-[family-name:var(--font-inter)] text-blue-600">
                 Taha Vacid
               </h2>
-              <p className="text-lg text-gray-300 mb-6">
-                Vakıf&apos;ın kurucusu olarak, global sağlık erişiminden sürdürülebilir teknolojilere kadar her alanda devrim yaratmaya odaklanır.
+              <p className="text-lg text-gray-600 font-medium mb-4">
+                Co-Founder
               </p>
-              <div className="text-base text-gray-300">
-                <p>&quot;Teknoloji, insanlığın ortak mirasıdır.&quot;</p>
+              <div className="text-gray-700 leading-relaxed space-y-3">
+                <p>
+                  Defines the foundation's strategic direction with his visionary approach in technology and healthcare. 
+                  Specialized in artificial intelligence and medical technologies.
+                </p>
+                <p>
+                  "Technology finds its true value when it serves humanity."
+                </p>
               </div>
             </div>
 
@@ -45,11 +52,17 @@ export default function Management() {
               <h2 className="text-2xl font-bold mb-2 font-[family-name:var(--font-inter)] text-blue-600">
                 Haktan Köksal
               </h2>
-              <p className="text-lg text-gray-300 mb-6">
-                Ekibimiz, dünyanın en büyük zorluklarını çözmek için gereken uzmanlığa ve tutkuya sahip liderlerden oluşur.
+              <p className="text-lg text-gray-600 font-medium mb-4">
+                Co-Founder
               </p>
-              <div className="text-base text-gray-300">
-                <p>&quot;Bilim, toplumsal dönüşümün en güçlü aracıdır.&quot;</p>
+              <div className="text-gray-700 leading-relaxed space-y-3">
+                <p>
+                  Leads pioneering work in sustainable food systems and energy solutions. 
+                  Experienced in building global networks and operational excellence.
+                </p>
+                <p>
+                  "Change is possible with bold steps and shared vision."
+                </p>
               </div>
             </div>
           </div>

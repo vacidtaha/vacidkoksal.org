@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
 
 const backgroundImages = [
   "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", // Afrika çocukları
@@ -366,15 +365,6 @@ export default function Login() {
               >
                 Forgot your password?
               </button>
-            </div>
-
-            <div className="text-center space-y-4">
-              <p className="text-sm text-gray-400">
-                Henüz üye değil misiniz?{" "}
-                <Link href="/" className="font-medium text-blue-400 hover:text-blue-300">
-                  Kayıt ol
-                </Link>
-              </p>
             </div>
 
           </div>
