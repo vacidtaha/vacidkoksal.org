@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { Faq5 } from '@/components/ui/faq-5';
 
 // Foundation FAQ questions in English
 const foundationFaqs = [

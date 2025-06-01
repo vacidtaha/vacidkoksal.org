@@ -1,7 +1,9 @@
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import SlideMenu from "@/components/ui/slide-menu";
 
 interface HeaderProps {
   onMenuToggle: () => void;
@@ -26,16 +28,9 @@ export default function Header({ onMenuToggle, isDark = false }: HeaderProps) {
         <div className="w-10"></div>
         
         {/* Logo */}
-        <a href="/">
-          <Image
-            src="/logo.png" 
-            alt="Vacid & Köksal Foundation Logo"
-            width={300}
-            height={75}
-            priority
-            style={isDark ? { filter: 'invert(1)' } : {}}
-          />
-        </a>
+        <Link href="/" className="text-xl font-bold text-white">
+          VK.com
+        </Link>
         
         {/* Hamburger Menu Button */}
         <button

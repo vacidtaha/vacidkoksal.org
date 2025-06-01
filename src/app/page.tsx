@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { BentoGrid } from "@/components/ui/bento-grid";
 
 export default function Home() {
   const [showScrollIndicator, setShowScrollIndicator] = useState(true);
@@ -29,8 +29,8 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl font-bold mb-8 font-[family-name:var(--font-inter)] leading-tight">
               Technology for <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Humanity</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              We engineer solutions that heal, nourish, and educate. Our mission is to make cutting-edge technology accessible to all humanity.
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+              Bu dünyada &quot;mülkiyet&quot; kavramını &quot;erişim&quot; kavramıyla değiştiren, bilgiyi özgürleştiren, sağlık hizmetlerini demokratikleştiren ve sürdürülebilir teknolojilerle geleceği inşa eden bir misyona katılın.
             </p>
           </div>
         </div>
@@ -56,19 +56,20 @@ export default function Home() {
           <h2 className="text-4xl font-bold mb-12 text-center font-[family-name:var(--font-inter)]">Manifesto</h2>
           
           <div className="text-[#494949] font-[family-name:var(--font-inter)] leading-relaxed space-y-8 text-center mx-auto">
-            <p className="text-lg">
-              We live in a curious age—one that can name every disease with near-perfect precision, yet still keeps the cure out of reach. Fields spill over with boundless yield while hungry, unhealthy tables sit in their shadows. Information flashes across the globe at light-speed, yet "premium" paywalls spring up in its path. Cities that turn night into day float beneath a haze of carbon smoke… This landscape cannot be "normalized." It is the product of a system built wrong—one that rewards hesitation and inertia.
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+              Vakıf Koksal, geleceği şekillendiren &quot;büyük&quot; idealleri hayata geçiren bir platform.
             </p>
             
-            <p className="text-lg">
-              The Vacid & Köksal Foundation is an intervention in that design flaw.
-              We are not a rival to any sector; we are an idea engineered to supply the missing link of a civilization that has lost both its speed and its sense of direction.
+            <p className="text-lg text-gray-300 leading-relaxed">
+              &quot;Sağlığın bir ayrıcalık değil, hak olduğu&quot; dünyanın tasarımında yer alın.
             </p>
             
-            <p className="text-lg">
-              Technology is the common thread running through every issue we name—but it becomes revolutionary only when it is as accessible as it is refined, not when it remains a toy of concentrated capital.
-              We reject the health industry's creed that treats profit sheets as holier than medicine itself.
-              We reject the gates that stamp knowledge with a "premium access" seal.
+            <p className="text-lg text-gray-300">
+              VK.com&apos;da her proje, milyonlarca insanın yaşamını doğrudan etkileyen çözümler üretir.
+            </p>
+            
+            <p className="text-lg text-gray-300">
+              VK.com&apos;da her teknoloji, insan refahını artırmak için tasarlanır.
             </p>
             
             <div className="py-8">
