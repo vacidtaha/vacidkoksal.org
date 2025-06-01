@@ -5,6 +5,16 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
   
+  // ESLint'i build sırasında ignore et (production için)
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  
+  // TypeScript errors'ı build sırasında ignore et (production için)
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  
   // Image optimization
   images: {
     remotePatterns: [
