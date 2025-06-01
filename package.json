@@ -6,7 +6,12 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "start:prod": "NODE_ENV=production next start",
+    "pm2:start": "pm2 start ecosystem.config.js --env production",
+    "pm2:stop": "pm2 stop vacidkoksal-org",
+    "pm2:restart": "pm2 restart vacidkoksal-org",
+    "pm2:logs": "pm2 logs vacidkoksal-org"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
