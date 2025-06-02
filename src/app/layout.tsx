@@ -3,11 +3,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { Inter } from "next/font/google";
 import { Cinzel } from "next/font/google";
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import "./globals.css";
-import Header from "@/components/ui/header";
-import SlideMenu from "@/components/ui/slide-menu";
+import ClientLayout from "@/components/layouts/client-layout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,46 +32,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const pathname = usePathname();
-  
-  // Login sayfasında header ve menüyü gizle
-  const hideHeaderAndMenu = pathname === '/login';
-
-  // Service Worker kaydı
-  useEffect(() => {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('/sw.js')
-        .then((registration) => {
-          console.log('Service Worker başarıyla kaydedildi:', registration);
-          
-          // Service Worker güncellendiyse yeniden yükle
-          registration.addEventListener('updatefound', () => {
-            const newWorker = registration.installing;
-            if (newWorker) {
-              newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                  // Yeni service worker hazır, kullanıcıya bildir
-                  console.log('Yeni Service Worker sürümü mevcut');
-                }
-              });
-            }
-          });
-        })
-        .catch((error) => {
-          console.error('Service Worker kaydı başarısız:', error);
-        });
-
-      // Service Worker mesajlarını dinle
-      navigator.serviceWorker.addEventListener('message', (event) => {
-        if (event.data && event.data.type === 'VIDEO_CACHED') {
-          console.log('Video cache\'lendi:', event.data.url);
-        }
-      });
-    }
-  }, []);
-
   return (
     <html lang="tr">
       <head>
@@ -107,30 +64,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${cinzel.variable} antialiased bg-white`}
       >
-        {/* Slide-out Menu - sadece login sayfası değilse göster */}
-        {!hideHeaderAndMenu && (
-          <SlideMenu 
-            isOpen={isMenuOpen} 
-            onClose={() => setIsMenuOpen(false)} 
-          />
-        )}
-        
-        <div 
-          className={`transition-all duration-300 ${
-            isMenuOpen && !hideHeaderAndMenu ? 'transform translate-x-4 blur-sm' : ''
-          }`}
-        >
-          {/* Header - sadece login sayfası değilse göster */}
-          {!hideHeaderAndMenu && (
-            <Header 
-              onMenuToggle={() => setIsMenuOpen(true)}
-              isDark={false} 
-            />
-          )}
-          
-          {/* Sayfa içeriği */}
+        <ClientLayout>
           {children}
-        </div>
+        </ClientLayout>
       </body>
     </html>
   );
