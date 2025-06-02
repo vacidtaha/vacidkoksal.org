@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
+import { Heart } from "lucide-react";
 
 interface SlideMenuProps {
   isOpen: boolean;
@@ -76,13 +77,11 @@ export default function SlideMenu({ isOpen, onClose }: SlideMenuProps) {
                 </Link>
                 <Link 
                   href="/healthcare" 
-                  className="group flex items-center px-4 py-3 text-gray-900 hover:bg-gray-100/60 rounded-xl transition-all duration-200"
+                  className="flex items-center space-x-3 py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors"
                   onClick={onClose}
                 >
-                  <svg className="w-5 h-5 mr-3 text-gray-500 group-hover:text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                  <span className="font-medium">Healthcare</span>
+                  <Heart className="h-5 w-5 text-red-500" />
+                  <span>Healthcare</span>
                 </Link>
               </nav>
             </div>
@@ -113,6 +112,24 @@ export default function SlideMenu({ isOpen, onClose }: SlideMenuProps) {
                   <span className="font-medium">Careers</span>
                 </Link>
               </nav>
+            </div>
+
+            <div className="py-4">
+              <div className="bg-gray-50 rounded-lg p-4">
+                <h3 className="text-lg font-medium mb-3 text-gray-900">Investment</h3>
+                <div className="space-y-1">
+                  <Link 
+                    href="/funding" 
+                    className="flex items-center space-x-3 py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors"
+                    onClick={onClose}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-blue-500">
+                      <path d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" />
+                    </svg>
+                    <span>Apply for Funding</span>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
           

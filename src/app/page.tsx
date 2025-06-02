@@ -332,7 +332,7 @@ export default function Home() {
               We deploy resources toward transformative technologies that serve humanity's fundamental needs. 
               Our success is measured not by financial returns, but by the tangible impact on human lives and global well-being.
             </p>
-            <div className="grid md:grid-cols-4 gap-8 mt-8">
+            <div className="grid md:grid-cols-4 gap-8 mt-8 mb-12">
               <div>
                 <div className="text-3xl font-light text-blue-400 mb-2">$500M+</div>
                 <div className="text-sm text-gray-300">Committed resources</div>
@@ -352,11 +352,22 @@ export default function Home() {
             </div>
             
             <div className="mt-12 pt-8 border-t border-gray-700">
-              <p className="text-lg font-light text-gray-300 italic">
+              <p className="text-lg font-light text-gray-300 italic mb-8">
                 "Our metric of success is not applause: it is empty hospital beds, full plates, 
                 skylines that banish carbon to the pages of history, and tiny dreamers' fingers 
                 reaching an open screen for the very first time."
               </p>
+              
+              {/* CTA Button for Funding Application */}
+              <Link 
+                href="/funding"
+                className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 mr-3">
+                  <path d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" />
+                </svg>
+                Apply for Funding
+              </Link>
             </div>
           </div>
         </div>
