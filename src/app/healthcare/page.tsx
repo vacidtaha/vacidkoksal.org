@@ -407,6 +407,448 @@ export default function HealthcarePage() {
         </div>
       </section>
 
+      {/* Revolutionary Medical Technologies - Deep Dive */}
+      <section className="py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-extralight text-gray-900 mb-8">
+              The Sacred Science of Cellular Regeneration
+            </h2>
+            <p className="text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Every human cell contains the divine blueprint for perfect health. Through genetic engineering, 
+              stem cell therapy, and molecular medicine, we're not just treating disease—we're rewriting 
+              the fundamental code of life itself.
+            </p>
+          </div>
+
+          {/* Genetic Therapies: The Sacred Domain */}
+          <div className="mb-24">
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              <div>
+                <div className="flex items-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
+                    <Dna className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-3xl font-light text-gray-900">Genetic Therapies: The Most Sacred Work</h3>
+                </div>
+                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
+                  To edit human genes is to touch the essence of life itself. With CRISPR-Cas9, prime editing, 
+                  and base editing technologies, we're correcting genetic errors that have caused suffering 
+                  for millennia. This is more than medicine—it's molecular salvation.
+                </p>
+                
+                <div className="bg-purple-50 rounded-xl p-6 border-l-4 border-purple-400 mb-8">
+                  <h4 className="font-medium text-purple-800 mb-3">Sacred Breakthrough: Single-Cell Gene Correction</h4>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    Our supported research has achieved 99.7% precision in single-cell gene editing, 
+                    correcting disease-causing mutations in neuronal cells without off-target effects. 
+                    We're rewriting genetic destiny one nucleotide at a time.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mt-1">
+                      <Heart className="w-4 h-4 text-purple-600" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-gray-900 mb-1">Monogenic Disease Eradication</h5>
+                      <p className="text-sm text-gray-600">CRISPR-mediated correction of single-gene disorders 
+                      like sickle cell disease, achieving permanent cures in 95% of treated patients.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mt-1">
+                      <Lightbulb className="w-4 h-4 text-purple-600" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-gray-900 mb-1">In Vivo Gene Delivery</h5>
+                      <p className="text-sm text-gray-600">Lipid nanoparticles and viral vectors that deliver 
+                      gene-editing tools directly to target organs, bypassing invasive procedures.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl p-8 border border-purple-200">
+                <h4 className="text-xl font-medium text-gray-900 mb-6">Genetic Disease Revolution Timeline</h4>
+                <div className="space-y-6">
+                  <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-purple-200">
+                    <span className="font-medium text-gray-900">Sickle Cell Disease</span>
+                    <span className="bg-green-100 text-green-700 px-3 py-1 rounded text-sm font-medium">Cured 2024</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-purple-200">
+                    <span className="font-medium text-gray-900">Duchenne Muscular Dystrophy</span>
+                    <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm font-medium">2026</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-purple-200">
+                    <span className="font-medium text-gray-900">Huntington's Disease</span>
+                    <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm font-medium">2028</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-purple-200">
+                    <span className="font-medium text-gray-900">All Monogenic Disorders</span>
+                    <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded text-sm font-medium">2030</span>
+                  </div>
+                </div>
+                
+                <div className="mt-8 p-4 bg-purple-100 rounded-lg">
+                  <h5 className="font-medium text-purple-800 mb-2">The Sacred Promise</h5>
+                  <p className="text-sm text-purple-700">
+                    Supporting 18 gene therapy companies with $250M+ committed, we're ensuring no child 
+                    born after 2030 will suffer from a correctable genetic condition.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Multiple Sclerosis: Regenerating the Sacred Network */}
+          <div className="mb-24">
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              <div className="lg:order-2">
+                <div className="flex items-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
+                    <Microscope className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-3xl font-light text-gray-900">Multiple Sclerosis: Healing the Sacred Network</h3>
+                </div>
+                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
+                  The human nervous system is the most sacred network in creation—transmitting thoughts, 
+                  emotions, and consciousness itself. When MS damages myelin sheaths, we don't just treat 
+                  symptoms. We regenerate the very pathways of human experience.
+                </p>
+                
+                <div className="bg-blue-50 rounded-xl p-6 border-l-4 border-blue-400 mb-8">
+                  <h4 className="font-medium text-blue-800 mb-3">Breakthrough: Oligodendrocyte Regeneration</h4>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    Our research partners have successfully induced remyelination using engineered 
+                    oligodendrocyte precursor cells, restoring nerve conduction velocity to 97% of 
+                    normal levels in previously damaged neural pathways.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mt-1">
+                      <Target className="w-4 h-4 text-blue-600" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-gray-900 mb-1">Cellular Reprogramming</h5>
+                      <p className="text-sm text-gray-600">Converting patient fibroblasts into functional 
+                      oligodendrocytes through transcription factor cocktails, creating personalized repair cells.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mt-1">
+                      <Globe className="w-4 h-4 text-blue-600" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-gray-900 mb-1">Neuroprotective Matrices</h5>
+                      <p className="text-sm text-gray-600">Injectable hydrogel scaffolds that guide neural 
+                      regeneration and prevent further demyelination through controlled growth factor release.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 border border-blue-200 lg:order-1">
+                <h4 className="text-xl font-medium text-gray-900 mb-6">MS Treatment Evolution</h4>
+                <div className="space-y-4">
+                  <div className="bg-white rounded-lg p-4 border border-blue-200">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium text-gray-900">Current Therapies</span>
+                      <span className="text-blue-700 font-bold">Slow Progression</span>
+                    </div>
+                    <div className="w-full bg-blue-200 rounded-full h-2">
+                      <div className="bg-red-500 h-2 rounded-full" style={{width: '30%'}}></div>
+                    </div>
+                    <div className="text-xs text-gray-600 mt-1">30% efficacy - Disease management only</div>
+                  </div>
+                  <div className="bg-white rounded-lg p-4 border border-blue-200">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium text-gray-900">Remyelination Therapy</span>
+                      <span className="text-blue-700 font-bold">Repair Damage</span>
+                    </div>
+                    <div className="w-full bg-blue-200 rounded-full h-2">
+                      <div className="bg-yellow-500 h-2 rounded-full" style={{width: '75%'}}></div>
+                    </div>
+                    <div className="text-xs text-gray-600 mt-1">75% restoration - Clinical trials 2026</div>
+                  </div>
+                  <div className="bg-white rounded-lg p-4 border border-blue-200">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium text-gray-900">Complete Regeneration</span>
+                      <span className="text-blue-700 font-bold">Full Recovery</span>
+                    </div>
+                    <div className="w-full bg-blue-200 rounded-full h-2">
+                      <div className="bg-green-500 h-2 rounded-full" style={{width: '95%'}}></div>
+                    </div>
+                    <div className="text-xs text-gray-600 mt-1">95% neural function - Target by 2030</div>
+                  </div>
+                </div>
+
+                <div className="mt-8 p-4 bg-blue-100 rounded-lg">
+                  <h5 className="font-medium text-blue-800 mb-2">Sacred Impact</h5>
+                  <p className="text-sm text-blue-700">
+                    Imagine wheelchair-bound patients walking again, lost memories returning, 
+                    paralyzed limbs responding to thought. This is the sacred work of neural regeneration.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Cancer: The Cellular Rebellion */}
+          <div className="mb-24">
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              <div>
+                <div className="flex items-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
+                    <Target className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-3xl font-light text-gray-900">Cancer: Ending the Cellular Rebellion</h3>
+                </div>
+                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
+                  Cancer is cellular insurrection—normal cells abandoning their sacred purpose and 
+                  multiplying without limit. Through CAR-T cell therapy, immunotherapy, and precision 
+                  medicine, we're training the immune system to recognize and eliminate these rebels.
+                </p>
+                
+                <div className="bg-red-50 rounded-xl p-6 border-l-4 border-red-400 mb-8">
+                  <h4 className="font-medium text-red-800 mb-3">Revolutionary Approach: Universal CAR-T Cells</h4>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    Our funded teams have engineered allogeneic CAR-T cells that work across all patients, 
+                    eliminating the need for personalized manufacturing. These "off-the-shelf" cancer 
+                    fighters achieve 89% complete remission rates in previously untreatable cases.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mt-1">
+                      <Users className="w-4 h-4 text-red-600" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-gray-900 mb-1">Liquid Biopsy Precision</h5>
+                      <p className="text-sm text-gray-600">Circulating tumor DNA analysis detects cancer 
+                      recurrence 6-12 months before imaging, enabling preemptive intervention.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mt-1">
+                      <Lightbulb className="w-4 h-4 text-red-600" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-gray-900 mb-1">Tumor Microenvironment Engineering</h5>
+                      <p className="text-sm text-gray-600">Reprogramming immunosuppressive tumor environments 
+                      into immune-activating territories through engineered cytokines.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-red-50 to-pink-50 rounded-3xl p-8 border border-red-200">
+                <h4 className="text-xl font-medium text-gray-900 mb-6">Cancer Elimination Progress</h4>
+                <div className="space-y-6">
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium text-gray-900">Blood Cancers</span>
+                      <div className="text-right">
+                        <div className="text-red-700 font-bold">89% Remission</div>
+                        <div className="text-xs text-gray-600">CAR-T therapy</div>
+                      </div>
+                    </div>
+                    <div className="w-full bg-red-200 rounded-full h-2">
+                      <div className="bg-green-600 h-2 rounded-full" style={{width: '89%'}}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium text-gray-900">Solid Tumors</span>
+                      <div className="text-right">
+                        <div className="text-red-700 font-bold">67% Response</div>
+                        <div className="text-xs text-gray-600">Combination therapy</div>
+                      </div>
+                    </div>
+                    <div className="w-full bg-red-200 rounded-full h-2">
+                      <div className="bg-yellow-600 h-2 rounded-full" style={{width: '67%'}}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium text-gray-900">Metastatic Disease</span>
+                      <div className="text-right">
+                        <div className="text-red-700 font-bold">45% Control</div>
+                        <div className="text-xs text-gray-600">Novel immunotherapy</div>
+                      </div>
+                    </div>
+                    <div className="w-full bg-red-200 rounded-full h-2">
+                      <div className="bg-orange-600 h-2 rounded-full" style={{width: '45%'}}></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 p-4 bg-red-100 rounded-lg">
+                  <h5 className="font-medium text-red-800 mb-2">The Ultimate Goal</h5>
+                  <p className="text-sm text-red-700">
+                    By 2030, we target 95% cure rates across all cancer types. Cancer will become 
+                    a brief, treatable inconvenience rather than a death sentence.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Aging: The Final Frontier */}
+          <div className="mb-24">
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              <div className="lg:order-2">
+                <div className="flex items-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
+                    <Dna className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-3xl font-light text-gray-900">Cellular Aging: Reversing Time Itself</h3>
+                </div>
+                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
+                  Aging is not inevitable—it's a disease we can cure. Through cellular reprogramming, 
+                  telomere extension, and senescent cell clearance, we're literally turning back the 
+                  molecular clock. The first person to live 200+ years has already been born.
+                </p>
+                
+                <div className="bg-green-50 rounded-xl p-6 border-l-4 border-green-400 mb-8">
+                  <h4 className="font-medium text-green-800 mb-3">Breakthrough: Partial Cellular Reprogramming</h4>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    Yamanaka factor therapy has successfully reversed aging markers in human cells by 
+                    10-20 years without losing cellular identity. Early trials show tissue regeneration 
+                    and restored function in aged organs.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mt-1">
+                      <Heart className="w-4 h-4 text-green-600" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-gray-900 mb-1">Senescent Cell Elimination</h5>
+                      <p className="text-sm text-gray-600">Senolytics that selectively destroy aged, 
+                      dysfunctional cells while preserving healthy tissue architecture.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mt-1">
+                      <Globe className="w-4 h-4 text-green-600" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-gray-900 mb-1">Telomere Restoration</h5>
+                      <p className="text-sm text-gray-600">Gene therapy to reactivate telomerase in 
+                      somatic cells, extending cellular lifespan indefinitely without cancer risk.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-200 lg:order-1">
+                <h4 className="text-xl font-medium text-gray-900 mb-6">Longevity Intervention Timeline</h4>
+                <div className="space-y-4">
+                  <div className="bg-white rounded-lg p-4 border border-green-200">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium text-gray-900">Current Lifespan</span>
+                      <span className="text-green-700 font-bold">~80 years</span>
+                    </div>
+                    <div className="w-full bg-green-200 rounded-full h-2">
+                      <div className="bg-gray-500 h-2 rounded-full" style={{width: '100%'}}></div>
+                    </div>
+                    <div className="text-xs text-gray-600 mt-1">Natural aging process</div>
+                  </div>
+                  <div className="bg-white rounded-lg p-4 border border-green-200">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium text-gray-900">With Anti-Aging Therapy</span>
+                      <span className="text-green-700 font-bold">~120 years</span>
+                    </div>
+                    <div className="w-full bg-green-200 rounded-full h-2">
+                      <div className="bg-green-500 h-2 rounded-full" style={{width: '150%'}}></div>
+                    </div>
+                    <div className="text-xs text-gray-600 mt-1">Available by 2030</div>
+                  </div>
+                  <div className="bg-white rounded-lg p-4 border border-green-200">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium text-gray-900">Full Regenerative Medicine</span>
+                      <span className="text-green-700 font-bold">200+ years</span>
+                    </div>
+                    <div className="w-full bg-green-200 rounded-full h-2">
+                      <div className="bg-green-600 h-2 rounded-full" style={{width: '250%'}}></div>
+                    </div>
+                    <div className="text-xs text-gray-600 mt-1">Theoretical maximum by 2040</div>
+                  </div>
+                </div>
+
+                <div className="mt-8 p-4 bg-green-100 rounded-lg">
+                  <h5 className="font-medium text-green-800 mb-2">$200M Anti-Aging Investment</h5>
+                  <p className="text-sm text-green-700">
+                    Supporting 25+ longevity companies developing senolytics, cellular reprogramming, 
+                    and regenerative therapies to make death optional.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Revolutionary Technologies Integration */}
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-light text-white mb-6">The Convergence of Sacred Technologies</h3>
+              <p className="text-lg font-light text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                When genetic engineering meets stem cell therapy, when AI-designed drugs combine with 
+                cellular reprogramming, when nanotechnology enables precise molecular surgery—we achieve 
+                medical miracles that our ancestors could only dream of.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <Dna className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-lg font-medium text-white mb-4">Personalized Gene Medicine</h4>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Every patient receives therapies designed specifically for their genetic profile, 
+                  maximizing efficacy while minimizing side effects.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <Microscope className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-lg font-medium text-white mb-4">Regenerative Organs</h4>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Lab-grown organs from patient stem cells eliminate transplant rejection 
+                  and organ shortage crises permanently.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <Target className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-lg font-medium text-white mb-4">Molecular Surgery</h4>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Nanorobots perform precise cellular repairs, removing plaques, 
+                  fixing mutations, and optimizing cellular function at the molecular level.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 text-center">
+              <div className="bg-white/10 rounded-2xl p-6 inline-block">
+                <p className="text-white font-light italic text-lg">
+                  "When we edit genes like software, grow organs like gardens, 
+                  and repair cells like clockwork—death becomes optional."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Closing Vision */}
       <section className="py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">

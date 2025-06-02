@@ -194,38 +194,117 @@ export default function FundingPage() {
     };
 
     const fields = requiredFields[stepNumber] || [];
+    
+    // Special handling for individual optional steps
+    if (formData.organizationType === 'individual') {
+      if (stepNumber === 3) {
+        // Support Needs - consider completed if ANY field has content
+        const supportFields = [
+          formData.fundingRound, 
+          formData.targetAmount, 
+          formData.currentRaise, 
+          formData.valuation, 
+          formData.useOfFunds, 
+          formData.previousFunding
+        ];
+        return supportFields.some(field => field?.trim() !== '');
+      }
+      
+      if (stepNumber === 5) {
+        // Background & Skills - consider completed if ANY field has content
+        const backgroundFields = [
+          formData.founders, 
+          formData.keyTeam, 
+          formData.advisors, 
+          formData.techStack, 
+          formData.ip, 
+          formData.businessModel
+        ];
+        return backgroundFields.some(field => field?.trim() !== '');
+      }
+    }
+    
     return fields.every(field => formData[field as keyof typeof formData]?.trim() !== '');
   };
 
   const handleNextStep = () => {
-    const isCurrentStepValid = validateStep(currentStep);
-    
-    if (!isCurrentStepValid) {
-      setStepValidationErrors(prev => ({
-        ...prev,
-        [currentStep]: true
-      }));
+    if (validateStep(currentStep)) {
+      setStepValidationErrors(prev => ({ ...prev, [currentStep]: false }));
+      setCurrentStep(prev => Math.min(steps.length, prev + 1));
     } else {
-      setStepValidationErrors(prev => ({
-        ...prev,
-        [currentStep]: false
-      }));
-    }
-    
-    // Always allow moving to next step, but mark as invalid if needed
-    if (currentStep < steps.length) {
-      setCurrentStep(currentStep + 1);
+      setStepValidationErrors(prev => ({ ...prev, [currentStep]: true }));
     }
   };
 
+  const handlePreviousStep = () => {
+    setCurrentStep(prev => Math.max(1, prev - 1));
+  };
+
   const handleStepClick = (stepId: number) => {
-    // Check all previous steps for validation when jumping to a step
-    const errors: {[key: number]: boolean} = {};
-    for (let i = 1; i < stepId; i++) {
-      errors[i] = !validateStep(i);
+    // Allow navigation to any step, but mark validation errors appropriately
+    if (stepId < currentStep || validateStep(currentStep)) {
+      setStepValidationErrors(prev => ({ ...prev, [currentStep]: false }));
+      setCurrentStep(stepId);
+    } else {
+      setStepValidationErrors(prev => ({ ...prev, [currentStep]: true }));
     }
-    setStepValidationErrors(prev => ({ ...prev, ...errors }));
-    setCurrentStep(stepId);
+  };
+
+  // Form submission handler
+  const handleFormSubmission = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!robotVerified) {
+      alert('Lütfen robot doğrulamasını tamamlayın.');
+      return;
+    }
+
+    // Validate all steps before submission
+    let isValid = true;
+    const errors: {[key: number]: boolean} = {};
+    
+    for (let i = 1; i <= steps.length; i++) {
+      if (!validateStep(i)) {
+        errors[i] = true;
+        isValid = false;
+      }
+    }
+    
+    if (!isValid) {
+      setStepValidationErrors(errors);
+      alert('Lütfen tüm gerekli alanları doldurun ve eksik olan adımları tamamlayın.');
+      
+      // Navigate to first incomplete step
+      const firstIncompleteStep = Object.keys(errors).find(step => errors[parseInt(step)] === true);
+      if (firstIncompleteStep) {
+        setCurrentStep(parseInt(firstIncompleteStep));
+      }
+      return;
+    }
+
+    try {
+      // Generate application ID
+      const applicationId = `VKF-${Date.now()}-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
+      
+      // Here you would normally send the data to your backend
+      console.log('Form submitted with data:', {
+        applicationId,
+        ...formData,
+        submissionDate: new Date().toISOString()
+      });
+      
+      // Store application ID in localStorage for the success page
+      localStorage.setItem('applicationId', applicationId);
+      localStorage.setItem('applicationType', formData.applicationType);
+      localStorage.setItem('organizationType', formData.organizationType);
+      
+      // Redirect to success page
+      window.location.href = '/funding/success';
+      
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('Başvuru gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
+    }
   };
 
   const renderStepContent = () => {
@@ -421,20 +500,25 @@ export default function FundingPage() {
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="companyName">Full Name *</label>
                     <input
                       type="text"
+                      id="companyName"
+                      name="companyName"
                       value={formData.companyName}
                       onChange={(e) => handleInputChange('companyName', e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="Your full name"
+                      required
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Age</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="foundedYear">Age</label>
                     <input
                       type="number"
+                      id="foundedYear"
+                      name="foundedYear"
                       value={formData.foundedYear}
                       onChange={(e) => handleInputChange('foundedYear', e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -445,9 +529,11 @@ export default function FundingPage() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Location</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="headquarters">Location</label>
                     <input
                       type="text"
+                      id="headquarters"
+                      name="headquarters"
                       value={formData.headquarters}
                       onChange={(e) => handleInputChange('headquarters', e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -456,9 +542,11 @@ export default function FundingPage() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Personal Website/Portfolio</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="website">Personal Website/Portfolio</label>
                     <input
                       type="url"
+                      id="website"
+                      name="website"
                       value={formData.website}
                       onChange={(e) => handleInputChange('website', e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -467,8 +555,10 @@ export default function FundingPage() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Current Status *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="companyStage">Current Status *</label>
                     <select
+                      id="companyStage"
+                      name="companyStage"
                       value={formData.companyStage}
                       onChange={(e) => handleInputChange('companyStage', e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -484,8 +574,10 @@ export default function FundingPage() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Education Level</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="employees">Education Level</label>
                     <select
+                      id="employees"
+                      name="employees"
                       value={formData.employees}
                       onChange={(e) => handleInputChange('employees', e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -502,8 +594,10 @@ export default function FundingPage() {
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Brief Personal Introduction *</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="useOfFunds">Brief Personal Introduction *</label>
                   <textarea
+                    id="useOfFunds"
+                    name="useOfFunds"
                     value={formData.useOfFunds}
                     onChange={(e) => handleInputChange('useOfFunds', e.target.value)}
                     rows={4}
@@ -518,31 +612,39 @@ export default function FundingPage() {
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Company Name *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="companyNameCorp">Company Name *</label>
                     <input
                       type="text"
+                      id="companyNameCorp"
+                      name="companyName"
                       value={formData.companyName}
                       onChange={(e) => handleInputChange('companyName', e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="Your company name"
+                      required
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Founded Year *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="foundedYearCorp">Founded Year *</label>
                     <input
                       type="number"
+                      id="foundedYearCorp"
+                      name="foundedYear"
                       value={formData.foundedYear}
                       onChange={(e) => handleInputChange('foundedYear', e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="2020"
+                      required
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Headquarters</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="headquartersCorp">Headquarters</label>
                     <input
                       type="text"
+                      id="headquartersCorp"
+                      name="headquarters"
                       value={formData.headquarters}
                       onChange={(e) => handleInputChange('headquarters', e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -551,9 +653,11 @@ export default function FundingPage() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Website</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="websiteCorp">Website</label>
                     <input
                       type="url"
+                      id="websiteCorp"
+                      name="website"
                       value={formData.website}
                       onChange={(e) => handleInputChange('website', e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -562,11 +666,14 @@ export default function FundingPage() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Company Stage *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="companyStageCorp">Company Stage *</label>
                     <select
+                      id="companyStageCorp"
+                      name="companyStage"
                       value={formData.companyStage}
                       onChange={(e) => handleInputChange('companyStage', e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      required
                     >
                       <option value="">Select stage</option>
                       <option value="idea">Idea Stage</option>
@@ -579,8 +686,10 @@ export default function FundingPage() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Number of Employees</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="employeesCorp">Number of Employees</label>
                     <select
+                      id="employeesCorp"
+                      name="employees"
                       value={formData.employees}
                       onChange={(e) => handleInputChange('employees', e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -968,40 +1077,116 @@ export default function FundingPage() {
       case 5:
         return (
           <div className="space-y-8">
-            <h3 className="text-2xl font-light text-gray-900 mb-6">Team Information</h3>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Founders & Co-Founders *</label>
-              <textarea
-                value={formData.founders}
-                onChange={(e) => handleInputChange('founders', e.target.value)}
-                rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="List founders with their backgrounds, expertise, and previous experience..."
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Key Team Members</label>
-              <textarea
-                value={formData.keyTeam}
-                onChange={(e) => handleInputChange('keyTeam', e.target.value)}
-                rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="Describe key team members, their roles and expertise..."
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Advisors & Board Members</label>
-              <textarea
-                value={formData.advisors}
-                onChange={(e) => handleInputChange('advisors', e.target.value)}
-                rows={3}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="List advisors, board members, and their credentials..."
-              />
-            </div>
+            {formData.organizationType === 'individual' ? (
+              <>
+                <h3 className="text-2xl font-light text-gray-900 mb-6">Background & Skills</h3>
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Educational Background</label>
+                    <textarea
+                      value={formData.founders}
+                      onChange={(e) => handleInputChange('founders', e.target.value)}
+                      rows={3}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Your education, degrees, certifications, courses, self-learning..."
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Professional Experience</label>
+                    <textarea
+                      value={formData.keyTeam}
+                      onChange={(e) => handleInputChange('keyTeam', e.target.value)}
+                      rows={3}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Work experience, internships, research positions, volunteer work..."
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Core Skills & Expertise</label>
+                    <textarea
+                      value={formData.advisors}
+                      onChange={(e) => handleInputChange('advisors', e.target.value)}
+                      rows={3}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Technical skills, languages, tools, areas of expertise..."
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Personal Achievements</label>
+                    <textarea
+                      value={formData.techStack}
+                      onChange={(e) => handleInputChange('techStack', e.target.value)}
+                      rows={3}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Awards, recognitions, publications, projects, competitions..."
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">What motivates you to work on this project?</label>
+                  <textarea
+                    value={formData.ip}
+                    onChange={(e) => handleInputChange('ip', e.target.value)}
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Your personal story, passion, what drives you to solve this problem..."
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Learning Goals & Development Areas</label>
+                  <textarea
+                    value={formData.businessModel}
+                    onChange={(e) => handleInputChange('businessModel', e.target.value)}
+                    rows={3}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="What skills do you want to develop? What do you hope to learn through this support?"
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                <h3 className="text-2xl font-light text-gray-900 mb-6">Team Information</h3>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Founders & Co-Founders *</label>
+                  <textarea
+                    value={formData.founders}
+                    onChange={(e) => handleInputChange('founders', e.target.value)}
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="List founders with their backgrounds, expertise, and previous experience..."
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Key Team Members</label>
+                  <textarea
+                    value={formData.keyTeam}
+                    onChange={(e) => handleInputChange('keyTeam', e.target.value)}
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Describe key team members, their roles and expertise..."
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Advisors & Board Members</label>
+                  <textarea
+                    value={formData.advisors}
+                    onChange={(e) => handleInputChange('advisors', e.target.value)}
+                    rows={3}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="List advisors, board members, and their credentials..."
+                  />
+                </div>
+              </>
+            )}
           </div>
         );
       
@@ -1252,42 +1437,53 @@ export default function FundingPage() {
             
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Primary Contact Name *</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="contactName">Primary Contact Name *</label>
                 <input
                   type="text"
+                  id="contactName"
+                  name="contactName"
                   value={formData.contactName}
                   onChange={(e) => handleInputChange('contactName', e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Contact person name"
+                  required
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Position/Title *</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="position">Position/Title *</label>
                 <input
                   type="text"
+                  id="position"
+                  name="position"
                   value={formData.position}
                   onChange={(e) => handleInputChange('position', e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="CEO, Founder, etc."
+                  required
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="email">Email Address *</label>
                 <input
                   type="email"
+                  id="email"
+                  name="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="contact@yourcompany.com"
+                  required
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="phone">Phone Number</label>
                 <input
                   type="tel"
+                  id="phone"
+                  name="phone"
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -1348,6 +1544,7 @@ export default function FundingPage() {
                   return (
                     <button
                       key={step.id}
+                      type="button"
                       onClick={() => handleStepClick(step.id)}
                       className={`w-full flex items-center p-3 rounded-xl text-left transition-all ${
                         isCurrent 
@@ -1417,16 +1614,69 @@ export default function FundingPage() {
             </div>
           </div>
 
-          {/* Main Content */}
+          {/* Main Content - Form */}
           <div className="flex-1">
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
-              {renderStepContent()}
+            <form 
+              method="POST" 
+              onSubmit={handleFormSubmission}
+              className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8"
+              noValidate
+            >
+              {/* Hidden input to indicate current step for accessibility */}
+              <input type="hidden" name="currentStep" value={currentStep} />
+              <input type="hidden" name="totalSteps" value={steps.length} />
+              
+              {/* Hidden inputs for all form data to ensure proper form submission */}
+              <input type="hidden" name="applicationType" value={formData.applicationType} />
+              <input type="hidden" name="applicantRole" value={formData.applicantRole} />
+              <input type="hidden" name="organizationType" value={formData.organizationType} />
+              <input type="hidden" name="companyName" value={formData.companyName} />
+              <input type="hidden" name="foundedYear" value={formData.foundedYear} />
+              <input type="hidden" name="headquarters" value={formData.headquarters} />
+              <input type="hidden" name="website" value={formData.website} />
+              <input type="hidden" name="companyStage" value={formData.companyStage} />
+              <input type="hidden" name="employees" value={formData.employees} />
+              <input type="hidden" name="fundingRound" value={formData.fundingRound} />
+              <input type="hidden" name="targetAmount" value={formData.targetAmount} />
+              <input type="hidden" name="currentRaise" value={formData.currentRaise} />
+              <input type="hidden" name="useOfFunds" value={formData.useOfFunds} />
+              <input type="hidden" name="previousFunding" value={formData.previousFunding} />
+              <input type="hidden" name="valuation" value={formData.valuation} />
+              <input type="hidden" name="industry" value={formData.industry} />
+              <input type="hidden" name="productDescription" value={formData.productDescription} />
+              <input type="hidden" name="marketSize" value={formData.marketSize} />
+              <input type="hidden" name="competitors" value={formData.competitors} />
+              <input type="hidden" name="uniqueValue" value={formData.uniqueValue} />
+              <input type="hidden" name="businessModel" value={formData.businessModel} />
+              <input type="hidden" name="founders" value={formData.founders} />
+              <input type="hidden" name="keyTeam" value={formData.keyTeam} />
+              <input type="hidden" name="advisors" value={formData.advisors} />
+              <input type="hidden" name="revenue" value={formData.revenue} />
+              <input type="hidden" name="growth" value={formData.growth} />
+              <input type="hidden" name="customers" value={formData.customers} />
+              <input type="hidden" name="partnerships" value={formData.partnerships} />
+              <input type="hidden" name="techStack" value={formData.techStack} />
+              <input type="hidden" name="ip" value={formData.ip} />
+              <input type="hidden" name="contactName" value={formData.contactName} />
+              <input type="hidden" name="position" value={formData.position} />
+              <input type="hidden" name="email" value={formData.email} />
+              <input type="hidden" name="phone" value={formData.phone} />
+              <input type="hidden" name="robotVerified" value={robotVerified ? "true" : "false"} />
+              
+              {/* Form content */}
+              <fieldset className="border-0 p-0 m-0">
+                <legend className="sr-only">
+                  {steps[currentStep - 1]?.title} - Step {currentStep} of {steps.length}
+                </legend>
+                {renderStepContent()}
+              </fieldset>
               
               {/* Navigation Buttons */}
               <div className="mt-12 pt-8 border-t border-gray-200">
                 <div className="flex justify-between items-start">
                   <button
-                    onClick={() => handleStepClick(Math.max(1, currentStep - 1))}
+                    type="button"
+                    onClick={() => handlePreviousStep()}
                     disabled={currentStep === 1}
                     className="px-6 py-3 border border-gray-300 rounded-xl text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex-shrink-0"
                   >
@@ -1435,6 +1685,7 @@ export default function FundingPage() {
                   
                   {currentStep < steps.length ? (
                     <button
+                      type="button"
                       onClick={handleNextStep}
                       className="px-8 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors"
                     >
@@ -1455,6 +1706,7 @@ export default function FundingPage() {
                                 {currentRobotQuestion.question}
                               </div>
                               <button
+                                type="button"
                                 onClick={changeQuestion}
                                 className="ml-3 p-1 text-gray-400 hover:text-purple-600 transition-colors"
                                 title="Change question"
@@ -1468,14 +1720,18 @@ export default function FundingPage() {
                             <div className="space-y-3">
                               <input
                                 type="text"
+                                name="robotVerification"
                                 value={robotAnswer}
                                 onChange={(e) => handleRobotAnswer(e.target.value)}
                                 className="w-full px-3 py-2 border border-gray-300 rounded-lg text-center text-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                                 placeholder="Type your answer here..."
                                 onKeyPress={(e) => e.key === 'Enter' && robotAnswer.trim() && checkAnswer()}
+                                aria-label="Robot verification answer"
+                                required={currentStep === steps.length}
                               />
                               
                               <button
+                                type="button"
                                 onClick={() => robotAnswer.trim() && checkAnswer()}
                                 disabled={!robotAnswer.trim()}
                                 style={{
@@ -1529,6 +1785,7 @@ export default function FundingPage() {
                       </div>
                       
                       <button
+                        type="submit"
                         disabled={!robotVerified}
                         className={`px-8 py-4 rounded-xl transition-all duration-300 flex items-center space-x-3 font-medium text-lg shadow-lg transform w-full ${
                           robotVerified 
@@ -1550,7 +1807,7 @@ export default function FundingPage() {
                   )}
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

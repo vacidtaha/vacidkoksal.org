@@ -12,7 +12,51 @@ interface ScrollExpandMediaProps {
   scrollToExpand: string;
   textBlend?: boolean;
   children: ReactNode;
+  manifestoButtonText?: string;
+  onManifestoClick?: () => void;
 }
+
+// Video cache management
+const videoCache = new Map<string, HTMLVideoElement>();
+const preloadedVideos = new Set<string>();
+
+const preloadVideo = (src: string): Promise<HTMLVideoElement> => {
+  return new Promise((resolve, reject) => {
+    // Eğer cache'de varsa direkt dön
+    if (videoCache.has(src)) {
+      resolve(videoCache.get(src)!);
+      return;
+    }
+
+    const video = document.createElement('video');
+    video.crossOrigin = 'anonymous';
+    video.preload = 'auto'; // Tüm video'yu yükle
+    video.muted = true;
+    video.playsInline = true;
+    
+    const handleCanPlayThrough = () => {
+      video.removeEventListener('canplaythrough', handleCanPlayThrough);
+      video.removeEventListener('error', handleError);
+      
+      // Cache'e ekle
+      videoCache.set(src, video);
+      preloadedVideos.add(src);
+      resolve(video);
+    };
+
+    const handleError = () => {
+      video.removeEventListener('canplaythrough', handleCanPlayThrough);
+      video.removeEventListener('error', handleError);
+      reject(new Error(`Video yüklenemedi: ${src}`));
+    };
+
+    video.addEventListener('canplaythrough', handleCanPlayThrough);
+    video.addEventListener('error', handleError);
+    
+    video.src = src;
+    video.load();
+  });
+};
 
 const ScrollExpandMedia = ({
   mediaType,
@@ -24,20 +68,136 @@ const ScrollExpandMedia = ({
   scrollToExpand,
   textBlend = false,
   children,
+  manifestoButtonText = "Read Our Manifesto in English",
+  onManifestoClick,
 }: ScrollExpandMediaProps) => {
   const [scale, setScale] = useState(1);
   const [opacity, setOpacity] = useState(1);
   const [mediaOpacity, setMediaOpacity] = useState(1);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [showPoster, setShowPoster] = useState(true);
+  const [showManifesto, setShowManifesto] = useState(false);
+  const [videoError, setVideoError] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const mediaRef = useRef<HTMLVideoElement | HTMLImageElement>(null);
+  const manifestoRef = useRef<HTMLDivElement>(null);
+  const cachedVideoRef = useRef<HTMLVideoElement | null>(null);
+
+  const handleManifestoClick = () => {
+    setShowManifesto(true);
+    if (manifestoRef.current) {
+      manifestoRef.current.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    if (onManifestoClick) {
+      onManifestoClick();
+    }
+  };
+
+  // Video preloading effect with Intersection Observer
+  useEffect(() => {
+    if (mediaType === 'video' && mediaSrc && containerRef.current) {
+      // Intersection Observer ile lazy loading
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Video görünür alanda, preload et
+              preloadVideo(mediaSrc)
+                .then((cachedVideo) => {
+                  cachedVideoRef.current = cachedVideo;
+                  setVideoLoaded(true);
+                  
+                  // Ana video element'a cached video'yu klonla
+                  if (mediaRef.current && mediaRef.current instanceof HTMLVideoElement) {
+                    const videoElement = mediaRef.current;
+                    
+                    // Cached video'nun özelliklerini ana video'ya kopyala
+                    videoElement.currentTime = 0;
+                    
+                    // Video ready olduğunu işaretle
+                    setTimeout(() => {
+                      setShowPoster(false);
+                    }, 300);
+                  }
+                })
+                .catch((error) => {
+                  console.error('Video preload hatası:', error);
+                  setVideoError(true);
+                  setVideoLoaded(false);
+                });
+              
+              // Observer'ı durdur
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: '100px', // 100px önce yüklemeye başla
+          threshold: 0.1
+        }
+      );
+
+      observer.observe(containerRef.current);
+
+      return () => {
+        if (containerRef.current) {
+          observer.unobserve(containerRef.current);
+        }
+      };
+    }
+  }, [mediaType, mediaSrc]);
+
+  // Network durumunu kontrol et ve buna göre preload stratejisi belirle
+  useEffect(() => {
+    if ('connection' in navigator) {
+      const connection = (navigator as any).connection;
+      
+      if (connection) {
+        const isSlowConnection = connection.effectiveType === 'slow-2g' || 
+                                connection.effectiveType === '2g';
+        
+        if (isSlowConnection && mediaRef.current instanceof HTMLVideoElement) {
+          // Yavaş bağlantıda video preload'ını azalt
+          mediaRef.current.preload = 'metadata';
+        }
+      }
+    }
+  }, []);
+
+  // Poster preloading
+  useEffect(() => {
+    if (posterSrc && mediaType === 'video') {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => {
+        // Poster yüklendi, video yoksa poster göster
+        if (!videoLoaded) {
+          setShowPoster(true);
+        }
+      };
+      img.src = posterSrc;
+    }
+  }, [posterSrc, mediaType, videoLoaded]);
+
+  // Background image preloading
+  useEffect(() => {
+    if (bgImageSrc) {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.src = bgImageSrc;
+    }
+  }, [bgImageSrc]);
 
   useEffect(() => {
     const resetSection = () => {
       setScale(1);
       setOpacity(1);
       setMediaOpacity(1);
+      setShowManifesto(false);
     };
 
     window.addEventListener('resetSection', resetSection);
@@ -75,29 +235,26 @@ const ScrollExpandMedia = ({
     };
   }, []);
 
-  // Poster resmini önceden yükle
-  useEffect(() => {
-    if (posterSrc && mediaType === 'video') {
-      const img = new Image();
-      img.src = posterSrc;
-    }
-  }, [posterSrc, mediaType]);
-
-  // Video yükleme event handlers
+  // Video event handlers
   const handleVideoLoadedData = () => {
     setVideoLoaded(true);
-    // Video yüklendikten 500ms sonra poster'i gizle
     setTimeout(() => {
       setShowPoster(false);
-    }, 500);
+    }, 200);
   };
 
   const handleVideoCanPlay = () => {
     setVideoLoaded(true);
   };
 
+  const handleVideoError = () => {
+    setVideoError(true);
+    setVideoLoaded(false);
+    console.error('Video oynatma hatası');
+  };
+
   return (
-    <div className="relative min-h-[200vh]">
+    <div className={`relative ${showManifesto ? 'min-h-[200vh]' : 'min-h-screen'}`}>
       {/* Content Container */}
       <div ref={containerRef} className="relative z-30">
         {/* Hero Section */}
@@ -128,42 +285,65 @@ const ScrollExpandMedia = ({
             <div className="absolute inset-0 bg-black">
               {mediaType === 'video' ? (
                 <>
-                  {/* Poster Image - Video yüklenmeden önce göster */}
-                  {posterSrc && showPoster && (
+                  {/* Poster Image */}
+                  {posterSrc && showPoster && !videoError && (
                     <div 
                       className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500"
                       style={{ 
                         backgroundImage: `url(${posterSrc})`,
                         opacity: showPoster ? 1 : 0,
-                        zIndex: videoLoaded ? 1 : 2
+                        zIndex: videoLoaded && !showPoster ? 1 : 2
+                      }}
+                    />
+                  )}
+                  
+                  {/* Error fallback */}
+                  {videoError && posterSrc && (
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                      style={{ 
+                        backgroundImage: `url(${posterSrc})`,
+                        zIndex: 3
                       }}
                     />
                   )}
                   
                   {/* Video Element */}
-                  <video
-                    ref={mediaRef as React.RefObject<HTMLVideoElement>}
-                    src={mediaSrc}
-                    poster={posterSrc}
-                    className="w-full h-full object-cover transition-opacity duration-500"
-                    style={{ 
-                      opacity: videoLoaded ? mediaOpacity : 0,
-                      zIndex: videoLoaded ? 2 : 1
-                    }}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="metadata"
-                    onLoadedData={handleVideoLoadedData}
-                    onCanPlay={handleVideoCanPlay}
-                    onLoadStart={() => setVideoLoaded(false)}
-                  />
+                  {!videoError && (
+                    <video
+                      ref={mediaRef as React.RefObject<HTMLVideoElement>}
+                      src={mediaSrc}
+                      poster={posterSrc}
+                      className="w-full h-full object-cover transition-opacity duration-500"
+                      style={{ 
+                        opacity: videoLoaded && !showPoster ? mediaOpacity : 0,
+                        zIndex: videoLoaded && !showPoster ? 2 : 1
+                      }}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      crossOrigin="anonymous"
+                      onLoadedData={handleVideoLoadedData}
+                      onCanPlay={handleVideoCanPlay}
+                      onError={handleVideoError}
+                      onLoadStart={() => {
+                        // Sadece cache'de yoksa loading göster
+                        if (!preloadedVideos.has(mediaSrc)) {
+                          setVideoLoaded(false);
+                        }
+                      }}
+                    />
+                  )}
                   
-                  {/* Loading indicator */}
-                  {!videoLoaded && (
+                  {/* Loading indicator - Sadece cache'de yoksa göster */}
+                  {!videoLoaded && !videoError && !preloadedVideos.has(mediaSrc) && (
                     <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-10">
-                      <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                      <div className="flex flex-col items-center gap-3">
+                        <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                        <span className="text-white/80 text-sm font-medium">Video yükleniyor...</span>
+                      </div>
                     </div>
                   )}
                 </>
@@ -174,6 +354,7 @@ const ScrollExpandMedia = ({
                   alt={title}
                   className="w-full h-full object-cover"
                   style={{ opacity: mediaOpacity }}
+                  crossOrigin="anonymous"
                 />
               )}
             </div>
@@ -192,9 +373,18 @@ const ScrollExpandMedia = ({
             <p className="text-xl md:text-2xl mb-2 opacity-80 drop-shadow-lg">
               {date}
             </p>
-            <p className="text-lg opacity-60 drop-shadow-lg">
+            <p className="text-lg opacity-60 drop-shadow-lg mb-6">
               {scrollToExpand}
             </p>
+            
+            {/* Manifesto Butonu - Scroll yazısının altında */}
+            <button
+              onClick={handleManifestoClick}
+              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl font-medium tracking-wide"
+              style={{ opacity: opacity }}
+            >
+              {manifestoButtonText}
+            </button>
           </div>
           
           {/* Scroll Indicator */}
@@ -218,12 +408,17 @@ const ScrollExpandMedia = ({
           </div>
         </div>
         
-        {/* Content Section */}
-        <div className="min-h-screen bg-white relative z-20">
-          <div className="py-16">
-            {children}
+        {/* Content Section - Manifesto sadece butona basıldığında görünür */}
+        {showManifesto && (
+          <div 
+            ref={manifestoRef}
+            className="min-h-screen bg-white relative z-20 transition-all duration-500"
+          >
+            <div className="py-16">
+              {children}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
