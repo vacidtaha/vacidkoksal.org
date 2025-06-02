@@ -28,6 +28,8 @@ const ScrollExpandMedia = ({
   const [scale, setScale] = useState(1);
   const [opacity, setOpacity] = useState(1);
   const [mediaOpacity, setMediaOpacity] = useState(1);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [showPoster, setShowPoster] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
   const mediaRef = useRef<HTMLVideoElement | HTMLImageElement>(null);
 
@@ -73,6 +75,27 @@ const ScrollExpandMedia = ({
     };
   }, []);
 
+  // Poster resmini önceden yükle
+  useEffect(() => {
+    if (posterSrc && mediaType === 'video') {
+      const img = new Image();
+      img.src = posterSrc;
+    }
+  }, [posterSrc, mediaType]);
+
+  // Video yükleme event handlers
+  const handleVideoLoadedData = () => {
+    setVideoLoaded(true);
+    // Video yüklendikten 500ms sonra poster'i gizle
+    setTimeout(() => {
+      setShowPoster(false);
+    }, 500);
+  };
+
+  const handleVideoCanPlay = () => {
+    setVideoLoaded(true);
+  };
+
   return (
     <div className="relative min-h-[200vh]">
       {/* Content Container */}
@@ -104,17 +127,46 @@ const ScrollExpandMedia = ({
             {/* Background Media (for scaling effect) */}
             <div className="absolute inset-0 bg-black">
               {mediaType === 'video' ? (
-                <video
-                  ref={mediaRef as React.RefObject<HTMLVideoElement>}
-                  src={mediaSrc}
-                  poster={posterSrc}
-                  className="w-full h-full object-cover"
-                  style={{ opacity: mediaOpacity }}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
+                <>
+                  {/* Poster Image - Video yüklenmeden önce göster */}
+                  {posterSrc && showPoster && (
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500"
+                      style={{ 
+                        backgroundImage: `url(${posterSrc})`,
+                        opacity: showPoster ? 1 : 0,
+                        zIndex: videoLoaded ? 1 : 2
+                      }}
+                    />
+                  )}
+                  
+                  {/* Video Element */}
+                  <video
+                    ref={mediaRef as React.RefObject<HTMLVideoElement>}
+                    src={mediaSrc}
+                    poster={posterSrc}
+                    className="w-full h-full object-cover transition-opacity duration-500"
+                    style={{ 
+                      opacity: videoLoaded ? mediaOpacity : 0,
+                      zIndex: videoLoaded ? 2 : 1
+                    }}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    onLoadedData={handleVideoLoadedData}
+                    onCanPlay={handleVideoCanPlay}
+                    onLoadStart={() => setVideoLoaded(false)}
+                  />
+                  
+                  {/* Loading indicator */}
+                  {!videoLoaded && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-10">
+                      <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    </div>
+                  )}
+                </>
               ) : (
                 <img
                   ref={mediaRef as React.RefObject<HTMLImageElement>}
