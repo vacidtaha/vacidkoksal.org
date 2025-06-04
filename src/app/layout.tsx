@@ -36,7 +36,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Vacid & Köksal Foundation - Healthcare, Information, Food & Energy</title>
-        <meta name="description" content="Revolutionizing tomorrow. Breaking boundaries in health, tech, food & energy. The future starts here." />
+        <meta name="description" content="We support crazy ideas that actually work. Healthcare, tech, food, energy - because the world needs fixing." />
         <meta name="keywords" content="Vacid, Köksal, Foundation, Healthcare, Health Technology, Information Technology, IT, Food Security, Sustainable Energy, Renewable Energy, Innovation, Social Impact, Turkey" />
         <meta name="author" content="Vacid & Köksal Foundation" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -47,7 +47,7 @@ export default function RootLayout({
         {/* Open Graph / Facebook Meta Tags */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Vacid & Köksal Foundation - Healthcare, Information, Food & Energy" />
-        <meta property="og:description" content="Where impossible becomes inevitable. Shaping humanity's future through breakthrough innovation." />
+        <meta property="og:description" content="Supporting brilliant minds who think the world is broken. We fund the weirdly wonderful solutions." />
         <meta property="og:image" content="/og-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -58,7 +58,7 @@ export default function RootLayout({
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Vacid & Köksal Foundation - Healthcare, Information, Food & Energy" />
-        <meta name="twitter:description" content="The next evolution starts here. Revolutionary solutions that will change everything." />
+        <meta name="twitter:description" content="Yeah, we're that foundation. The ones backing ideas everyone else thinks are impossible." />
         <meta name="twitter:image" content="/og-image.png" />
         <meta name="twitter:site" content="@vacidkoksal" />
         <meta name="twitter:creator" content="@vacidkoksal" />
