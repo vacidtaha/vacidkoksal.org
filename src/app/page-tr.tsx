@@ -11,7 +11,7 @@ interface MediaAbout {
 }
 
 interface MediaContent {
-  src: string;
+  src?: string;
   poster?: string;
   background: string;
   title: string;
@@ -25,9 +25,7 @@ interface MediaContentCollection {
 }
 
 const foundationMediaContent: MediaContentCollection = {
-  video: {
-    src: 'https://me7aitdbxq.ufs.sh/f/2wsMIGDMQRdYuZ5R8ahEEZ4aQK56LizRdfBSqeDMsmUIrJN1',
-    poster: 'https://images.pexels.com/videos/5752729/space-earth-universe-cosmos-5752729.jpeg',
+  image: {
     background: 'https://me7aitdbxq.ufs.sh/f/2wsMIGDMQRdYMNjMlBUYHaeYpxduXPVNwf8mnFA61L7rkcoS',
     title: 'İnsanlık İçin Teknoloji',
     date: 'Dünyanın her köşesinde iyileştiren, besleyen ve eğiten mühendislik çözümleri',
@@ -107,7 +105,7 @@ const ManifestoContent = ({ mediaType }: { mediaType: 'video' | 'image' }) => {
 };
 
 export default function HomeTurkish() {
-  const mediaType = 'video';
+  const mediaType = 'image';
   const currentMedia = foundationMediaContent[mediaType];
 
   useEffect(() => {
@@ -121,16 +119,13 @@ export default function HomeTurkish() {
     <>
       {/* Hero Section with ScrollExpandMedia */}
       <ScrollExpandMedia
-        mediaType={mediaType}
-        mediaSrc={currentMedia.src}
-        posterSrc={currentMedia.poster}
         bgImageSrc={currentMedia.background}
         title={currentMedia.title}
         date={currentMedia.date}
         scrollToExpand={currentMedia.scrollToExpand}
         manifestoButtonText="Manifestomuzu Okuyun"
       >
-        <ManifestoContent mediaType={mediaType} />
+        <ManifestoContent mediaType="image" />
       </ScrollExpandMedia>
       
       {/* Our Vision Section */}
@@ -140,11 +135,11 @@ export default function HomeTurkish() {
             Vizyonumuz
           </h2>
           <p className='text-xl mb-8 text-gray-600 leading-relaxed text-center max-w-4xl mx-auto'>
-            {foundationMediaContent.video.about.overview}
+            {foundationMediaContent.image.about.overview}
           </p>
 
           <p className='text-xl mb-12 text-gray-600 leading-relaxed text-center max-w-4xl mx-auto'>
-            {foundationMediaContent.video.about.conclusion}
+            {foundationMediaContent.image.about.conclusion}
           </p>
 
           {/* Mission Areas */}

@@ -12,7 +12,7 @@ interface MediaAbout {
 }
 
 interface MediaContent {
-  src: string;
+  src?: string;
   poster?: string;
   background: string;
   title: string;
@@ -26,9 +26,7 @@ interface MediaContentCollection {
 }
 
 const foundationMediaContent: MediaContentCollection = {
-  video: {
-    src: 'https://me7aitdbxq.ufs.sh/f/2wsMIGDMQRdYuZ5R8ahEEZ4aQK56LizRdfBSqeDMsmUIrJN1',
-    poster: 'https://images.pexels.com/videos/5752729/space-earth-universe-cosmos-5752729.jpeg',
+  image: {
     background: 'https://me7aitdbxq.ufs.sh/f/2wsMIGDMQRdYMNjMlBUYHaeYpxduXPVNwf8mnFA61L7rkcoS',
     title: 'Technology for Humanity',
     date: 'Engineering solutions that heal, nourish, and educate every corner of our world',
@@ -157,7 +155,7 @@ export default function Home() {
 
 // Original English content as separate component
 function EnglishHomePage() {
-  const mediaType = 'video';
+  const mediaType = 'image';
   const currentMedia = foundationMediaContent[mediaType];
 
   useEffect(() => {
@@ -171,16 +169,13 @@ function EnglishHomePage() {
     <>
       {/* Hero Section with ScrollExpandMedia */}
       <ScrollExpandMedia
-        mediaType={mediaType}
-        mediaSrc={currentMedia.src}
-        posterSrc={currentMedia.poster}
         bgImageSrc={currentMedia.background}
         title={currentMedia.title}
         date={currentMedia.date}
         scrollToExpand={currentMedia.scrollToExpand}
         manifestoButtonText="Read Our Manifesto"
       >
-        <ManifestoContent mediaType={mediaType} />
+        <ManifestoContent mediaType="image" />
       </ScrollExpandMedia>
       
       {/* Our Vision Section */}
@@ -190,11 +185,11 @@ function EnglishHomePage() {
             Our Vision
           </h2>
           <p className='text-xl mb-8 text-gray-600 leading-relaxed text-center max-w-4xl mx-auto'>
-            {foundationMediaContent.video.about.overview}
+            {foundationMediaContent.image.about.overview}
           </p>
 
           <p className='text-xl mb-12 text-gray-600 leading-relaxed text-center max-w-4xl mx-auto'>
-            {foundationMediaContent.video.about.conclusion}
+            {foundationMediaContent.image.about.conclusion}
           </p>
 
           {/* Mission Areas */}

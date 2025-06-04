@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState, ReactNode } from 'react';
 
 interface ScrollExpandMediaProps {
-  mediaType: 'video' | 'image';
-  mediaSrc: string;
+  mediaType?: 'video' | 'image';
+  mediaSrc?: string;
   posterSrc?: string;
   bgImageSrc: string;
   title: string;
@@ -105,7 +105,7 @@ const ScrollExpandMedia = ({
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               // Video görünür alanda, preload et
-              preloadVideo(mediaSrc)
+              preloadVideo(mediaSrc!)
                 .then((cachedVideo) => {
                   cachedVideoRef.current = cachedVideo;
                   setVideoLoaded(true);
@@ -271,94 +271,96 @@ const ScrollExpandMedia = ({
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/40" style={{ opacity: opacity }} />
           
-          {/* Media Container */}
-          <div 
-            className="relative mb-8 overflow-hidden rounded-2xl z-10"
-            style={{
-              width: '400px',
-              height: '300px',
-              transform: `scale(${scale})`,
-              transformOrigin: 'center center',
-            }}
-          >
-            {/* Background Media (for scaling effect) */}
-            <div className="absolute inset-0 bg-black">
-              {mediaType === 'video' ? (
-                <>
-                  {/* Poster Image */}
-                  {posterSrc && showPoster && !videoError && (
-                    <div 
-                      className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500"
-                      style={{ 
-                        backgroundImage: `url(${posterSrc})`,
-                        opacity: showPoster ? 1 : 0,
-                        zIndex: videoLoaded && !showPoster ? 1 : 2
-                      }}
-                    />
-                  )}
-                  
-                  {/* Error fallback */}
-                  {videoError && posterSrc && (
-                    <div 
-                      className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                      style={{ 
-                        backgroundImage: `url(${posterSrc})`,
-                        zIndex: 3
-                      }}
-                    />
-                  )}
-                  
-                  {/* Video Element */}
-                  {!videoError && (
-                    <video
-                      ref={mediaRef as React.RefObject<HTMLVideoElement>}
-                      src={mediaSrc}
-                      poster={posterSrc}
-                      className="w-full h-full object-cover transition-opacity duration-500"
-                      style={{ 
-                        opacity: videoLoaded && !showPoster ? mediaOpacity : 0,
-                        zIndex: videoLoaded && !showPoster ? 2 : 1
-                      }}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="auto"
-                      crossOrigin="anonymous"
-                      onLoadedData={handleVideoLoadedData}
-                      onCanPlay={handleVideoCanPlay}
-                      onError={handleVideoError}
-                      onLoadStart={() => {
-                        // Sadece cache'de yoksa loading göster
-                        if (!preloadedVideos.has(mediaSrc)) {
-                          setVideoLoaded(false);
-                        }
-                      }}
-                    />
-                  )}
-                  
-                  {/* Loading indicator - Sadece cache'de yoksa göster */}
-                  {!videoLoaded && !videoError && !preloadedVideos.has(mediaSrc) && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-10">
-                      <div className="flex flex-col items-center gap-3">
-                        <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                        <span className="text-white/80 text-sm font-medium">Video yükleniyor...</span>
+          {/* Media Container - Sadece mediaSrc varsa göster */}
+          {mediaSrc && (
+            <div 
+              className="relative mb-8 overflow-hidden rounded-2xl z-10"
+              style={{
+                width: '400px',
+                height: '300px',
+                transform: `scale(${scale})`,
+                transformOrigin: 'center center',
+              }}
+            >
+              {/* Background Media (for scaling effect) */}
+              <div className="absolute inset-0 bg-black">
+                {mediaType === 'video' ? (
+                  <>
+                    {/* Poster Image */}
+                    {posterSrc && showPoster && !videoError && (
+                      <div 
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500"
+                        style={{ 
+                          backgroundImage: `url(${posterSrc})`,
+                          opacity: showPoster ? 1 : 0,
+                          zIndex: videoLoaded && !showPoster ? 1 : 2
+                        }}
+                      />
+                    )}
+                    
+                    {/* Error fallback */}
+                    {videoError && posterSrc && (
+                      <div 
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                        style={{ 
+                          backgroundImage: `url(${posterSrc})`,
+                          zIndex: 3
+                        }}
+                      />
+                    )}
+                    
+                    {/* Video Element */}
+                    {!videoError && (
+                      <video
+                        ref={mediaRef as React.RefObject<HTMLVideoElement>}
+                        src={mediaSrc}
+                        poster={posterSrc}
+                        className="w-full h-full object-cover transition-opacity duration-500"
+                        style={{ 
+                          opacity: videoLoaded && !showPoster ? mediaOpacity : 0,
+                          zIndex: videoLoaded && !showPoster ? 2 : 1
+                        }}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                        crossOrigin="anonymous"
+                        onLoadedData={handleVideoLoadedData}
+                        onCanPlay={handleVideoCanPlay}
+                        onError={handleVideoError}
+                        onLoadStart={() => {
+                          // Sadece cache'de yoksa loading göster
+                          if (!preloadedVideos.has(mediaSrc)) {
+                            setVideoLoaded(false);
+                          }
+                        }}
+                      />
+                    )}
+                    
+                    {/* Loading indicator - Sadece cache'de yoksa göster */}
+                    {!videoLoaded && !videoError && !preloadedVideos.has(mediaSrc) && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-10">
+                        <div className="flex flex-col items-center gap-3">
+                          <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                          <span className="text-white/80 text-sm font-medium">Video yükleniyor...</span>
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </>
-              ) : (
-                <img
-                  ref={mediaRef as React.RefObject<HTMLImageElement>}
-                  src={mediaSrc}
-                  alt={title}
-                  className="w-full h-full object-cover"
-                  style={{ opacity: mediaOpacity }}
-                  crossOrigin="anonymous"
-                />
-              )}
+                    )}
+                  </>
+                ) : (
+                  <img
+                    ref={mediaRef as React.RefObject<HTMLImageElement>}
+                    src={mediaSrc}
+                    alt={title}
+                    className="w-full h-full object-cover"
+                    style={{ opacity: mediaOpacity }}
+                    crossOrigin="anonymous"
+                  />
+                )}
+              </div>
             </div>
-          </div>
+          )}
           
           {/* Text Content - Video'nun üzerine ortalanmış */}
           <div 
