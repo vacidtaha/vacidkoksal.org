@@ -104,37 +104,45 @@ export default function Management() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* Management Section */}
-      <section className="w-full py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6 font-[family-name:var(--font-inter)] text-gray-900">
+      <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 bg-white">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 max-w-6xl">
+          {/* Header - Mobile optimized */}
+          <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 font-[family-name:var(--font-inter)] text-gray-900 leading-tight">
               {t.title}
             </h1>
-            <p className="text-xl text-gray-600 font-[family-name:var(--font-inter)] max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 font-[family-name:var(--font-inter)] max-w-3xl mx-auto leading-relaxed px-2">
               {t.subtitle}
             </p>
           </div>
 
-          {/* Executives Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          {/* Executives Grid - Mobile: 2 columns side by side, Desktop: 2 columns */}
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-3 sm:gap-4 md:gap-8 lg:gap-12 max-w-4xl mx-auto">
             {/* Taha Vacid */}
             <div className="text-center">
-              <div className="w-64 h-64 mx-auto mb-6 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl shadow-lg flex items-center justify-center">
-                <div className="text-6xl text-gray-400">
+              {/* Avatar - Responsive sizing */}
+              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 lg:w-64 lg:h-64 mx-auto mb-2 sm:mb-3 md:mb-4 lg:mb-6 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg flex items-center justify-center">
+                <div className="text-lg sm:text-xl md:text-3xl lg:text-6xl text-gray-400">
                   👤
                 </div>
               </div>
-              <h2 className="text-2xl font-bold mb-2 font-[family-name:var(--font-inter)] text-blue-600">
+              
+              {/* Name - Responsive sizing */}
+              <h2 className="text-xs sm:text-sm md:text-lg lg:text-2xl font-bold mb-1 sm:mb-1 md:mb-2 font-[family-name:var(--font-inter)] text-blue-600 leading-tight">
                 {t.tahaVacid.name}
               </h2>
-              <p className="text-lg text-gray-600 font-medium mb-4">
+              
+              {/* Role - Responsive sizing */}
+              <p className="text-xs sm:text-xs md:text-sm lg:text-lg text-gray-600 font-medium mb-2 sm:mb-2 md:mb-3 lg:mb-4 leading-tight">
                 {t.tahaVacid.role}
               </p>
-              <div className="text-gray-700 leading-relaxed space-y-3">
-                <p>
+              
+              {/* Description and Quote - Responsive and compact */}
+              <div className="text-gray-700 leading-tight space-y-1 sm:space-y-2 md:space-y-3 px-1 sm:px-2">
+                <p className="text-xs sm:text-xs md:text-sm lg:text-base leading-tight">
                   {t.tahaVacid.description}
                 </p>
-                <p className="italic">
+                <p className="italic text-xs sm:text-xs md:text-sm lg:text-base leading-tight">
                   "{t.tahaVacid.quote}"
                 </p>
               </div>
@@ -142,35 +150,42 @@ export default function Management() {
 
             {/* Haktan Köksal */}
             <div className="text-center">
-              <div className="w-64 h-64 mx-auto mb-6 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl shadow-lg flex items-center justify-center">
-                <div className="text-6xl text-gray-400">
+              {/* Avatar - Responsive sizing */}
+              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 lg:w-64 lg:h-64 mx-auto mb-2 sm:mb-3 md:mb-4 lg:mb-6 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg flex items-center justify-center">
+                <div className="text-lg sm:text-xl md:text-3xl lg:text-6xl text-gray-400">
                   👤
                 </div>
               </div>
-              <h2 className="text-2xl font-bold mb-2 font-[family-name:var(--font-inter)] text-blue-600">
+              
+              {/* Name - Responsive sizing */}
+              <h2 className="text-xs sm:text-sm md:text-lg lg:text-2xl font-bold mb-1 sm:mb-1 md:mb-2 font-[family-name:var(--font-inter)] text-blue-600 leading-tight">
                 {t.haktanKoksal.name}
               </h2>
-              <p className="text-lg text-gray-600 font-medium mb-4">
+              
+              {/* Role - Responsive sizing */}
+              <p className="text-xs sm:text-xs md:text-sm lg:text-lg text-gray-600 font-medium mb-2 sm:mb-2 md:mb-3 lg:mb-4 leading-tight">
                 {t.haktanKoksal.role}
               </p>
-              <div className="text-gray-700 leading-relaxed space-y-3">
-                <p>
+              
+              {/* Description and Quote - Responsive and compact */}
+              <div className="text-gray-700 leading-tight space-y-1 sm:space-y-2 md:space-y-3 px-1 sm:px-2">
+                <p className="text-xs sm:text-xs md:text-sm lg:text-base leading-tight">
                   {t.haktanKoksal.description}
                 </p>
-                <p className="italic">
+                <p className="italic text-xs sm:text-xs md:text-sm lg:text-base leading-tight">
                   "{t.haktanKoksal.quote}"
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Mission Statement */}
-          <div className="mt-20 text-center">
-            <div className="bg-gray-50 rounded-3xl p-12 max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-6 font-[family-name:var(--font-inter)] text-gray-900">
+          {/* Mission Statement - Mobile optimized */}
+          <div className="mt-10 sm:mt-14 md:mt-18 lg:mt-24 text-center">
+            <div className="bg-gray-50 rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 max-w-4xl mx-auto">
+              <h3 className="text-sm sm:text-base md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 md:mb-6 font-[family-name:var(--font-inter)] text-gray-900 leading-tight">
                 {t.visionTitle}
               </h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed">
                 {t.visionDescription}
               </p>
             </div>
