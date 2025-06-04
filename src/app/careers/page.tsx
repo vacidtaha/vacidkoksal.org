@@ -58,93 +58,93 @@ const jobCategories = [
 const content = {
   en: {
     heroTitle: "Join Our Mission",
-    heroDescription: "Help us build a world where healthcare transcends barriers, knowledge flows freely, and sustainable technology serves all humanity.",
-    visionTag: "OUR VISION",
+    heroDescription: "We're building something unprecedented—and honestly, we need all the help we can get. If you're the type who gets excited about impossible problems, we might be a match.",
+    visionTag: "WHY WE DO THIS",
     visionTitle: "Why Join Our Mission?",
-    visionDescription: "We're not just building technology—we're engineering solutions that heal, nourish, and educate. Every project impacts millions globally.",
-    visionQuote: "Transform the world with us",
+    visionDescription: "Every line of code we write, every algorithm we train, every partnership we forge—it all points toward one goal: making advanced technology work for everyone, not just the privileged few. It's ambitious? Absolutely. Impossible? We'll find out together.",
+    visionQuote: "Transform tomorrow, starting today",
     manifestoQuote: "We reject the gates that stamp knowledge with a 'premium access' seal.",
     manifestoFrom: "From Our Manifesto",
     opportunitiesTitle: "Career Opportunities",
-    opportunitiesDescription: "Find your place in our mission to democratize healthcare, education, and sustainable technology.",
-    viewRoles: "View roles",
-    benefitsTag: "PERKS & BENEFITS",
+    opportunitiesDescription: "Find your place in our mission to democratize healthcare, education, and sustainable technology. We're looking for builders, dreamers, and pragmatic optimists.",
+    viewRoles: "Explore opportunities",
+    benefitsTag: "WHAT WE OFFER",
     benefitsTitle: "More Than Just A Job",
-    benefitsDescription: "Join a movement that values innovation, growth, and global impact",
+    benefitsDescription: "Join a team that's genuinely trying to change the world—and actually has a plan to do it",
     benefits: [
       {
-        title: "Global Impact",
-        description: "Work on projects that affect millions worldwide"
+        title: "Real Impact",
+        description: "Work on projects that could affect millions of lives—not engagement metrics"
       },
       {
-        title: "Learning & Growth",
-        description: "Access to cutting-edge research and development"
+        title: "Learn & Grow",
+        description: "Access cutting-edge research and collaborate with brilliant minds across disciplines"
       },
       {
-        title: "Collaborative Culture",
-        description: "Work with passionate minds from around the world"
+        title: "Global Team",
+        description: "Work with passionate people from around the world who share your drive to solve big problems"
       },
       {
-        title: "Competitive Benefits",
-        description: "Comprehensive health, retirement, and wellness programs"
+        title: "Competitive Package",
+        description: "Comprehensive health, equity, and wellness benefits—because we take care of our own"
       },
       {
-        title: "Flexible Work",
-        description: "Remote-first culture with flexible schedules"
+        title: "Work Your Way",
+        description: "Remote-first with flexible schedules—results matter more than where you sit"
       },
       {
-        title: "Innovation Focus",
-        description: "20% time for personal research projects"
+        title: "Research Time",
+        description: "20% time for your own research projects—pursue what excites you"
       }
     ],
     applicationTitle: "Ready to Make an Impact?",
-    applicationDescription: "Join us in building technology that serves humanity. Whether you have years of experience or are just starting your career, we value passion and potential.",
+    applicationDescription: "We're looking for people who want to build technology that serves humanity. Whether you're a senior engineer or fresh graduate, what matters is your drive to create meaningful change.",
     applyNow: "Apply Now",
     askQuestions: "Ask Questions"
   },
   tr: {
     heroTitle: "Misyonumuza Katılın",
-    heroDescription: "Sağlığın engelleri aştığı, bilginin özgürce aktığı ve sürdürülebilir teknolojinin tüm insanlığa hizmet ettiği bir dünya inşa etmemize yardım edin.",
-    visionTag: "VİZYONUMUZ",
+    heroDescription: "Benzeri görülmemiş bir şey inşa ediyoruz—ve açıkçası, elimizden gelen tüm yardıma ihtiyacımız var. İmkansız problemler karşısında heyecanlanıyorsan, uyumlu olabiliriz.",
+    visionTag: "NEDEN BUNU YAPIYORUZ",
     visionTitle: "Neden Misyonumuza Katılmalısınız?",
-    visionDescription: "Sadece teknoloji inşa etmiyoruz—iyileştiren, besleyen ve eğiten çözümler geliştiriyoruz. Her proje dünya çapında milyonlarca insanı etkiliyor.",
-    visionQuote: "Dünyayı bizimle dönüştürün",
+    visionDescription: "Yazdığımız her kod satırı, eğittiğimiz her algoritma, kurduğumuz her ortaklık—hepsi tek bir hedefe işaret ediyor: gelişmiş teknolojinin sadece ayrıcalıklı azınlık için değil, herkes için çalışmasını sağlamak. İddialı mı? Kesinlikle. İmkansız mı? Birlikte öğreneceğiz.",
+    visionQuote: "Yarını bugünden dönüştür",
     manifestoQuote: "Bilgiyi 'premium erişim' mührüyle damgalayan kapıları reddediyoruz.",
     manifestoFrom: "Manifestomuzdan",
     opportunitiesTitle: "Kariyer Fırsatları",
-    opportunitiesDescription: "Sağlığı, eğitimi ve sürdürülebilir teknolojiyi demokratikleştirme misyonumuzda yerinizi bulun.",
-    viewRoles: "Rolleri görüntüle",
-    benefitsTag: "AVANTAJLAR VE FAYDALAR",
+    opportunitiesDescription: "Sağlığı, eğitimi ve sürdürülebilir teknolojiyi demokratikleştirme misyonumuzda yerinizi bulun. İnşacılar, hayalciler ve pragmatik iyimserler arıyoruz.",
+    viewRoles: "Fırsatları keşfet",
+    benefitsTag: "NELERİ SUNUYORUZ",
     benefitsTitle: "Sadece Bir İşten Fazlası",
-    benefitsDescription: "İnovasyonu, büyümeyi ve küresel etkiyi değerli bulan bir harekete katılın",
+    benefitsDescription: "Gerçekten dünyayı değiştirmeye çalışan—ve bunu yapmak için somut bir planı olan—bir ekibe katılın",
     benefits: [
       {
-        title: "Küresel Etki",
-        description: "Dünya çapında milyonlarca insanı etkileyen projelerde çalışın"
+        title: "Gerçek Etki",
+        description: "Milyonlarca hayatı etkileyebilecek projelerde çalışın—etkileşim metrikleri değil"
       },
       {
-        title: "Öğrenme ve Gelişim",
-        description: "En son araştırma ve geliştirmeye erişim"
+        title: "Öğren ve Büyü",
+        description: "En son araştırmalara erişin ve disiplinler arası parlak zihinlerle işbirliği yapın"
       },
       {
-        title: "İşbirlikçi Kültür",
-        description: "Dünyanın dört bir yanından tutkulu zihinlerle çalışın"
+        title: "Küresel Ekip",
+        description: "Büyük sorunları çözme konusunda sizinle aynı tutkuyu paylaşan dünya çapında tutkulu insanlarla çalışın"
       },
       {
-        title: "Rekabetçi Faydalar",
-        description: "Kapsamlı sağlık, emeklilik ve sağlıklı yaşam programları"
+        title: "Rekabetçi Paket",
+        description: "Kapsamlı sağlık, hisse senedi ve sağlıklı yaşam faydaları—çünkü ekibimize özen gösteriyoruz"
       },
       {
-        title: "Esnek Çalışma",
-        description: "Esnek programlarla uzaktan öncelikli kültür"
+        title: "Kendi Tarzınızda Çalışın",
+        description: "Esnek programlarla uzaktan öncelikli—nerede oturduğunuzdan çok sonuçlar önemli"
       },
       {
-        title: "İnovasyon Odağı",
-        description: "Kişisel araştırma projeleri için %20 zaman"
+        title: "Araştırma Zamanı",
+        description: "Kendi araştırma projeleriniz için %20 zaman—sizi heyecanlandıranı takip edin"
       }
     ],
     applicationTitle: "Etki Yaratmaya Hazır mısınız?",
-    applicationDescription: "İnsanlığa hizmet eden teknoloji inşa etmekte bize katılın. Yıllarca deneyiminiz olsun ya da kariyerinize yeni başlıyor olun, tutku ve potansiyeli değerlendiriyoruz.",
+    applicationDescription: "İnsanlığa hizmet eden teknoloji geliştirmek isteyen insanlar arıyoruz. İster kıdemli mühendis olun ister yeni mezun, önemli olan anlamlı değişim yaratma konusundaki kararlılığınız.",
     applyNow: "Şimdi Başvur",
     askQuestions: "Soru Sor"
   }

@@ -6,40 +6,40 @@ import { useState, useEffect } from "react";
 
 const content = {
   en: {
-    title: "Foundation Leadership",
-    subtitle: "Visionary leadership shaping the future. Experienced founders united to solve humanity's greatest challenges.",
+    title: "The Founders",
+    subtitle: "Two young people who somehow convinced themselves that they can change the world. And honestly? They might just be crazy enough to do it.",
     tahaVacid: {
       name: "Taha Vacid",
-      role: "Co-Founder",
-      description: "Defines the foundation's strategic direction with his visionary approach in technology and healthcare. Specialized in artificial intelligence and medical technologies.",
-      quote: "Technology finds its true value when it serves humanity."
-    },
-    haktanKoksal: {
-      name: "Haktan Köksal", 
-      role: "Co-Founder",
-      description: "Leads pioneering work in sustainable food systems and energy solutions. Experienced in building global networks and operational excellence.",
-      quote: "Change is possible with bold steps and shared vision."
-    },
-    visionTitle: "Our Leadership Vision",
-    visionDescription: "As founders of Vacid & Köksal Foundation, we aim to channel the power of technology toward humanity's most fundamental needs. While developing revolutionary solutions in healthcare, food, energy, and access to knowledge, we build global collaborations to construct a sustainable future."
-  },
-  tr: {
-    title: "Vakıf Yönetimi",
-    subtitle: "Geleceği şekillendiren vizyoner liderlik. İnsanlığın en büyük zorluklarını çözmek için bir araya gelmiş deneyimli kurucular.",
-    tahaVacid: {
-      name: "Taha Vacid",
-      role: "Kurucu Ortak",
-      description: "Teknoloji ve sağlıkta vizyoner yaklaşımıyla vakfın stratejik yönünü belirler. Yapay zeka ve tıbbi teknolojiler konusunda uzmanlaşmıştır.",
-      quote: "Teknoloji, asıl değerini insanlığa hizmet ettiğinde bulur."
+      role: "The Tech Dreamer",
+      description: "Believes AI can cure everything from cancer to stupidity (still working on the latter). Spends his days building medical algorithms and nights wondering if he's actually smart enough for this.",
+      quote: "If we're going to fail, might as well fail at something important."
     },
     haktanKoksal: {
       name: "Haktan Köksal",
-      role: "Kurucu Ortak", 
-      description: "Sürdürülebilir gıda sistemleri ve enerji çözümlerinde öncü çalışmalara liderlik eder. Küresel ağlar kurmak ve operasyonel mükemmellik konusunda deneyimlidir.",
-      quote: "Değişim, cesur adımlar ve ortak vizyon ile mümkündür."
+      role: "The Systems Optimist", 
+      description: "Thinks he can fix global food distribution like it's a logistics puzzle. Surprisingly, his track record suggests he might not be completely delusional.",
+      quote: "The world's problems aren't that complicated. We just overcomplicate the solutions."
     },
-    visionTitle: "Liderlik Vizyonumuz",
-    visionDescription: "Vacid & Köksal Vakfı kurucuları olarak, teknolojinin gücünü insanlığın en temel ihtiyaçlarına yönlendirmeyi hedefliyoruz. Sağlık, gıda, enerji ve bilgiye erişim alanlarında devrimci çözümler geliştirirken, sürdürülebilir bir gelecek inşa etmek için küresel işbirlikleri kuruyoruz."
+    visionTitle: "Our Slightly Ridiculous Vision",
+    visionDescription: "Look, we're two twenty-somethings who think we can solve humanity's biggest problems. Yes, we're aware how that sounds. But every impossible thing started with someone naive enough to try. We're building solutions for health, food, energy, and education not because we're qualified, but because someone has to—and apparently, we're dumb enough to volunteer."
+  },
+  tr: {
+    title: "Kurucular",
+    subtitle: "Bir şekilde kendilerini dünyayı değiştirebileceklerine ikna etmiş iki genç. Ve açıkçası? Bunu yapacak kadar kırık olabilirler.",
+    tahaVacid: {
+      name: "Taha Vacid",
+      role: "Teknoloji Hayalcisi",
+      description: "AI'ın kanserden aptallığa kadar her şeyi iyileştirebileceğine inanıyor (ikincisi üzerinde hâlâ çalışıyor). Günlerini tıbbi algoritmalar geliştirerek, gecelerini bunun için gerçekten yeterince akıllı olup olmadığını merak ederek geçiriyor.",
+      quote: "Nasılsa başarısız olacaksak, en azından önemli bir şeyde başarısız olalım."
+    },
+    haktanKoksal: {
+      name: "Haktan Köksal",
+      role: "Sistem Optimisti", 
+      description: "Küresel gıda dağıtımını bir lojistik bulmacası gibi çözebileceğini düşünüyor. Şaşırtıcı şekilde, geçmiş performansı tamamen hezeyan halinde olmadığını gösteriyor.",
+      quote: "Dünyanın sorunları o kadar karmaşık değil. Sadece çözümleri fazla karmaşıklaştırıyoruz."
+    },
+    visionTitle: "Biraz Gülünç Vizyonumuz",
+    visionDescription: "Bakın, biz insanlığın en büyük sorunlarını çözebileceğimizi düşünen yirmili yaşlarda iki kişiyiz. Evet, bunun nasıl göründüğünün farkındayız. Ama her imkansız şey, deneyecek kadar saf biriyle başladı. Sağlık, gıda, enerji ve eğitim alanlarında çözümler üretiyoruz çünkü yeterliyiz değil, çünkü biri yapmak zorunda—ve görünüşe göre biz gönüllü olmak için yeterince aptalız."
   }
 };
 

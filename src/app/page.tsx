@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import ScrollExpandMedia from '@/components/blocks/scroll-expansion-hero';
+import ImmersiveScrollGallery from '@/components/blocks/immersive-scroll-gallery';
 import HomeTurkish from './page-tr';
 
 interface MediaAbout {
@@ -245,6 +246,9 @@ function EnglishHomePage() {
           </div>
         </div>
       </section>
+
+      {/* Immersive Photo Gallery */}
+      <ImmersiveScrollGallery language="en" />
 
       {/* Investment Focus Areas */}
       <section className="py-32 bg-white">
