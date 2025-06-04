@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Country {
   code: string;
@@ -13,6 +13,7 @@ interface Country {
 interface CountrySelectorProps {
   selectedCountry: Country;
   onCountryChange: (country: Country) => void;
+  isTurkish: boolean;
 }
 
 const countries = [
@@ -119,7 +120,7 @@ const countries = [
   { code: "+84", name: "Vietnam", flag: "🇻🇳" }
 ];
 
-function CountrySelector({ selectedCountry, onCountryChange }: CountrySelectorProps) {
+function CountrySelector({ selectedCountry, onCountryChange, isTurkish }: CountrySelectorProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSelect = (country: Country) => {
@@ -176,6 +177,190 @@ export default function Contact() {
   const [selectedCountry, setSelectedCountry] = useState(
     countries.find(c => c.code === "+90") || countries[0]
   );
+  const [selectedLanguage, setSelectedLanguage] = useState<'en' | 'tr'>('en');
+  const [mounted, setMounted] = useState(false);
+
+  // Check language preference from localStorage
+  useEffect(() => {
+    setMounted(true);
+    
+    // Delay to ensure proper mounting
+    const timer = setTimeout(() => {
+      try {
+        if (typeof window !== 'undefined' && window.localStorage) {
+          const savedLanguage = localStorage.getItem('language-preference') as 'en' | 'tr' | null;
+          if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'tr')) {
+            setSelectedLanguage(savedLanguage);
+          }
+        }
+      } catch (error) {
+        console.warn('Failed to read language preference:', error);
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Listen for language changes in localStorage
+  useEffect(() => {
+    if (!mounted || typeof window === 'undefined') return;
+
+    const handleStorageChange = () => {
+      try {
+        if (window.localStorage) {
+          const savedLanguage = localStorage.getItem('language-preference') as 'en' | 'tr' | null;
+          if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'tr')) {
+            setSelectedLanguage(savedLanguage);
+          }
+        }
+      } catch (error) {
+        console.warn('Failed to read language preference in storage handler:', error);
+      }
+    };
+
+    // Custom event listener for same-tab language changes
+    const handleLanguageChange = (event: Event) => {
+      try {
+        const customEvent = event as CustomEvent;
+        if (customEvent.detail && 
+            typeof customEvent.detail === 'string' && 
+            (customEvent.detail === 'en' || customEvent.detail === 'tr')) {
+          setSelectedLanguage(customEvent.detail);
+        }
+      } catch (error) {
+        console.warn('Failed to handle language change event:', error);
+      }
+    };
+
+    // Add event listeners with error protection
+    try {
+      window.addEventListener('storage', handleStorageChange);
+      window.addEventListener('languageChanged', handleLanguageChange);
+    } catch (error) {
+      console.warn('Failed to add event listeners:', error);
+    }
+
+    return () => {
+      try {
+        if (typeof window !== 'undefined') {
+          window.removeEventListener('storage', handleStorageChange);
+          window.removeEventListener('languageChanged', handleLanguageChange);
+        }
+      } catch (error) {
+        console.warn('Failed to remove event listeners:', error);
+      }
+    };
+  }, [mounted]);
+
+  // Don't render until mounted to prevent hydration mismatch
+  if (!mounted) {
+    return <div className="min-h-screen bg-white" />;
+  }
+
+  const isTurkish = selectedLanguage === 'tr';
+
+  const content = {
+    en: {
+      hero: {
+        title: "Get in Touch",
+        subtitle: "We'd love to hear from you. Whether you have a question about our work, want to collaborate, or simply want to connect—we're here."
+      },
+      form: {
+        title: "Send us a Message",
+        firstName: "First Name",
+        firstNamePlaceholder: "Enter your first name",
+        lastName: "Last Name",
+        lastNamePlaceholder: "Enter your last name",
+        email: "Email Address",
+        emailPlaceholder: "Enter your email address",
+        phone: "Phone Number",
+        phonePlaceholder: "Enter your phone number",
+        subject: "Subject",
+        subjectPlaceholder: "Choose your inquiry type",
+        message: "Message",
+        messagePlaceholder: "Tell us how we can help you...",
+        submit: "Send Message",
+        subjectOptions: {
+          general: "General Inquiry",
+          partnership: "Partnership Opportunity",
+          collaboration: "Collaboration Request",
+          research: "Research & Development",
+          media: "Media & Press",
+          support: "Technical Support",
+          investment: "Investment Inquiry",
+          volunteer: "Volunteer Application",
+          donation: "Donation Information",
+          career: "Career Opportunities"
+        }
+      },
+      contactInfo: {
+        title: "Contact Information",
+        email: "Email",
+        phone: "Phone",
+        office: "Office",
+        businessHours: "Business Hours",
+        address: "Esenyurt Neighborhood\nVillakent Street No:59\nSivas Center 58000\nTurkey",
+        hours: "Monday - Friday: 9:00 AM - 6:00 PM PST\nSaturday: 10:00 AM - 4:00 PM PST\nSunday: Closed"
+      },
+      quickContact: {
+        title: "Need Immediate Assistance?",
+        subtitle: "For urgent matters or press inquiries, reach out to our dedicated support team.",
+        callNow: "Call Now",
+        sendEmail: "Send Email"
+      }
+    },
+    tr: {
+      hero: {
+        title: "İletişime Geçin",
+        subtitle: "Sizden haber almayı çok isteriz. İşimiz hakkında bir sorunuz olsun, işbirliği yapmak isteyin veya sadece bağlantı kurmak isteyin—buradayız."
+      },
+      form: {
+        title: "Bize Mesaj Gönderin",
+        firstName: "Ad",
+        firstNamePlaceholder: "Adınızı girin",
+        lastName: "Soyad",
+        lastNamePlaceholder: "Soyadınızı girin",
+        email: "E-posta Adresi",
+        emailPlaceholder: "E-posta adresinizi girin",
+        phone: "Telefon Numarası",
+        phonePlaceholder: "Telefon numaranızı girin",
+        subject: "Konu",
+        subjectPlaceholder: "Sorgu türünüzü seçin",
+        message: "Mesaj",
+        messagePlaceholder: "Size nasıl yardımcı olabileceğimizi söyleyin...",
+        submit: "Mesaj Gönder",
+        subjectOptions: {
+          general: "Genel Sorgu",
+          partnership: "Ortaklık Fırsatı",
+          collaboration: "İşbirliği Talebi",
+          research: "Araştırma ve Geliştirme",
+          media: "Medya ve Basın",
+          support: "Teknik Destek",
+          investment: "Yatırım Sorgusu",
+          volunteer: "Gönüllü Başvurusu",
+          donation: "Bağış Bilgisi",
+          career: "Kariyer Fırsatları"
+        }
+      },
+      contactInfo: {
+        title: "İletişim Bilgileri",
+        email: "E-posta",
+        phone: "Telefon",
+        office: "Ofis",
+        businessHours: "Çalışma Saatleri",
+        address: "Esenyurt Mahallesi\nVillakent Sokak No:59\nSivas Merkez 58000\nTürkiye",
+        hours: "Pazartesi - Cuma: 09:00 - 18:00\nCumartesi: 10:00 - 16:00\nPazar: Kapalı"
+      },
+      quickContact: {
+        title: "Acil Yardıma İhtiyacınız Var mı?",
+        subtitle: "Acil durumlar veya basın sorguları için özel destek ekibimizle iletişime geçin.",
+        callNow: "Hemen Ara",
+        sendEmail: "E-posta Gönder"
+      }
+    }
+  };
+
+  const currentContent = isTurkish ? content.tr : content.en;
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -184,10 +369,10 @@ export default function Contact() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 font-[family-name:var(--font-inter)]">
-              Get in Touch
+              {currentContent.hero.title}
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              We'd love to hear from you. Whether you have a question about our work, want to collaborate, or simply want to connect—we're here.
+              {currentContent.hero.subtitle}
             </p>
           </div>
         </div>
@@ -202,84 +387,85 @@ export default function Contact() {
             <div className="p-12 md:p-16">
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold mb-8 font-[family-name:var(--font-inter)] text-center">
-                  Send us a Message
+                  {currentContent.form.title}
                 </h2>
                 
                 <form className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                       <label className="block text-lg font-medium text-gray-900 mb-3">
-                        First Name
+                        {currentContent.form.firstName}
                       </label>
                       <input
                         type="text"
                         required
                         className="w-full px-6 py-4 bg-white border-0 rounded-2xl text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm"
-                        placeholder="Enter your first name"
+                        placeholder={currentContent.form.firstNamePlaceholder}
                       />
                     </div>
                     <div>
                       <label className="block text-lg font-medium text-gray-900 mb-3">
-                        Last Name
+                        {currentContent.form.lastName}
                       </label>
                       <input
                         type="text"
                         required
                         className="w-full px-6 py-4 bg-white border-0 rounded-2xl text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm"
-                        placeholder="Enter your last name"
+                        placeholder={currentContent.form.lastNamePlaceholder}
                       />
                     </div>
                   </div>
 
                   <div>
                     <label className="block text-lg font-medium text-gray-900 mb-3">
-                      Email Address
+                      {currentContent.form.email}
                     </label>
                     <input
                       type="email"
                       required
                       className="w-full px-6 py-4 bg-white border-0 rounded-2xl text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm"
-                      placeholder="Enter your email address"
+                      placeholder={currentContent.form.emailPlaceholder}
                     />
                   </div>
 
                   <div>
                     <label className="block text-lg font-medium text-gray-900 mb-3">
-                      Phone Number
+                      {currentContent.form.phone}
                     </label>
                     <div className="flex space-x-4">
                       <CountrySelector 
                         selectedCountry={selectedCountry}
                         onCountryChange={setSelectedCountry}
+                        isTurkish={isTurkish}
                       />
                       <input
                         type="tel"
                         className="flex-1 px-6 py-4 bg-white border-0 rounded-2xl text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm"
-                        placeholder="Enter your phone number"
+                        placeholder={currentContent.form.phonePlaceholder}
                       />
                     </div>
                   </div>
 
                   <div>
                     <label className="block text-lg font-medium text-gray-900 mb-3">
-                      Subject
+                      {currentContent.form.subject}
                     </label>
                     <div className="relative">
                       <select
                         required
                         className="w-full px-6 py-4 bg-white border-0 rounded-2xl text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm appearance-none cursor-pointer"
                       >
-                        <option value="" className="text-gray-400">Choose your inquiry type</option>
-                        <option value="general">General Inquiry</option>
-                        <option value="partnership">Partnership Opportunity</option>
-                        <option value="collaboration">Collaboration Request</option>
-                        <option value="research">Research & Development</option>
-                        <option value="media">Media & Press</option>
-                        <option value="support">Technical Support</option>
-                        <option value="investment">Investment Inquiry</option>
-                        <option value="volunteer">Volunteer Application</option>
-                        <option value="donation">Donation Information</option>
-                        <option value="career">Career Opportunities</option>
+                        <option value="" className="text-gray-400">{currentContent.form.subjectPlaceholder}</option>
+                        <option value="general">{currentContent.form.subjectOptions.general}</option>
+                        <option value="partnership">{currentContent.form.subjectOptions.partnership}</option>
+                        <option value="collaboration">{currentContent.form.subjectOptions.collaboration}</option>
+                        <option value="research">{currentContent.form.subjectOptions.research}</option>
+                        <option value="media">{currentContent.form.subjectOptions.media}</option>
+                        <option value="support">{currentContent.form.subjectOptions.support}</option>
+                        <option value="investment">{currentContent.form.subjectOptions.investment}</option>
+                        <option value="volunteer">{currentContent.form.subjectOptions.volunteer}</option>
+                        <option value="donation">{currentContent.form.subjectOptions.donation}</option>
+                        <option value="career">{currentContent.form.subjectOptions.career}</option>
                       </select>
                       <div className="absolute inset-y-0 right-6 flex items-center pointer-events-none">
                         <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -291,13 +477,13 @@ export default function Contact() {
 
                   <div>
                     <label className="block text-lg font-medium text-gray-900 mb-3">
-                      Message
+                      {currentContent.form.message}
                     </label>
                     <textarea
                       rows={6}
                       required
                       className="w-full px-6 py-4 bg-white border-0 rounded-2xl text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm resize-none"
-                      placeholder="Tell us how we can help you..."
+                      placeholder={currentContent.form.messagePlaceholder}
                     ></textarea>
                   </div>
 
@@ -306,7 +492,7 @@ export default function Contact() {
                       type="submit"
                       className="bg-gray-900 text-white py-4 px-12 rounded-2xl text-lg font-medium hover:bg-gray-800 transition-colors shadow-lg"
                     >
-                      Send Message
+                      {currentContent.form.submit}
                     </button>
                   </div>
                 </form>
@@ -318,7 +504,7 @@ export default function Contact() {
           <div className="rounded-3xl overflow-hidden bg-gray-100 shadow-sm">
             <div className="p-12 md:p-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-12 font-[family-name:var(--font-inter)] text-center">
-                Contact Information
+                {currentContent.contactInfo.title}
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -330,7 +516,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">Email</h3>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{currentContent.contactInfo.email}</h3>
                     <p className="text-lg text-gray-700 mb-1">info@vacidkoksal.org</p>
                     <p className="text-lg text-gray-700">contact@vacidkoksal.org</p>
                   </div>
@@ -344,7 +530,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">Phone</h3>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{currentContent.contactInfo.phone}</h3>
                     <p className="text-lg text-gray-700 mb-1">+90 532 241 1739</p>
                     <p className="text-lg text-gray-700">+90 534 731 91 99</p>
                   </div>
@@ -359,12 +545,9 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">Office</h3>
-                    <p className="text-lg text-gray-700">
-                      Esenyurt Neighborhood<br />
-                      Villakent Street No:59<br />
-                      Sivas Center 58000<br />
-                      Turkey
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{currentContent.contactInfo.office}</h3>
+                    <p className="text-lg text-gray-700 whitespace-pre-line">
+                      {currentContent.contactInfo.address}
                     </p>
                   </div>
                 </div>
@@ -377,11 +560,9 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">Business Hours</h3>
-                    <p className="text-lg text-gray-700">
-                      Monday - Friday: 9:00 AM - 6:00 PM PST<br />
-                      Saturday: 10:00 AM - 4:00 PM PST<br />
-                      Sunday: Closed
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{currentContent.contactInfo.businessHours}</h3>
+                    <p className="text-lg text-gray-700 whitespace-pre-line">
+                      {currentContent.contactInfo.hours}
                     </p>
                   </div>
                 </div>
@@ -393,10 +574,10 @@ export default function Contact() {
           <div className="rounded-3xl overflow-hidden bg-gray-100 shadow-sm">
             <div className="p-12 md:p-16 text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 font-[family-name:var(--font-inter)]">
-                Need Immediate Assistance?
+                {currentContent.quickContact.title}
               </h2>
               <p className="text-xl text-gray-700 mb-12 max-w-2xl mx-auto">
-                For urgent matters or press inquiries, reach out to our dedicated support team.
+                {currentContent.quickContact.subtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <a 
@@ -406,7 +587,7 @@ export default function Contact() {
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                   </svg>
-                  <span>Call Now</span>
+                  <span>{currentContent.quickContact.callNow}</span>
                 </a>
                 <a 
                   href="mailto:urgent@vacidkoksal.org"
@@ -415,7 +596,7 @@ export default function Contact() {
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                   </svg>
-                  <span>Send Email</span>
+                  <span>{currentContent.quickContact.sendEmail}</span>
                 </a>
               </div>
             </div>
@@ -423,63 +604,6 @@ export default function Contact() {
 
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="w-full border-t border-gray-200 py-12 mt-16 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-            {/* Sol boş alan */}
-            <div></div>
-            
-            {/* Orta - Latin motto */}
-            <div className="text-center">
-              <p className="text-xl tracking-wide text-gray-600 italic font-[family-name:var(--font-cinzel)]">
-                Aut inveniam viam aut faciam
-              </p>
-            </div>
-            
-            {/* Sağ taraf - Foundation bilgileri */}
-            <div className="text-right">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Vacid & Köksal Foundation
-              </h3>
-              <nav className="space-y-1">
-                <Link 
-                  href="/yonetim" 
-                  className="block text-gray-600 hover:text-gray-900 transition-colors"
-                >
-                  Foundation Management
-                </Link>
-                <Link 
-                  href="/contact" 
-                  className="block text-gray-600 hover:text-gray-900 transition-colors"
-                >
-                  Contact
-                </Link>
-                <Link 
-                  href="/careers" 
-                  className="block text-gray-600 hover:text-gray-900 transition-colors"
-                >
-                  Careers
-                </Link>
-                <Link 
-                  href="/faq" 
-                  className="block text-gray-600 hover:text-gray-900 transition-colors"
-                >
-                  FAQ
-                </Link>
-              </nav>
-            </div>
-          </div>
-          
-          {/* Alt kısım - Copyright */}
-          <div className="mt-8 pt-6 border-t border-gray-300 text-center">
-            <div className="text-sm text-gray-500">
-              © {new Date().getFullYear()} Vacid & Köksal Foundation. All rights reserved.
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 } 

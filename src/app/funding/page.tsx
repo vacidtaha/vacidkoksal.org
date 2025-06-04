@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { 
   ArrowLeft, 
@@ -19,10 +19,116 @@ import {
   AlertCircle,
   Briefcase,
   Award,
-  PieChart
+  PieChart,
+  Monitor,
+  Smartphone
 } from 'lucide-react';
 
 export default function FundingPage() {
+  // Mobile detection state
+  const [isMobile, setIsMobile] = useState(false);
+  const [showMobileWarning, setShowMobileWarning] = useState(false);
+  
+  // Language support state
+  const [selectedLanguage, setSelectedLanguage] = useState<'en' | 'tr'>('en');
+  const [mounted, setMounted] = useState(false);
+
+  // Language detection effect
+  useEffect(() => {
+    setMounted(true);
+    
+    const timer = setTimeout(() => {
+      try {
+        if (typeof window !== 'undefined' && window.localStorage) {
+          const savedLanguage = localStorage.getItem('language-preference') as 'en' | 'tr' | null;
+          if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'tr')) {
+            setSelectedLanguage(savedLanguage);
+          }
+        }
+      } catch (error) {
+        console.warn('Failed to read language preference:', error);
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Listen for language changes
+  useEffect(() => {
+    if (!mounted || typeof window === 'undefined') return;
+
+    const handleStorageChange = () => {
+      try {
+        if (window.localStorage) {
+          const savedLanguage = localStorage.getItem('language-preference') as 'en' | 'tr' | null;
+          if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'tr')) {
+            setSelectedLanguage(savedLanguage);
+          }
+        }
+      } catch (error) {
+        console.warn('Failed to read language preference in storage handler:', error);
+      }
+    };
+
+    const handleLanguageChange = (event: Event) => {
+      try {
+        const customEvent = event as CustomEvent;
+        if (customEvent.detail && 
+            typeof customEvent.detail === 'string' && 
+            (customEvent.detail === 'en' || customEvent.detail === 'tr')) {
+          setSelectedLanguage(customEvent.detail);
+        }
+      } catch (error) {
+        console.warn('Failed to handle language change event:', error);
+      }
+    };
+
+    try {
+      window.addEventListener('storage', handleStorageChange);
+      window.addEventListener('languageChanged', handleLanguageChange);
+    } catch (error) {
+      console.warn('Failed to add event listeners:', error);
+    }
+
+    return () => {
+      try {
+        if (typeof window !== 'undefined') {
+          window.removeEventListener('storage', handleStorageChange);
+          window.removeEventListener('languageChanged', handleLanguageChange);
+        }
+      } catch (error) {
+        console.warn('Failed to remove event listeners:', error);
+      }
+    };
+  }, [mounted]);
+
+  // Mobile detection effect
+  useEffect(() => {
+    const detectMobile = () => {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const isMobileDevice = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile/.test(userAgent);
+      const isSmallScreen = window.innerWidth <= 1024; // Consider tablets as mobile too
+      
+      return isMobileDevice || isSmallScreen;
+    };
+
+    const handleResize = () => {
+      const mobileDetected = detectMobile();
+      setIsMobile(mobileDetected);
+      setShowMobileWarning(mobileDetected);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Listen for resize events
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   // Robot verification logic - moved before useState
   const robotQuestions = [
     { question: "🐱 What sound does a cat make?", answer: "meow", hint: "The most famous cat sound!" },
@@ -1499,9 +1605,102 @@ export default function FundingPage() {
     }
   };
 
+  // Mobile warning screen - Apple-style minimalist design
+  if (showMobileWarning) {
+    // Mobile warning content in both languages
+    const mobileWarningContent = {
+      en: {
+        title: "Desktop Required",
+        subtitle: "Our funding application requires the precision and capability of a desktop environment.",
+        description: "This comprehensive application involves detailed financial documentation, multi-step forms, and extensive data entry that's optimized for desktop use.",
+        mobileLabel: "Mobile",
+        desktopLabel: "Desktop", 
+        instruction: "Please visit us from a desktop computer or laptop to access the full application experience.",
+        returnButton: "Return Home",
+        footerNote: "Thank you for your interest in supporting technology for humanity."
+      },
+      tr: {
+        title: "Masaüstü Gerekli",
+        subtitle: "Finansman başvuru sürecimiz masaüstü ortamının hassasiyeti ve yeteneklerini gerektirmektedir.",
+        description: "Bu kapsamlı başvuru detaylı finansal belgeler, çok adımlı formlar ve masaüstü kullanımı için optimize edilmiş kapsamlı veri girişi içermektedir.",
+        mobileLabel: "Mobil",
+        desktopLabel: "Masaüstü",
+        instruction: "Lütfen tam başvuru deneyimi için masaüstü bilgisayar veya dizüstü bilgisayardan ziyaret edin.",
+        returnButton: "Ana Sayfaya Dön",
+        footerNote: "İnsanlık için teknoloji destekleme ilginiz için teşekkür ederiz."
+      }
+    };
+
+    const currentContent = selectedLanguage === 'tr' ? mobileWarningContent.tr : mobileWarningContent.en;
+
+    return (
+      <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-center">
+        {/* Apple-style minimalist layout */}
+        <div className="max-w-md mx-auto space-y-8">
+          {/* Logo/Icon */}
+          <div className="flex justify-center">
+            <div className="w-24 h-24 bg-gray-100 rounded-3xl flex items-center justify-center">
+              <Monitor className="w-12 h-12 text-gray-400" />
+            </div>
+          </div>
+          
+          {/* Title */}
+          <div className="space-y-4">
+            <h1 className="text-2xl font-semibold text-gray-900 tracking-tight">
+              {currentContent.title}
+            </h1>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              {currentContent.subtitle}
+            </p>
+          </div>
+          
+          {/* Description */}
+          <div className="space-y-6 text-gray-500">
+            <p className="text-base leading-relaxed">
+              {currentContent.description}
+            </p>
+            
+            <div className="flex items-center justify-center space-x-4 py-4">
+              <div className="flex items-center space-x-2 text-sm">
+                <Smartphone className="w-4 h-4 text-red-400" />
+                <span>{currentContent.mobileLabel}</span>
+              </div>
+              <div className="w-8 h-px bg-gray-300"></div>
+              <div className="flex items-center space-x-2 text-sm">
+                <Monitor className="w-4 h-4 text-green-500" />
+                <span>{currentContent.desktopLabel}</span>
+              </div>
+            </div>
+            
+            <p className="text-sm leading-relaxed">
+              {currentContent.instruction}
+            </p>
+          </div>
+          
+          {/* Action Button */}
+          <div className="pt-4">
+            <Link 
+              href="/" 
+              className="inline-flex items-center justify-center px-8 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors text-sm font-medium"
+            >
+              {currentContent.returnButton}
+            </Link>
+          </div>
+          
+          {/* Footer note */}
+          <div className="pt-8 border-t border-gray-100">
+            <p className="text-xs text-gray-400">
+              {currentContent.footerNote}
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
+      {/* Page Header */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
@@ -1511,12 +1710,12 @@ export default function FundingPage() {
                 Back to Home
               </Link>
               <div>
-                <h1 className="text-2xl font-light text-gray-900">Impact Investment Portal</h1>
-                <p className="text-gray-600">Technology for Humanity - Vacid & Köksal Foundation</p>
+                <h1 className="text-2xl font-light text-gray-900">Impact Investing Portal</h1>
+                <p className="text-gray-600">technology for humanity - Vacid & Köksal Fundation</p>
               </div>
             </div>
             <div className="text-right">
-              <p className="text-sm text-gray-500">Step {currentStep} of {steps.length}</p>
+              <p className="text-sm text-gray-500">Step {currentStep} / {steps.length}</p>
               <div className="w-32 bg-gray-200 rounded-full h-2 mt-1">
                 <div 
                   className="bg-blue-600 h-2 rounded-full transition-all duration-300"
