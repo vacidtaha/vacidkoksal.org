@@ -56,14 +56,14 @@ export default function Footer({ theme = 'light' }: FooterProps) {
   // Mount edilmeden önce basit footer döndür
   if (!mounted) {
     return (
-      <footer className={`w-full border-t py-16 ${
+      <footer className={`w-full border-t py-8 md:py-16 ${
         isDark 
           ? 'bg-black border-gray-800 text-white' 
           : 'bg-gray-50 border-gray-200 text-gray-900'
       }`}>
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="container mx-auto px-3 md:px-6 lg:px-8 max-w-7xl">
           <div className="text-center">
-            <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
+            <p className={`text-xs md:text-sm ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
               © {currentYear} Vacid & Köksal Foundation. All rights reserved.
             </p>
           </div>
@@ -75,25 +75,25 @@ export default function Footer({ theme = 'light' }: FooterProps) {
   // Türkçe içerik
   if (selectedLanguage === 'tr') {
     return (
-      <footer className={`w-full border-t py-16 ${
+      <footer className={`w-full border-t py-8 md:py-16 ${
         isDark 
           ? 'bg-black border-gray-800 text-white' 
           : 'bg-gray-50 border-gray-200 text-gray-900'
       }`}>
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-12">
+        <div className="container mx-auto px-3 md:px-6 lg:px-8 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 md:gap-12 mb-6 md:mb-12">
             {/* Logo and Foundation Info */}
             <div className="lg:col-span-1">
-              <div className="mb-6">
+              <div className="mb-4 md:mb-6">
                 <Image
                   src="/logo.png" 
                   alt="Vacid & Köksal Vakfı Logosu"
-                  width={200}
-                  height={50}
+                  width={160}
+                  height={40}
+                  className="md:w-[200px] md:h-[50px] mb-3 md:mb-4"
                   style={isDark ? { filter: 'invert(1)' } : {}}
-                  className="mb-4"
                 />
-                <p className={`text-sm leading-relaxed ${
+                <p className={`text-xs md:text-sm leading-relaxed ${
                   isDark ? 'text-gray-300' : 'text-gray-600'
                 }`}>
                   İnsanlık için teknoloji geliştiren, sağlık, eğitim, gıda ve enerji sektörlerinde 
@@ -101,8 +101,8 @@ export default function Footer({ theme = 'light' }: FooterProps) {
                 </p>
               </div>
               
-              <div className="mb-6">
-                <p className={`text-lg italic font-[family-name:var(--font-cinzel)] ${
+              <div className="mb-4 md:mb-6">
+                <p className={`text-sm md:text-lg italic font-[family-name:var(--font-cinzel)] ${
                   isDark ? 'text-gray-400' : 'text-gray-600'
                 }`}>
                   "Aut inveniam viam aut faciam"
@@ -117,15 +117,15 @@ export default function Footer({ theme = 'light' }: FooterProps) {
 
             {/* Main Pages */}
             <div>
-              <h3 className={`text-lg font-semibold mb-6 ${
+              <h3 className={`text-base md:text-lg font-semibold mb-3 md:mb-6 ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}>
                 Ana Alanlar
               </h3>
-              <nav className="space-y-3">
+              <nav className="space-y-2 md:space-y-3">
                 <Link 
                   href="/" 
-                  className={`block hover:underline transition-colors ${
+                  className={`block text-sm md:text-base hover:underline transition-colors ${
                     isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -133,7 +133,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
                 </Link>
                 <Link 
                   href="/healthcare" 
-                  className={`block hover:underline transition-colors ${
+                  className={`block text-sm md:text-base hover:underline transition-colors ${
                     isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -141,7 +141,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
                 </Link>
                 <Link 
                   href="/knowledge" 
-                  className={`block hover:underline transition-colors ${
+                  className={`block text-sm md:text-base hover:underline transition-colors ${
                     isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -149,7 +149,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
                 </Link>
                 <Link 
                   href="/food" 
-                  className={`block hover:underline transition-colors ${
+                  className={`block text-sm md:text-base hover:underline transition-colors ${
                     isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -157,7 +157,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
                 </Link>
                 <Link 
                   href="/energy" 
-                  className={`block hover:underline transition-colors ${
+                  className={`block text-sm md:text-base hover:underline transition-colors ${
                     isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -168,15 +168,15 @@ export default function Footer({ theme = 'light' }: FooterProps) {
 
             {/* Support and Contact */}
             <div>
-              <h3 className={`text-lg font-semibold mb-6 ${
+              <h3 className={`text-base md:text-lg font-semibold mb-3 md:mb-6 ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}>
                 Destek ve İletişim
               </h3>
-              <nav className="space-y-3">
+              <nav className="space-y-2 md:space-y-3">
                 <Link 
                   href="/funding" 
-                  className={`block hover:underline transition-colors ${
+                  className={`block text-sm md:text-base hover:underline transition-colors ${
                     isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -184,7 +184,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
                 </Link>
                 <Link 
                   href="/contact" 
-                  className={`block hover:underline transition-colors ${
+                  className={`block text-sm md:text-base hover:underline transition-colors ${
                     isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -192,7 +192,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
                 </Link>
                 <Link 
                   href="/faq" 
-                  className={`block hover:underline transition-colors ${
+                  className={`block text-sm md:text-base hover:underline transition-colors ${
                     isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -200,7 +200,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
                 </Link>
                 <Link 
                   href="/careers" 
-                  className={`block hover:underline transition-colors ${
+                  className={`block text-sm md:text-base hover:underline transition-colors ${
                     isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -208,7 +208,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
                 </Link>
                 <Link 
                   href="/login" 
-                  className={`block hover:underline transition-colors ${
+                  className={`block text-sm md:text-base hover:underline transition-colors ${
                     isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -219,15 +219,15 @@ export default function Footer({ theme = 'light' }: FooterProps) {
 
             {/* Foundation Information */}
             <div>
-              <h3 className={`text-lg font-semibold mb-6 ${
+              <h3 className={`text-base md:text-lg font-semibold mb-3 md:mb-6 ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}>
                 Vakıf Bilgileri
               </h3>
-              <nav className="space-y-3">
+              <nav className="space-y-2 md:space-y-3">
                 <Link 
                   href="/yonetim" 
-                  className={`block hover:underline transition-colors ${
+                  className={`block text-sm md:text-base hover:underline transition-colors ${
                     isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -238,11 +238,11 @@ export default function Footer({ theme = 'light' }: FooterProps) {
           </div>
 
           {/* Bottom Section - Copyright and Social Media */}
-          <div className={`border-t pt-8 ${
+          <div className={`border-t pt-4 md:pt-8 ${
             isDark ? 'border-gray-800' : 'border-gray-300'
           }`}>
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className={`text-sm ${
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
+              <div className={`text-xs md:text-sm ${
                 isDark ? 'text-gray-400' : 'text-gray-500'
               }`}>
                 © {currentYear} Vacid & Köksal Vakfı. Tüm hakları saklıdır.
@@ -263,25 +263,25 @@ export default function Footer({ theme = 'light' }: FooterProps) {
 
   // İngilizce içerik (default)
   return (
-    <footer className={`w-full border-t py-16 ${
+    <footer className={`w-full border-t py-8 md:py-16 ${
       isDark 
         ? 'bg-black border-gray-800 text-white' 
         : 'bg-gray-50 border-gray-200 text-gray-900'
     }`}>
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-12">
+      <div className="container mx-auto px-3 md:px-6 lg:px-8 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 md:gap-12 mb-6 md:mb-12">
           {/* Logo and Foundation Info */}
           <div className="lg:col-span-1">
-            <div className="mb-6">
+            <div className="mb-4 md:mb-6">
               <Image
                 src="/logo.png" 
                 alt="Vacid & Köksal Foundation Logo"
-                width={200}
-                height={50}
+                width={160}
+                height={40}
+                className="md:w-[200px] md:h-[50px] mb-3 md:mb-4"
                 style={isDark ? { filter: 'invert(1)' } : {}}
-                className="mb-4"
               />
-              <p className={`text-sm leading-relaxed ${
+              <p className={`text-xs md:text-sm leading-relaxed ${
                 isDark ? 'text-gray-300' : 'text-gray-600'
               }`}>
                 A foundation developing technology for humanity, creating breakthrough solutions 
@@ -289,8 +289,8 @@ export default function Footer({ theme = 'light' }: FooterProps) {
               </p>
             </div>
             
-            <div className="mb-6">
-              <p className={`text-lg italic font-[family-name:var(--font-cinzel)] ${
+            <div className="mb-4 md:mb-6">
+              <p className={`text-sm md:text-lg italic font-[family-name:var(--font-cinzel)] ${
                 isDark ? 'text-gray-400' : 'text-gray-600'
               }`}>
                 "Aut inveniam viam aut faciam"
@@ -305,15 +305,15 @@ export default function Footer({ theme = 'light' }: FooterProps) {
 
           {/* Main Pages */}
           <div>
-            <h3 className={`text-lg font-semibold mb-6 ${
+            <h3 className={`text-base md:text-lg font-semibold mb-3 md:mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
               Main Areas
             </h3>
-            <nav className="space-y-3">
+            <nav className="space-y-2 md:space-y-3">
               <Link 
                 href="/" 
-                className={`block hover:underline transition-colors ${
+                className={`block text-sm md:text-base hover:underline transition-colors ${
                   isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -321,7 +321,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
               </Link>
               <Link 
                 href="/healthcare" 
-                className={`block hover:underline transition-colors ${
+                className={`block text-sm md:text-base hover:underline transition-colors ${
                   isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -329,7 +329,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
               </Link>
               <Link 
                 href="/knowledge" 
-                className={`block hover:underline transition-colors ${
+                className={`block text-sm md:text-base hover:underline transition-colors ${
                   isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -337,7 +337,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
               </Link>
               <Link 
                 href="/food" 
-                className={`block hover:underline transition-colors ${
+                className={`block text-sm md:text-base hover:underline transition-colors ${
                   isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -345,7 +345,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
               </Link>
               <Link 
                 href="/energy" 
-                className={`block hover:underline transition-colors ${
+                className={`block text-sm md:text-base hover:underline transition-colors ${
                   isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -356,15 +356,15 @@ export default function Footer({ theme = 'light' }: FooterProps) {
 
           {/* Support and Contact */}
           <div>
-            <h3 className={`text-lg font-semibold mb-6 ${
+            <h3 className={`text-base md:text-lg font-semibold mb-3 md:mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
               Support & Contact
             </h3>
-            <nav className="space-y-3">
+            <nav className="space-y-2 md:space-y-3">
               <Link 
                 href="/funding" 
-                className={`block hover:underline transition-colors ${
+                className={`block text-sm md:text-base hover:underline transition-colors ${
                   isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -372,7 +372,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
               </Link>
               <Link 
                 href="/contact" 
-                className={`block hover:underline transition-colors ${
+                className={`block text-sm md:text-base hover:underline transition-colors ${
                   isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -380,7 +380,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
               </Link>
               <Link 
                 href="/faq" 
-                className={`block hover:underline transition-colors ${
+                className={`block text-sm md:text-base hover:underline transition-colors ${
                   isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -388,7 +388,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
               </Link>
               <Link 
                 href="/careers" 
-                className={`block hover:underline transition-colors ${
+                className={`block text-sm md:text-base hover:underline transition-colors ${
                   isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -396,7 +396,7 @@ export default function Footer({ theme = 'light' }: FooterProps) {
               </Link>
               <Link 
                 href="/login" 
-                className={`block hover:underline transition-colors ${
+                className={`block text-sm md:text-base hover:underline transition-colors ${
                   isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -407,15 +407,15 @@ export default function Footer({ theme = 'light' }: FooterProps) {
 
           {/* Foundation Information */}
           <div>
-            <h3 className={`text-lg font-semibold mb-6 ${
+            <h3 className={`text-base md:text-lg font-semibold mb-3 md:mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
               Foundation Info
             </h3>
-            <nav className="space-y-3">
+            <nav className="space-y-2 md:space-y-3">
               <Link 
                 href="/yonetim" 
-                className={`block hover:underline transition-colors ${
+                className={`block text-sm md:text-base hover:underline transition-colors ${
                   isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -426,11 +426,11 @@ export default function Footer({ theme = 'light' }: FooterProps) {
         </div>
 
         {/* Bottom Section - Copyright and Social Media */}
-        <div className={`border-t pt-8 ${
+        <div className={`border-t pt-4 md:pt-8 ${
           isDark ? 'border-gray-800' : 'border-gray-300'
         }`}>
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className={`text-sm ${
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
+            <div className={`text-xs md:text-sm ${
               isDark ? 'text-gray-400' : 'text-gray-500'
             }`}>
               © {currentYear} Vacid & Köksal Foundation. All rights reserved.

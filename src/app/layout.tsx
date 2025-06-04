@@ -3,6 +3,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { Inter } from "next/font/google";
 import { Cinzel } from "next/font/google";
+import { useState, useEffect } from "react";
 import "./globals.css";
 import ClientLayout from "@/components/layouts/client-layout";
 
@@ -32,8 +33,39 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [currentLang, setCurrentLang] = useState('en');
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    
+    // Initial language check
+    try {
+      const savedLanguage = localStorage.getItem('language-preference') as 'en' | 'tr' | null;
+      if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'tr')) {
+        setCurrentLang(savedLanguage);
+      }
+    } catch (error) {
+      console.warn('Failed to read language preference:', error);
+    }
+
+    // Listen for language changes
+    const handleLanguageChange = (event: CustomEvent) => {
+      if (event.detail && (event.detail === 'en' || event.detail === 'tr')) {
+        setCurrentLang(event.detail);
+      }
+    };
+
+    window.addEventListener('languageChanged', handleLanguageChange as EventListener);
+
+    return () => {
+      window.removeEventListener('languageChanged', handleLanguageChange as EventListener);
+    };
+  }, []);
+
+  // Use suppressHydrationWarning to prevent mismatch warnings until language is loaded
   return (
-    <html lang="en">
+    <html lang={mounted ? currentLang : 'en'} suppressHydrationWarning>
       <head>
         <title>Vacid & Köksal Foundation - Healthcare, Information, Food & Energy</title>
         <meta name="description" content="We support crazy ideas that actually work. Healthcare, tech, food, energy - because the world needs fixing." />
