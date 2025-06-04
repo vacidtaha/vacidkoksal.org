@@ -565,12 +565,12 @@ const content = {
           plasma: {
             title: "Plazma Fiziği İnovasyonu",
             description: "Karışıklıkları öngörmek ve önlemek, kararlı füzyon reaksiyonlarını sürdürmek için makine öğrenmesi kullanan gelişmiş plazma kontrol algoritmaları."
-          },
+        },
           materials: {
             title: "Malzeme Mühendisliği",
             description: "20+ yıl füzyon nötron bombardımanına dayanabilen trityum üreyen örtüler ve nötron dirençli malzemeler."
-          }
-        },
+        }
+      },
         roadmap: {
           title: "Füzyon Teknolojisi Yol Haritası",
           milestones: [
@@ -865,21 +865,21 @@ export default function EnergyPage() {
         </div>
         
         {/* Hero Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <div className="mb-12">
-            <Zap className="w-12 h-12 mx-auto text-green-400 mb-8" />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+          <div className="mb-6 sm:mb-12">
+            <Zap className="w-8 h-8 sm:w-12 sm:h-12 mx-auto text-green-400 mb-4 sm:mb-8" />
           </div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extralight mb-12 leading-tight text-gray-900">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight mb-6 sm:mb-12 leading-tight text-gray-900">
             {t.hero.title1}
-            <span className="block font-light text-green-600 mt-4">
+            <span className="block font-light text-green-600 mt-2 sm:mt-4">
               {t.hero.title2}
             </span>
           </h1>
           <div className="max-w-4xl mx-auto">
-            <p className="text-2xl md:text-3xl font-light text-gray-600 leading-relaxed mb-8">
+            <p className="text-lg sm:text-2xl md:text-3xl font-light text-gray-600 leading-relaxed mb-4 sm:mb-8">
               {t.hero.subtitle1}
             </p>
-            <p className="text-xl md:text-2xl font-light text-gray-500 leading-relaxed">
+            <p className="text-base sm:text-xl md:text-2xl font-light text-gray-500 leading-relaxed">
               {t.hero.subtitle2}
             </p>
           </div>
@@ -887,57 +887,57 @@ export default function EnergyPage() {
       </section>
 
       {/* Mission Statement */}
-      <section className="py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-extralight text-gray-900 mb-12 leading-tight">
+      <section className="py-16 sm:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-20">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight text-gray-900 mb-6 sm:mb-12 leading-tight">
               {t.mission.title}
-              <span className="block text-3xl md:text-4xl font-light text-green-600 mt-6">
+              <span className="block text-xl sm:text-3xl md:text-4xl font-light text-green-600 mt-3 sm:mt-6">
                 {t.mission.subtitle}
               </span>
             </h2>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-20 items-start">
-            <div className="space-y-10">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-20 items-start">
+            <div className="space-y-6 sm:space-y-10">
               <div>
-                <h3 className="text-2xl font-light text-gray-900 mb-6">{t.mission.section1.title}</h3>
-                <p className="text-lg font-light text-gray-600 leading-relaxed">
+                <h3 className="text-lg sm:text-2xl font-light text-gray-900 mb-3 sm:mb-6">{t.mission.section1.title}</h3>
+                <p className="text-sm sm:text-lg font-light text-gray-600 leading-relaxed">
                   {t.mission.section1.content}
                 </p>
               </div>
               
               <div>
-                <h3 className="text-2xl font-light text-gray-900 mb-6">{t.mission.section2.title}</h3>
-                <p className="text-lg font-light text-gray-600 leading-relaxed">
+                <h3 className="text-lg sm:text-2xl font-light text-gray-900 mb-3 sm:mb-6">{t.mission.section2.title}</h3>
+                <p className="text-sm sm:text-lg font-light text-gray-600 leading-relaxed">
                   {t.mission.section2.content}
                 </p>
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-12 border border-green-100">
-              <div className="space-y-8">
-                <div className="flex items-start space-x-4">
-                  <Sun className="w-6 h-6 text-orange-500 mt-1 flex-shrink-0" />
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl sm:rounded-3xl p-6 sm:p-12 border border-green-100">
+              <div className="space-y-4 sm:space-y-8">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <Sun className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-normal text-gray-900 mb-2">{t.mission.features.solar.title}</h4>
-                    <p className="text-gray-600 font-light">{t.mission.features.solar.description}</p>
+                    <h4 className="text-base sm:text-lg font-normal text-gray-900 mb-1 sm:mb-2">{t.mission.features.solar.title}</h4>
+                    <p className="text-sm sm:text-base text-gray-600 font-light">{t.mission.features.solar.description}</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <Battery className="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" />
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <Battery className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-normal text-gray-900 mb-2">{t.mission.features.storage.title}</h4>
-                    <p className="text-gray-600 font-light">{t.mission.features.storage.description}</p>
+                    <h4 className="text-base sm:text-lg font-normal text-gray-900 mb-1 sm:mb-2">{t.mission.features.storage.title}</h4>
+                    <p className="text-sm sm:text-base text-gray-600 font-light">{t.mission.features.storage.description}</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <Zap className="w-6 h-6 text-purple-500 mt-1 flex-shrink-0" />
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-purple-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-normal text-gray-900 mb-2">{t.mission.features.fusion.title}</h4>
-                    <p className="text-gray-600 font-light">{t.mission.features.fusion.description}</p>
+                    <h4 className="text-base sm:text-lg font-normal text-gray-900 mb-1 sm:mb-2">{t.mission.features.fusion.title}</h4>
+                    <p className="text-sm sm:text-base text-gray-600 font-light">{t.mission.features.fusion.description}</p>
                   </div>
                 </div>
               </div>
@@ -947,19 +947,69 @@ export default function EnergyPage() {
       </section>
 
       {/* Support Framework */}
-      <section className="py-32 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-5xl font-extralight text-gray-900 mb-8">
+      <section className="py-16 sm:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-24">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight text-gray-900 mb-4 sm:mb-8">
               {t.support.title}
             </h2>
-            <p className="text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
               {t.support.subtitle}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12 mb-20">
-            <div className="text-center">
+          {/* Mobil için horizontal scroll, desktop için grid */}
+          <div className="md:grid md:grid-cols-3 md:gap-12 mb-12 sm:mb-20">
+            {/* Mobile horizontal scroll container */}
+            <div className="md:hidden flex gap-6 overflow-x-auto pb-4 px-1 -mx-1 snap-x snap-mandatory">
+              <div className="flex-none w-[280px] snap-start text-center bg-white rounded-2xl p-6 border border-gray-100">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Building className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-light text-gray-900 mb-3">{t.support.institutions.title}</h3>
+                <p className="text-gray-600 font-light leading-relaxed mb-4 text-sm">
+                  {t.support.institutions.description}
+                </p>
+                <div className="space-y-2 text-xs text-gray-500 font-light">
+                  {t.support.institutions.features.map((feature, index) => (
+                    <p key={index}>• {feature}</p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex-none w-[280px] snap-start text-center bg-white rounded-2xl p-6 border border-gray-100">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Lightbulb className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-light text-gray-900 mb-3">{t.support.startups.title}</h3>
+                <p className="text-gray-600 font-light leading-relaxed mb-4 text-sm">
+                  {t.support.startups.description}
+                </p>
+                <div className="space-y-2 text-xs text-gray-500 font-light">
+                  {t.support.startups.features.map((feature, index) => (
+                    <p key={index}>• {feature}</p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex-none w-[280px] snap-start text-center bg-white rounded-2xl p-6 border border-gray-100">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <HandHeart className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-light text-gray-900 mb-3">{t.support.innovators.title}</h3>
+                <p className="text-gray-600 font-light leading-relaxed mb-4 text-sm">
+                  {t.support.innovators.description}
+                </p>
+                <div className="space-y-2 text-xs text-gray-500 font-light">
+                  {t.support.innovators.features.map((feature, index) => (
+                    <p key={index}>• {feature}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop grid layout */}
+            <div className="hidden md:block text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg">
                 <Building className="w-8 h-8 text-white" />
               </div>
@@ -974,7 +1024,7 @@ export default function EnergyPage() {
               </div>
             </div>
 
-            <div className="text-center">
+            <div className="hidden md:block text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg">
                 <Lightbulb className="w-8 h-8 text-white" />
               </div>
@@ -989,7 +1039,7 @@ export default function EnergyPage() {
               </div>
             </div>
 
-            <div className="text-center">
+            <div className="hidden md:block text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg">
                 <HandHeart className="w-8 h-8 text-white" />
               </div>
@@ -1006,10 +1056,63 @@ export default function EnergyPage() {
           </div>
 
           {/* Additional Support Types */}
-          <div className="bg-white rounded-3xl p-12 border border-gray-100">
-            <h3 className="text-3xl font-light text-gray-900 mb-12 text-center">{t.support.strategic.title}</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div>
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-12 border border-gray-100">
+            <h3 className="text-xl sm:text-3xl font-light text-gray-900 mb-6 sm:mb-12 text-center">{t.support.strategic.title}</h3>
+            
+            {/* Mobile horizontal scroll for strategic support */}
+            <div className="md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8">
+              <div className="md:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+                <div className="flex-none w-64 snap-start">
+                  <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mb-3">
+                    <Target className="w-4 h-4 text-orange-600" />
+                  </div>
+                  <h4 className="text-base font-normal text-gray-900 mb-3">
+                    {t.support.strategic.emergency.title}
+                  </h4>
+                  <p className="text-gray-600 font-light text-xs leading-relaxed">
+                    {t.support.strategic.emergency.description}
+                  </p>
+                </div>
+                
+                <div className="flex-none w-64 snap-start">
+                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mb-3">
+                    <Leaf className="w-4 h-4 text-green-600" />
+                  </div>
+                  <h4 className="text-base font-normal text-gray-900 mb-3">
+                    {t.support.strategic.climate.title}
+                  </h4>
+                  <p className="text-gray-600 font-light text-xs leading-relaxed">
+                    {t.support.strategic.climate.description}
+                  </p>
+                </div>
+                
+                <div className="flex-none w-64 snap-start">
+                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                    <Wind className="w-4 h-4 text-blue-600" />
+                  </div>
+                  <h4 className="text-base font-normal text-gray-900 mb-3">
+                    {t.support.strategic.smartGrid.title}
+                  </h4>
+                  <p className="text-gray-600 font-light text-xs leading-relaxed">
+                    {t.support.strategic.smartGrid.description}
+                  </p>
+                </div>
+                
+                <div className="flex-none w-64 snap-start">
+                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
+                    <Globe className="w-4 h-4 text-purple-600" />
+                  </div>
+                  <h4 className="text-base font-normal text-gray-900 mb-3">
+                    {t.support.strategic.partnerships.title}
+                  </h4>
+                  <p className="text-gray-600 font-light text-xs leading-relaxed">
+                    {t.support.strategic.partnerships.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Desktop grid */}
+              <div className="hidden md:block">
                 <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                   <Target className="w-5 h-5 text-orange-600" />
                 </div>
@@ -1019,7 +1122,7 @@ export default function EnergyPage() {
                 </p>
               </div>
               
-              <div>
+              <div className="hidden md:block">
                 <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <Leaf className="w-5 h-5 text-green-600" />
                 </div>
@@ -1029,7 +1132,7 @@ export default function EnergyPage() {
                 </p>
               </div>
               
-              <div>
+              <div className="hidden md:block">
                 <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Wind className="w-5 h-5 text-blue-600" />
                 </div>
@@ -1039,7 +1142,7 @@ export default function EnergyPage() {
                 </p>
               </div>
               
-              <div>
+              <div className="hidden md:block">
                 <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <Globe className="w-5 h-5 text-purple-600" />
                 </div>
@@ -1054,44 +1157,44 @@ export default function EnergyPage() {
       </section>
 
       {/* Strategic Roadmap */}
-      <section className="py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-extralight text-gray-900 mb-8">
+      <section className="py-16 sm:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-20">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight text-gray-900 mb-4 sm:mb-8">
               {t.roadmap.title}
             </h2>
-            <p className="text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
               {t.roadmap.subtitle}
             </p>
           </div>
           
-          <div className="space-y-24">
+          <div className="space-y-12 sm:space-y-24">
             {/* Phase 1 */}
-            <div className="grid lg:grid-cols-3 gap-12 items-center">
-              <div className="bg-gradient-to-br from-orange-50 to-red-100 rounded-3xl p-8 text-center border border-orange-200">
-                <Sun className="w-16 h-16 text-orange-500 mx-auto mb-6" />
-                <h4 className="text-lg font-normal text-gray-900 mb-2">{t.roadmap.phases.phase1.period}</h4>
-                <p className="text-gray-600 font-light">{t.roadmap.phases.phase1.label}</p>
-                <div className="mt-4 text-xs text-orange-600 font-medium">
+            <div className="grid lg:grid-cols-3 gap-8 sm:gap-12 items-center">
+              <div className="bg-gradient-to-br from-orange-50 to-red-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center border border-orange-200">
+                <Sun className="w-12 h-12 sm:w-16 sm:h-16 text-orange-500 mx-auto mb-4 sm:mb-6" />
+                <h4 className="text-base sm:text-lg font-normal text-gray-900 mb-2">{t.roadmap.phases.phase1.period}</h4>
+                <p className="text-gray-600 font-light text-sm">{t.roadmap.phases.phase1.label}</p>
+                <div className="mt-3 sm:mt-4 text-xs text-orange-600 font-medium">
                   {t.roadmap.phases.phase1.badge}
                 </div>
               </div>
               <div className="lg:col-span-2">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center mr-6 shadow-lg">
-                    <span className="text-lg font-light text-white">01</span>
+                <div className="flex items-center mb-4 sm:mb-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center mr-4 sm:mr-6 shadow-lg">
+                    <span className="text-base sm:text-lg font-light text-white">01</span>
                   </div>
-                  <h3 className="text-3xl font-light text-gray-900">{t.roadmap.phases.phase1.title}</h3>
+                  <h3 className="text-xl sm:text-3xl font-light text-gray-900">{t.roadmap.phases.phase1.title}</h3>
                 </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-6">
+                <p className="text-sm sm:text-lg font-light text-gray-600 leading-relaxed mb-4 sm:mb-6">
                   {t.roadmap.phases.phase1.description}
                 </p>
-                <div className="bg-orange-50 border-l-4 border-orange-400 p-6 mb-6">
-                  <p className="text-orange-800 font-light italic">
+                <div className="bg-orange-50 border-l-4 border-orange-400 p-4 sm:p-6 mb-4 sm:mb-6">
+                  <p className="text-orange-800 font-light italic text-sm sm:text-base">
                     "{t.roadmap.phases.phase1.quote}"
                   </p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-6 text-sm font-light text-gray-500">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-6 text-xs sm:text-sm font-light text-gray-500">
                   <div>
                     {t.roadmap.phases.phase1.features.slice(0, 3).map((feature, index) => (
                       <p key={index} className="mb-2">• {feature}</p>
@@ -1107,31 +1210,31 @@ export default function EnergyPage() {
             </div>
 
             {/* Phase 2 */}
-            <div className="grid lg:grid-cols-3 gap-12 items-center">
-              <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-3xl p-8 text-center lg:order-1 border border-green-200">
-                <Battery className="w-16 h-16 text-green-500 mx-auto mb-6" />
-                <h4 className="text-lg font-normal text-gray-900 mb-2">{t.roadmap.phases.phase2.period}</h4>
-                <p className="text-gray-600 font-light">{t.roadmap.phases.phase2.label}</p>
-                <div className="mt-4 text-xs text-green-600 font-medium">
+            <div className="grid lg:grid-cols-3 gap-8 sm:gap-12 items-center">
+              <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center lg:order-1 border border-green-200">
+                <Battery className="w-12 h-12 sm:w-16 sm:h-16 text-green-500 mx-auto mb-4 sm:mb-6" />
+                <h4 className="text-base sm:text-lg font-normal text-gray-900 mb-2">{t.roadmap.phases.phase2.period}</h4>
+                <p className="text-gray-600 font-light text-sm">{t.roadmap.phases.phase2.label}</p>
+                <div className="mt-3 sm:mt-4 text-xs text-green-600 font-medium">
                   {t.roadmap.phases.phase2.badge}
                 </div>
               </div>
               <div className="lg:col-span-2 lg:order-2">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-6 shadow-lg">
-                    <span className="text-lg font-light text-white">02</span>
+                <div className="flex items-center mb-4 sm:mb-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-4 sm:mr-6 shadow-lg">
+                    <span className="text-base sm:text-lg font-light text-white">02</span>
                   </div>
-                  <h3 className="text-3xl font-light text-gray-900">{t.roadmap.phases.phase2.title}</h3>
+                  <h3 className="text-xl sm:text-3xl font-light text-gray-900">{t.roadmap.phases.phase2.title}</h3>
                 </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-6">
+                <p className="text-sm sm:text-lg font-light text-gray-600 leading-relaxed mb-4 sm:mb-6">
                   {t.roadmap.phases.phase2.description}
                 </p>
-                <div className="bg-green-50 border-l-4 border-green-400 p-6 mb-6">
-                  <p className="text-green-800 font-light italic">
+                <div className="bg-green-50 border-l-4 border-green-400 p-4 sm:p-6 mb-4 sm:mb-6">
+                  <p className="text-green-800 font-light italic text-sm sm:text-base">
                     "{t.roadmap.phases.phase2.quote}"
                   </p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-6 text-sm font-light text-gray-500">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-6 text-xs sm:text-sm font-light text-gray-500">
                   <div>
                     {t.roadmap.phases.phase2.features.slice(0, 3).map((feature, index) => (
                       <p key={index} className="mb-2">• {feature}</p>
@@ -1147,23 +1250,23 @@ export default function EnergyPage() {
             </div>
 
             {/* Phase 3 */}
-            <div className="grid lg:grid-cols-3 gap-12 items-center">
+            <div className="grid lg:grid-cols-3 gap-8 sm:gap-12 items-center">
               <div className="lg:col-span-2">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-6 shadow-lg">
-                    <span className="text-lg font-light text-white">03</span>
+                <div className="flex items-center mb-4 sm:mb-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-4 sm:mr-6 shadow-lg">
+                    <span className="text-base sm:text-lg font-light text-white">03</span>
                   </div>
-                  <h3 className="text-3xl font-light text-gray-900">{t.roadmap.phases.phase3.title}</h3>
+                  <h3 className="text-xl sm:text-3xl font-light text-gray-900">{t.roadmap.phases.phase3.title}</h3>
                 </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-6">
+                <p className="text-sm sm:text-lg font-light text-gray-600 leading-relaxed mb-4 sm:mb-6">
                   {t.roadmap.phases.phase3.description}
                 </p>
-                <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-6">
-                  <p className="text-blue-800 font-light italic">
+                <div className="bg-blue-50 border-l-4 border-blue-400 p-4 sm:p-6 mb-4 sm:mb-6">
+                  <p className="text-blue-800 font-light italic text-sm sm:text-base">
                     "{t.roadmap.phases.phase3.quote}"
                   </p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-6 text-sm font-light text-gray-500">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-6 text-xs sm:text-sm font-light text-gray-500">
                   <div>
                     {t.roadmap.phases.phase3.features.slice(0, 3).map((feature, index) => (
                       <p key={index} className="mb-2">• {feature}</p>
@@ -1176,11 +1279,11 @@ export default function EnergyPage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-blue-50 to-purple-100 rounded-3xl p-8 text-center border border-blue-200">
-                <Zap className="w-16 h-16 text-blue-500 mx-auto mb-6" />
-                <h4 className="text-lg font-normal text-gray-900 mb-2">{t.roadmap.phases.phase3.period}</h4>
-                <p className="text-gray-600 font-light">{t.roadmap.phases.phase3.label}</p>
-                <div className="mt-4 text-xs text-blue-600 font-medium">
+              <div className="bg-gradient-to-br from-blue-50 to-purple-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center border border-blue-200">
+                <Zap className="w-12 h-12 sm:w-16 sm:h-16 text-blue-500 mx-auto mb-4 sm:mb-6" />
+                <h4 className="text-base sm:text-lg font-normal text-gray-900 mb-2">{t.roadmap.phases.phase3.period}</h4>
+                <p className="text-gray-600 font-light text-sm">{t.roadmap.phases.phase3.label}</p>
+                <div className="mt-3 sm:mt-4 text-xs text-blue-600 font-medium">
                   {t.roadmap.phases.phase3.badge}
                 </div>
               </div>
@@ -1206,253 +1309,204 @@ export default function EnergyPage() {
       </section>
 
       {/* Technology Deep Dive - Comprehensive Energy Knowledge */}
-      <section className="py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-extralight text-gray-900 mb-8">
+      <section className="py-16 sm:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-20">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight text-gray-900 mb-4 sm:mb-8">
               {t.technologies.title}
             </h2>
-            <p className="text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
               {t.technologies.subtitle}
             </p>
           </div>
 
-          {/* Fusion Energy Deep Dive */}
-          <div className="mb-24">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <div className="flex items-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                    <Zap className="w-8 h-8 text-white" />
+          {/* Technology Cards - Mobile Horizontal Scroll */}
+          <div className="lg:space-y-24">
+            {/* Mobile horizontal scroll container */}
+            <div className="lg:hidden flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory">
+              {/* Fusion Energy Card */}
+              <div className="flex-none w-[320px] snap-start bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 border border-purple-200">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                    <Zap className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-3xl font-light text-gray-900">{t.technologies.fusion.title}</h3>
+                  <h3 className="text-lg font-light text-gray-900">{t.technologies.fusion.title}</h3>
                 </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                  {t.technologies.fusion.description}
+                <p className="text-sm font-light text-gray-600 leading-relaxed mb-4">
+                  {t.technologies.fusion.description.slice(0, 150)}...
                 </p>
                 
-                <div className="bg-purple-50 rounded-xl p-6 border-l-4 border-purple-400 mb-8">
-                  <h4 className="font-medium text-purple-800 mb-3">{t.technologies.fusion.breakthrough.title}</h4>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {t.technologies.fusion.breakthrough.content}
+                <div className="bg-purple-100 rounded-lg p-4 border-l-4 border-purple-400 mb-4">
+                  <h4 className="font-medium text-purple-800 mb-2 text-sm">{t.technologies.fusion.breakthrough.title}</h4>
+                  <p className="text-xs text-gray-700 leading-relaxed">
+                    {t.technologies.fusion.breakthrough.content.slice(0, 120)}...
                   </p>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mt-1">
-                      <Target className="w-4 h-4 text-purple-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{t.technologies.fusion.innovations.plasma.title}</h5>
-                      <p className="text-sm text-gray-600">{t.technologies.fusion.innovations.plasma.description}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mt-1">
-                      <Battery className="w-4 h-4 text-purple-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{t.technologies.fusion.innovations.materials.title}</h5>
-                      <p className="text-sm text-gray-600">{t.technologies.fusion.innovations.materials.description}</p>
-                    </div>
+                <div className="bg-white rounded-lg p-3 border border-purple-200">
+                  <h5 className="font-medium text-gray-900 mb-2 text-sm">{t.technologies.fusion.roadmap.title}</h5>
+                  <div className="space-y-2">
+                    {t.technologies.fusion.roadmap.milestones.slice(0, 3).map((milestone, index) => (
+                      <div key={index} className="flex justify-between items-center text-xs">
+                        <span className="text-gray-600">{milestone.name}</span>
+                        <span className="text-purple-700 font-medium">{milestone.year}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl p-8 border border-purple-200">
-                <h4 className="text-xl font-medium text-gray-900 mb-6">{t.technologies.fusion.roadmap.title}</h4>
-                <div className="space-y-6">
-                  {t.technologies.fusion.roadmap.milestones.map((milestone, index) => (
-                    <div key={index} className="flex items-center justify-between p-4 bg-white rounded-lg border border-purple-200">
-                      <span className="font-medium text-gray-900">{milestone.name}</span>
-                      <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm font-medium">{milestone.year}</span>
+              {/* Solar Technology Card */}
+              <div className="flex-none w-[320px] snap-start bg-gradient-to-br from-orange-50 to-yellow-50 rounded-2xl p-6 border border-orange-200">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-yellow-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                    <Sun className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-light text-gray-900">{t.technologies.solar.title}</h3>
+                </div>
+                <p className="text-sm font-light text-gray-600 leading-relaxed mb-4">
+                  {t.technologies.solar.description.slice(0, 150)}...
+                </p>
+                
+                <div className="bg-orange-100 rounded-lg p-4 border-l-4 border-orange-400 mb-4">
+                  <h4 className="font-medium text-orange-800 mb-2 text-sm">{t.technologies.solar.breakthrough.title}</h4>
+                  <p className="text-xs text-gray-700 leading-relaxed">
+                    {t.technologies.solar.breakthrough.content.slice(0, 120)}...
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-lg p-3 border border-orange-200">
+                  <h5 className="font-medium text-gray-900 mb-2 text-sm">{t.technologies.solar.matrix.title}</h5>
+                  <div className="space-y-2">
+                    {t.technologies.solar.matrix.technologies.slice(0, 2).map((tech, index) => (
+                      <div key={index} className="flex justify-between items-center text-xs">
+                        <span className="text-gray-600">{tech.name}</span>
+                        <span className="text-orange-700 font-medium">{tech.efficiency}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Storage Technology Card */}
+              <div className="flex-none w-[320px] snap-start bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-200">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                    <Battery className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-light text-gray-900">{t.technologies.storage.title}</h3>
+                </div>
+                <p className="text-sm font-light text-gray-600 leading-relaxed mb-4">
+                  {t.technologies.storage.description.slice(0, 150)}...
+                </p>
+                
+                <div className="bg-green-100 rounded-lg p-4 border-l-4 border-green-400 mb-4">
+                  <h4 className="font-medium text-green-800 mb-2 text-sm">{t.technologies.storage.breakthrough.title}</h4>
+                  <p className="text-xs text-gray-700 leading-relaxed">
+                    {t.technologies.storage.breakthrough.content.slice(0, 120)}...
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-lg p-3 border border-green-200">
+                  <h5 className="font-medium text-gray-900 mb-2 text-sm">{t.technologies.storage.comparison.title}</h5>
+                  <div className="space-y-2">
+                    {t.technologies.storage.comparison.technologies.slice(0, 2).map((tech, index) => (
+                      <div key={index} className="flex justify-between items-center text-xs">
+                        <span className="text-gray-600">{tech.name}</span>
+                        <span className="text-green-700 font-medium">{tech.cost}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Intelligent Systems Card */}
+              <div className="flex-none w-[320px] snap-start bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-200">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                    <Lightbulb className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-light text-gray-900">{t.technologies.intelligentSystems.title}</h3>
+                </div>
+                <p className="text-sm font-light text-gray-600 leading-relaxed mb-4">
+                  {t.technologies.intelligentSystems.description.slice(0, 150)}...
+                </p>
+                
+                <div className="space-y-3">
+                  {t.technologies.intelligentSystems.features.slice(0, 2).map((feature, index) => (
+                    <div key={index} className="bg-white rounded-lg p-3 border border-blue-200">
+                      <h5 className="font-medium text-gray-900 mb-1 text-sm">{feature.title}</h5>
+                      <p className="text-xs text-gray-600">{feature.description.slice(0, 80)}...</p>
                     </div>
                   ))}
                 </div>
-                
-                <div className="mt-8 p-4 bg-purple-100 rounded-lg">
-                  <h5 className="font-medium text-purple-800 mb-2">{t.technologies.fusion.roadmap.investment.title}</h5>
-                  <p className="text-sm text-purple-700">
-                    {t.technologies.fusion.roadmap.investment.description}
-                  </p>
-                </div>
               </div>
             </div>
-          </div>
 
-          {/* Advanced Solar Technologies */}
-          <div className="mb-24">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div className="lg:order-2">
-                <div className="flex items-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                    <Sun className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-light text-gray-900">{t.technologies.solar.title}</h3>
-                </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                  {t.technologies.solar.description}
-                </p>
-                
-                <div className="bg-orange-50 rounded-xl p-6 border-l-4 border-orange-400 mb-8">
-                  <h4 className="font-medium text-orange-800 mb-3">{t.technologies.solar.breakthrough.title}</h4>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {t.technologies.solar.breakthrough.content}
-                  </p>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mt-1">
-                      <Thermometer className="w-4 h-4 text-orange-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{t.technologies.solar.innovations.thermal.title}</h5>
-                      <p className="text-sm text-gray-600">{t.technologies.solar.innovations.thermal.description}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mt-1">
-                      <Microscope className="w-4 h-4 text-orange-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{t.technologies.solar.innovations.quantum.title}</h5>
-                      <p className="text-sm text-gray-600">{t.technologies.solar.innovations.quantum.description}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-3xl p-8 border border-orange-200 lg:order-1">
-                <h4 className="text-xl font-medium text-gray-900 mb-6">{t.technologies.solar.matrix.title}</h4>
-                <div className="space-y-4">
-                  {t.technologies.solar.matrix.technologies.map((tech, index) => (
-                    <div key={index} className="bg-white rounded-lg p-4 border border-orange-200">
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="font-medium text-gray-900">{tech.name}</span>
-                        <span className="text-orange-700 font-bold">{tech.efficiency}</span>
+            {/* Desktop version - keep original large layouts but optimize */}
+            <div className="hidden lg:block">
+              {/* Fusion Energy Deep Dive */}
+              <div className="mb-16 sm:mb-24">
+                <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-start">
+                  <div>
+                    <div className="flex items-center mb-6 sm:mb-8">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center mr-4 sm:mr-6 shadow-lg">
+                        <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                       </div>
-                      <div className="w-full bg-orange-200 rounded-full h-2">
-                        <div className="bg-orange-600 h-2 rounded-full" style={{width: tech.efficiency}}></div>
-                      </div>
-                      <div className="text-xs text-gray-600 mt-1">{tech.cost}</div>
+                      <h3 className="text-2xl sm:text-3xl font-light text-gray-900">{t.technologies.fusion.title}</h3>
                     </div>
-                  ))}
-                </div>
+                    <p className="text-base sm:text-lg font-light text-gray-600 leading-relaxed mb-6 sm:mb-8">
+                      {t.technologies.fusion.description}
+                    </p>
+                    
+                    <div className="bg-purple-50 rounded-xl p-4 sm:p-6 border-l-4 border-purple-400 mb-6 sm:mb-8">
+                      <h4 className="font-medium text-purple-800 mb-2 sm:mb-3">{t.technologies.fusion.breakthrough.title}</h4>
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        {t.technologies.fusion.breakthrough.content}
+                      </p>
+                    </div>
 
-                <div className="mt-8 p-4 bg-orange-100 rounded-lg">
-                  <h5 className="font-medium text-orange-800 mb-2">{t.technologies.solar.matrix.manufacturing.title}</h5>
-                  <p className="text-sm text-orange-700">
-                    {t.technologies.solar.matrix.manufacturing.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Energy Storage Innovation */}
-          <div className="mb-24">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <div className="flex items-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                    <Battery className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-light text-gray-900">{t.technologies.storage.title}</h3>
-                </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                  {t.technologies.storage.description}
-                </p>
-                
-                <div className="bg-green-50 rounded-xl p-6 border-l-4 border-green-400 mb-8">
-                  <h4 className="font-medium text-green-800 mb-3">{t.technologies.storage.breakthrough.title}</h4>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {t.technologies.storage.breakthrough.content}
-                  </p>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mt-1">
-                      <Zap className="w-4 h-4 text-green-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{t.technologies.storage.innovations.gridScale.title}</h5>
-                      <p className="text-sm text-gray-600">{t.technologies.storage.innovations.gridScale.description}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mt-1">
-                      <Globe className="w-4 h-4 text-green-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{t.technologies.storage.innovations.networks.title}</h5>
-                      <p className="text-sm text-gray-600">{t.technologies.storage.innovations.networks.description}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-200">
-                <h4 className="text-xl font-medium text-gray-900 mb-6">{t.technologies.storage.comparison.title}</h4>
-                <div className="space-y-6">
-                  {t.technologies.storage.comparison.technologies.map((tech, index) => (
-                    <div key={index}>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="font-medium text-gray-900">{tech.name}</span>
-                        <div className="text-right">
-                          <div className="text-green-700 font-bold">{tech.cost}</div>
-                          <div className="text-xs text-gray-600">{tech.density}</div>
+                    <div className="space-y-4">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mt-1">
+                          <Target className="w-4 h-4 text-purple-600" />
+                        </div>
+                        <div>
+                          <h5 className="font-medium text-gray-900 mb-1">{t.technologies.fusion.innovations.plasma.title}</h5>
+                          <p className="text-sm text-gray-600">{t.technologies.fusion.innovations.plasma.description}</p>
                         </div>
                       </div>
-                      <div className="w-full bg-green-200 rounded-full h-2">
-                        <div className="bg-green-600 h-2 rounded-full" style={{width: index === 0 ? '60%' : index === 1 ? '90%' : '70%'}}></div>
+                      <div className="flex items-start space-x-4">
+                        <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mt-1">
+                          <Battery className="w-4 h-4 text-purple-600" />
+                        </div>
+                        <div>
+                          <h5 className="font-medium text-gray-900 mb-1">{t.technologies.fusion.innovations.materials.title}</h5>
+                          <p className="text-sm text-gray-600">{t.technologies.fusion.innovations.materials.description}</p>
+                        </div>
                       </div>
                     </div>
-                  ))}
-                </div>
-
-                <div className="mt-8 p-4 bg-green-100 rounded-lg">
-                  <h5 className="font-medium text-green-800 mb-2">{t.technologies.storage.comparison.investment.title}</h5>
-                  <p className="text-sm text-green-700">
-                    {t.technologies.storage.comparison.investment.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Smart Grid & AI Integration */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-light text-white mb-6">{t.technologies.intelligentSystems.title}</h3>
-              <p className="text-lg font-light text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                {t.technologies.intelligentSystems.description}
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {t.technologies.intelligentSystems.features.map((feature, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    {index === 0 && <Lightbulb className="w-8 h-8 text-white" />}
-                    {index === 1 && <Globe className="w-8 h-8 text-white" />}
-                    {index === 2 && <Target className="w-8 h-8 text-white" />}
                   </div>
-                  <h4 className="text-lg font-medium text-white mb-4">{feature.title}</h4>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
 
-            <div className="mt-12 text-center">
-              <div className="bg-white/10 rounded-2xl p-6 inline-block">
-                <p className="text-white font-light italic text-lg">
-                  "{t.technologies.intelligentSystems.quote}"
-                </p>
+                  <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-purple-200">
+                    <h4 className="text-lg sm:text-xl font-medium text-gray-900 mb-4 sm:mb-6">{t.technologies.fusion.roadmap.title}</h4>
+                    <div className="space-y-4 sm:space-y-6">
+                      {t.technologies.fusion.roadmap.milestones.map((milestone, index) => (
+                        <div key={index} className="flex items-center justify-between p-3 sm:p-4 bg-white rounded-lg border border-purple-200">
+                          <span className="font-medium text-gray-900 text-sm sm:text-base">{milestone.name}</span>
+                          <span className="bg-purple-100 text-purple-700 px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-medium">{milestone.year}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-purple-100 rounded-lg">
+                      <h5 className="font-medium text-purple-800 mb-2">{t.technologies.fusion.roadmap.investment.title}</h5>
+                      <p className="text-xs sm:text-sm text-purple-700">
+                        {t.technologies.fusion.roadmap.investment.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1460,32 +1514,32 @@ export default function EnergyPage() {
       </section>
 
       {/* AI and Energy: The Critical Challenge */}
-      <section className="py-32 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-extralight text-gray-900 mb-8">
+      <section className="py-16 sm:py-32 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-20">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight text-gray-900 mb-4 sm:mb-8">
               {t.technologies.aiEnergy.title}
             </h2>
-            <p className="text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
               {t.technologies.aiEnergy.subtitle}
             </p>
           </div>
 
           {/* The AI Revolution */}
-          <div className="grid lg:grid-cols-2 gap-16 mb-24">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 mb-12 sm:mb-24">
             <div>
-              <div className="flex items-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                  <Lightbulb className="w-8 h-8 text-white" />
+              <div className="flex items-center mb-6 sm:mb-8">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center mr-4 sm:mr-6 shadow-lg">
+                  <Lightbulb className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-light text-gray-900">{t.technologies.aiEnergy.future.title}</h3>
+                <h3 className="text-xl sm:text-3xl font-light text-gray-900">{t.technologies.aiEnergy.future.title}</h3>
               </div>
               
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {t.technologies.aiEnergy.future.areas.map((area, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 border border-blue-200">
-                    <h4 className="text-lg font-medium text-gray-900 mb-3">{area.title}</h4>
-                    <p className="text-gray-600 font-light leading-relaxed">
+                  <div key={index} className="bg-white rounded-xl p-4 sm:p-6 border border-blue-200">
+                    <h4 className="text-base sm:text-lg font-medium text-gray-900 mb-2 sm:mb-3">{area.title}</h4>
+                    <p className="text-gray-600 font-light leading-relaxed text-sm sm:text-base">
                       {area.description}
                     </p>
                   </div>
@@ -1493,42 +1547,42 @@ export default function EnergyPage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl p-8 text-white">
-              <h4 className="text-2xl font-light mb-8">{selectedLanguage === 'tr' ? 'AI\'nin Dönüştürücü Vaadi' : 'AI\'s Transformative Promise'}</h4>
+            <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white">
+              <h4 className="text-xl sm:text-2xl font-light mb-6 sm:mb-8">{selectedLanguage === 'tr' ? 'AI\'nin Dönüştürücü Vaadi' : 'AI\'s Transformative Promise'}</h4>
               
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                    <Users className="w-6 h-6 text-white" />
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                    <Users className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <div>
-                    <div className="text-lg font-medium">{t.technologies.aiEnergy.future.promise.universal.title}</div>
-                    <div className="text-blue-200 text-sm">{t.technologies.aiEnergy.future.promise.universal.description}</div>
+                    <div className="text-base sm:text-lg font-medium">{t.technologies.aiEnergy.future.promise.universal.title}</div>
+                    <div className="text-blue-200 text-xs sm:text-sm">{t.technologies.aiEnergy.future.promise.universal.description}</div>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                    <Microscope className="w-6 h-6 text-white" />
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                    <Microscope className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <div>
-                    <div className="text-lg font-medium">{t.technologies.aiEnergy.future.promise.discovery.title}</div>
-                    <div className="text-blue-200 text-sm">{t.technologies.aiEnergy.future.promise.discovery.description}</div>
+                    <div className="text-base sm:text-lg font-medium">{t.technologies.aiEnergy.future.promise.discovery.title}</div>
+                    <div className="text-blue-200 text-xs sm:text-sm">{t.technologies.aiEnergy.future.promise.discovery.description}</div>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                    <Globe className="w-6 h-6 text-white" />
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                    <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <div>
-                    <div className="text-lg font-medium">{t.technologies.aiEnergy.future.promise.solutions.title}</div>
-                    <div className="text-blue-200 text-sm">{t.technologies.aiEnergy.future.promise.solutions.description}</div>
+                    <div className="text-base sm:text-lg font-medium">{t.technologies.aiEnergy.future.promise.solutions.title}</div>
+                    <div className="text-blue-200 text-xs sm:text-sm">{t.technologies.aiEnergy.future.promise.solutions.description}</div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 p-4 bg-white/10 rounded-lg">
+              <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-white/10 rounded-lg">
                 <p className="text-blue-100 text-sm italic">
                   "{t.technologies.aiEnergy.future.quote}"
                 </p>
@@ -1537,31 +1591,48 @@ export default function EnergyPage() {
           </div>
 
           {/* The Energy Crisis */}
-          <div className="mb-24">
-            <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl p-12 border border-red-200">
-              <div className="text-center mb-12">
-                <h3 className="text-3xl font-light text-gray-900 mb-6">{t.technologies.aiEnergy.crisis.title}</h3>
-                <p className="text-lg font-light text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <div className="mb-12 sm:mb-24">
+            <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl sm:rounded-3xl p-8 sm:p-12 border border-red-200">
+              <div className="text-center mb-8 sm:mb-12">
+                <h3 className="text-xl sm:text-3xl font-light text-gray-900 mb-4 sm:mb-6">{t.technologies.aiEnergy.crisis.title}</h3>
+                <p className="text-sm sm:text-lg font-light text-gray-600 max-w-3xl mx-auto leading-relaxed">
                   {t.technologies.aiEnergy.crisis.description}
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-8 mb-12">
-                {t.technologies.aiEnergy.crisis.metrics.map((metric, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 text-center border border-red-200">
-                    <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <Thermometer className="w-8 h-8 text-red-600" />
+              {/* Mobile horizontal scroll for metrics */}
+              <div className="md:grid md:grid-cols-3 md:gap-8 mb-8 sm:mb-12">
+                <div className="md:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+                  {t.technologies.aiEnergy.crisis.metrics.map((metric, index) => (
+                    <div key={index} className="flex-none w-64 snap-start bg-white rounded-xl p-6 text-center border border-red-200">
+                      <div className="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <Thermometer className="w-6 h-6 text-red-600" />
+                      </div>
+                      <h4 className="text-base font-medium text-gray-900 mb-3">{metric.title}</h4>
+                      <div className="text-2xl font-light text-red-600 mb-2">{metric.value}</div>
+                      <div className="text-xs text-gray-600">{metric.description}</div>
                     </div>
-                    <h4 className="text-lg font-medium text-gray-900 mb-3">{metric.title}</h4>
-                    <div className="text-3xl font-light text-red-600 mb-2">{metric.value}</div>
-                    <div className="text-sm text-gray-600">{metric.description}</div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+
+                {/* Desktop grid */}
+                <div className="hidden md:grid md:grid-cols-3 md:gap-8">
+                  {t.technologies.aiEnergy.crisis.metrics.map((metric, index) => (
+                    <div key={index} className="bg-white rounded-xl p-6 text-center border border-red-200">
+                      <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <Thermometer className="w-8 h-8 text-red-600" />
+                      </div>
+                      <h4 className="text-lg font-medium text-gray-900 mb-3">{metric.title}</h4>
+                      <div className="text-3xl font-light text-red-600 mb-2">{metric.value}</div>
+                      <div className="text-sm text-gray-600">{metric.description}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="bg-red-100 rounded-xl p-6 border-l-4 border-red-400">
-                <h4 className="font-medium text-red-800 mb-3">{t.technologies.aiEnergy.crisis.challenge.title}</h4>
-                <p className="text-red-700 leading-relaxed">
+              <div className="bg-red-100 rounded-xl p-4 sm:p-6 border-l-4 border-red-400">
+                <h4 className="font-medium text-red-800 mb-2 sm:mb-3">{t.technologies.aiEnergy.crisis.challenge.title}</h4>
+                <p className="text-red-700 leading-relaxed text-sm sm:text-base">
                   {t.technologies.aiEnergy.crisis.challenge.description}
                 </p>
               </div>
@@ -1569,30 +1640,30 @@ export default function EnergyPage() {
           </div>
 
           {/* The Solution: Clean AI Infrastructure */}
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-16">
             <div>
-              <div className="flex items-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                  <Leaf className="w-8 h-8 text-white" />
+              <div className="flex items-center mb-6 sm:mb-8">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl sm:rounded-2xl flex items-center justify-center mr-4 sm:mr-6 shadow-lg">
+                  <Leaf className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-light text-gray-900">{t.technologies.aiEnergy.solution.title}</h3>
+                <h3 className="text-xl sm:text-3xl font-light text-gray-900">{t.technologies.aiEnergy.solution.title}</h3>
               </div>
               
-              <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
+              <p className="text-sm sm:text-lg font-light text-gray-600 leading-relaxed mb-6 sm:mb-8">
                 {t.technologies.aiEnergy.solution.description}
               </p>
               
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {t.technologies.aiEnergy.solution.strategies.map((strategy, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div key={index} className="flex items-start space-x-3 sm:space-x-4">
                     <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mt-1">
                       {index === 0 && <Sun className="w-4 h-4 text-green-600" />}
                       {index === 1 && <Zap className="w-4 h-4 text-green-600" />}
                       {index === 2 && <Battery className="w-4 h-4 text-green-600" />}
                     </div>
                     <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{strategy.title}</h5>
-                      <p className="text-sm text-gray-600">
+                      <h5 className="font-medium text-gray-900 mb-1 text-sm sm:text-base">{strategy.title}</h5>
+                      <p className="text-xs sm:text-sm text-gray-600">
                         {strategy.description}
                       </p>
                     </div>
@@ -1601,26 +1672,26 @@ export default function EnergyPage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-200">
-              <h4 className="text-xl font-medium text-gray-900 mb-6">{t.technologies.aiEnergy.solution.investment.title}</h4>
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-green-200">
+              <h4 className="text-lg sm:text-xl font-medium text-gray-900 mb-4 sm:mb-6">{t.technologies.aiEnergy.solution.investment.title}</h4>
               
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {t.technologies.aiEnergy.solution.investment.areas.map((area, index) => (
-                  <div key={index} className="bg-white rounded-lg p-4 border border-green-200">
+                  <div key={index} className="bg-white rounded-lg p-3 sm:p-4 border border-green-200">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{area.title}</span>
-                      <span className="bg-green-100 text-green-700 px-3 py-1 rounded text-sm font-medium">{area.amount}</span>
+                      <span className="font-medium text-gray-900 text-sm sm:text-base">{area.title}</span>
+                      <span className="bg-green-100 text-green-700 px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-medium">{area.amount}</span>
                     </div>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-xs sm:text-sm text-gray-600">
                       {area.description}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 p-4 bg-green-100 rounded-lg">
+              <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-green-100 rounded-lg">
                 <h5 className="font-medium text-green-800 mb-2">{t.technologies.aiEnergy.solution.investment.mission.title}</h5>
-                <p className="text-sm text-green-700">
+                <p className="text-xs sm:text-sm text-green-700">
                   {t.technologies.aiEnergy.solution.investment.mission.description}
                 </p>
               </div>
@@ -1628,16 +1699,16 @@ export default function EnergyPage() {
           </div>
 
           {/* Bold Vision Statement */}
-          <div className="mt-24 bg-gradient-to-br from-blue-600 to-purple-700 rounded-3xl p-12 text-center text-white">
-            <h3 className="text-3xl font-light mb-6">{t.technologies.aiEnergy.convergence.title}</h3>
-            <p className="text-xl font-light leading-relaxed mb-8 text-blue-100">
+          <div className="mt-16 sm:mt-24 bg-gradient-to-br from-blue-600 to-purple-700 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center text-white">
+            <h3 className="text-xl sm:text-3xl font-light mb-4 sm:mb-6">{t.technologies.aiEnergy.convergence.title}</h3>
+            <p className="text-base sm:text-xl font-light leading-relaxed mb-6 sm:mb-8 text-blue-100">
               {t.technologies.aiEnergy.convergence.description}
             </p>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
               {t.technologies.aiEnergy.convergence.metrics.map((metric, index) => (
                 <div key={index}>
-                  <div className="text-4xl font-light text-green-300 mb-2">{metric.value}</div>
-                  <div className="text-sm text-blue-200">{metric.label}</div>
+                  <div className="text-3xl sm:text-4xl font-light text-green-300 mb-2">{metric.value}</div>
+                  <div className="text-xs sm:text-sm text-blue-200">{metric.label}</div>
                 </div>
               ))}
             </div>
@@ -1646,18 +1717,18 @@ export default function EnergyPage() {
       </section>
 
       {/* Closing Vision */}
-      <section className="py-32 bg-gradient-to-br from-gray-900 via-green-900 to-gray-900 text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-extralight mb-12 leading-tight">
+      <section className="py-16 sm:py-32 bg-gradient-to-br from-gray-900 via-green-900 to-gray-900 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight mb-6 sm:mb-12 leading-tight">
             {t.closing.title}
           </h2>
-          <div className="space-y-8 text-lg md:text-xl font-light leading-relaxed text-gray-300">
+          <div className="space-y-4 sm:space-y-8 text-base sm:text-lg md:text-xl font-light leading-relaxed text-gray-300">
             {t.closing.sections.map((section: string, index: number) => (
               <p key={index}>
                 {section}
               </p>
             ))}
-            <p className="text-2xl md:text-3xl font-light text-white pt-8">
+            <p className="text-lg sm:text-2xl md:text-3xl font-light text-white pt-4 sm:pt-8">
               {t.closing.highlight}
             </p>
           </div>
