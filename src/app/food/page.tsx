@@ -686,21 +686,21 @@ export default function FoodPage() {
         </div>
         
         {/* Hero Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <div className="mb-12">
-            <Wheat className="w-12 h-12 mx-auto text-orange-400 mb-8" />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+          <div className="mb-6 sm:mb-12">
+            <Wheat className="w-8 h-8 sm:w-12 sm:h-12 mx-auto text-orange-400 mb-4 sm:mb-8" />
           </div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extralight mb-12 leading-tight text-gray-900">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight mb-6 sm:mb-12 leading-tight text-gray-900">
             {t.hero.title1}
-            <span className="block font-light text-orange-600 mt-4">
+            <span className="block font-light text-orange-600 mt-2 sm:mt-4">
               {t.hero.title2}
             </span>
           </h1>
           <div className="max-w-4xl mx-auto">
-            <p className="text-2xl md:text-3xl font-light text-gray-600 leading-relaxed mb-8">
+            <p className="text-lg sm:text-2xl md:text-3xl font-light text-gray-600 leading-relaxed mb-4 sm:mb-8">
               {t.hero.subtitle1}
             </p>
-            <p className="text-xl md:text-2xl font-light text-gray-500 leading-relaxed">
+            <p className="text-base sm:text-xl md:text-2xl font-light text-gray-500 leading-relaxed">
               {t.hero.subtitle2}
             </p>
           </div>
@@ -708,22 +708,199 @@ export default function FoodPage() {
       </section>
 
       {/* The Cruel Reality - Emotional Section */}
-      <section className="py-24 bg-gradient-to-br from-red-50 to-orange-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <Heart className="w-16 h-16 text-red-500 mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+      <section className="py-16 sm:py-24 bg-gradient-to-br from-red-50 to-orange-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <Heart className="w-12 h-12 sm:w-16 sm:h-16 text-red-500 mx-auto mb-4 sm:mb-6" />
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-8">
               {t.cruelReality.title}
             </h2>
-            <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
               {t.cruelReality.subtitle}
             </p>
           </div>
 
-          {/* Professional Data Visualization */}
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            {/* Global Hunger Impact Chart - Düzeltilmiş */}
-            <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
+          {/* Professional Data Visualization - Mobile horizontal scroll */}
+          <div className="lg:grid lg:grid-cols-3 lg:gap-8 mb-12 sm:mb-16">
+            {/* Mobile horizontal scroll container */}
+            <div className="lg:hidden flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory">
+              {/* Global Hunger Impact Chart - Mobile Version */}
+              <div className="flex-none w-80 snap-start bg-white rounded-2xl p-6 shadow-2xl border border-gray-100">
+                <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                  <TrendingUp className="w-5 h-5 mr-3 text-red-500" />
+                  {t.charts.globalHunger.title}
+                </h3>
+                <div className="space-y-4">
+                  <div className="relative">
+                    <div className="space-y-3 mb-4">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-20 text-xs font-medium text-gray-700 text-right">
+                          {t.charts.globalHunger.subSaharan}
+                        </div>
+                        <div className="flex-1 bg-gray-100 rounded-full h-5 relative overflow-hidden">
+                          <div className="bg-gradient-to-r from-red-500 to-red-400 h-full rounded-full shadow-sm transition-all duration-700 ease-out" 
+                               style={{width: '85%'}}>
+                          </div>
+                          <div className="absolute inset-0 flex items-center justify-end pr-2">
+                            <span className="text-xs font-bold text-white">23.5%</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center space-x-2">
+                        <div className="w-20 text-xs font-medium text-gray-700 text-right">
+                          {t.charts.globalHunger.southAsia}
+                        </div>
+                        <div className="flex-1 bg-gray-100 rounded-full h-5 relative overflow-hidden">
+                          <div className="bg-gradient-to-r from-orange-500 to-orange-400 h-full rounded-full shadow-sm transition-all duration-700 ease-out" 
+                               style={{width: '45%'}}>
+                          </div>
+                          <div className="absolute inset-0 flex items-center justify-end pr-2">
+                            <span className="text-xs font-bold text-white">12.8%</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center space-x-2">
+                        <div className="w-20 text-xs font-medium text-gray-700 text-right">
+                          {t.charts.globalHunger.latinAmerica}
+                        </div>
+                        <div className="flex-1 bg-gray-100 rounded-full h-5 relative overflow-hidden">
+                          <div className="bg-gradient-to-r from-amber-500 to-amber-400 h-full rounded-full shadow-sm transition-all duration-700 ease-out" 
+                               style={{width: '25%'}}>
+                          </div>
+                          <div className="absolute inset-0 flex items-center justify-end pr-2">
+                            <span className="text-xs font-bold text-white">7.2%</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center space-x-2">
+                        <div className="w-20 text-xs font-medium text-gray-700 text-right">
+                          {t.charts.globalHunger.developed}
+                        </div>
+                        <div className="flex-1 bg-gray-100 rounded-full h-5 relative overflow-hidden">
+                          <div className="bg-gradient-to-r from-emerald-500 to-emerald-400 h-full rounded-full shadow-sm transition-all duration-700 ease-out" 
+                               style={{width: '15%'}}>
+                          </div>
+                          <div className="absolute inset-0 flex items-center justify-end pr-2">
+                            <span className="text-xs font-bold text-white">2.1%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-red-50 rounded-xl p-3 border-l-4 border-red-400">
+                    <div className="text-xs text-gray-700">
+                      <strong className="text-red-600">{t.charts.globalHunger.missionDescription}</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Food Waste vs Production Chart - Mobile Version */}
+              <div className="flex-none w-80 snap-start bg-white rounded-2xl p-6 shadow-2xl border border-gray-100">
+                <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                  <BarChart className="w-5 h-5 mr-3 text-green-500" />
+                  {t.charts.foodFlow.title}
+                </h3>
+                <div className="space-y-4">
+                  <div className="relative bg-gray-50 rounded-lg p-4">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between p-2 bg-green-100 rounded-lg border-l-4 border-green-500">
+                        <span className="text-xs font-semibold text-green-800">{t.charts.foodFlow.globalProduction}</span>
+                        <span className="text-base font-bold text-green-600">100%</span>
+                      </div>
+                      
+                      <div className="ml-2 flex items-center justify-between p-2 bg-blue-100 rounded-lg border-l-4 border-blue-500">
+                        <span className="text-xs font-semibold text-blue-800">{t.charts.foodFlow.consumerReady}</span>
+                        <span className="text-base font-bold text-blue-600">68%</span>
+                      </div>
+                      
+                      <div className="ml-2 flex items-center justify-between p-2 bg-red-100 rounded-lg border-l-4 border-red-500">
+                        <span className="text-xs font-semibold text-red-800">{t.charts.foodFlow.wasted}</span>
+                        <span className="text-base font-bold text-red-600">32%</span>
+                      </div>
+                      
+                      <div className="ml-4 flex items-center justify-between p-2 bg-orange-100 rounded-lg border-l-4 border-orange-500">
+                        <span className="text-xs font-semibold text-orange-800">{t.charts.foodFlow.couldFeedHungry}</span>
+                        <span className="text-base font-bold text-orange-600">820M</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-orange-50 rounded-xl p-3 border-l-4 border-orange-400">
+                    <div className="text-xs text-gray-700">
+                      <strong className="text-orange-600">{t.charts.foodFlow.strategyDescription}</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Economic Impact Breakdown - Mobile Version */}
+              <div className="flex-none w-80 snap-start bg-white rounded-2xl p-6 shadow-2xl border border-gray-100">
+                <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                  <LineChart className="w-5 h-5 mr-3 text-blue-500" />
+                  {t.charts.economicLoss.title}
+                </h3>
+                <div className="space-y-4">
+                  <div className="text-center mb-4">
+                    <div className="text-2xl font-bold text-gray-900">$3.5T</div>
+                    <div className="text-xs text-gray-600">Toplam Ekonomik Kayıp</div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between p-2 bg-red-50 rounded-lg border border-red-200">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <span className="text-xs font-medium text-gray-800">{t.charts.economicLoss.healthcareCosts}</span>
+                      </div>
+                      <span className="text-xs font-bold text-red-600">35%</span>
+                    </div>
+
+                    <div className="flex items-center justify-between p-2 bg-orange-50 rounded-lg border border-orange-200">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                        <span className="text-xs font-medium text-gray-800">{t.charts.economicLoss.lostProductivity}</span>
+                      </div>
+                      <span className="text-xs font-bold text-orange-600">20%</span>
+                    </div>
+
+                    <div className="flex items-center justify-between p-2 bg-yellow-50 rounded-lg border border-yellow-200">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <span className="text-xs font-medium text-gray-800">{t.charts.economicLoss.educationImpact}</span>
+                      </div>
+                      <span className="text-xs font-bold text-yellow-600">15%</span>
+                    </div>
+
+                    <div className="flex items-center justify-between p-2 bg-green-50 rounded-lg border border-green-200">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span className="text-xs font-medium text-gray-800">{t.charts.economicLoss.socialPrograms}</span>
+                      </div>
+                      <span className="text-xs font-bold text-green-600">15%</span>
+                    </div>
+
+                    <div className="flex items-center justify-between p-2 bg-blue-50 rounded-lg border border-blue-200">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                        <span className="text-xs font-medium text-gray-800">{t.charts.economicLoss.infrastructure}</span>
+                      </div>
+                      <span className="text-xs font-bold text-blue-600">15%</span>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-blue-50 rounded-xl p-3 border-l-4 border-blue-400">
+                    <div className="text-xs text-gray-700">
+                      <strong className="text-blue-600">{t.charts.economicLoss.technologyDescription}</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop versions - keep existing */}
+            <div className="hidden lg:block bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
                 <TrendingUp className="w-6 h-6 mr-3 text-red-500" />
                 {t.charts.globalHunger.title}
@@ -798,7 +975,7 @@ export default function FoodPage() {
             </div>
 
             {/* Food Waste vs Production Chart - Düzeltilmiş Flow */}
-            <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
+            <div className="hidden lg:block bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
                 <BarChart className="w-6 h-6 mr-3 text-green-500" />
                 {t.charts.foodFlow.title}
@@ -837,7 +1014,7 @@ export default function FoodPage() {
             </div>
 
             {/* Economic Impact Breakdown - Tamamen yeniden tasarlanmış pie chart */}
-            <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
+            <div className="hidden lg:block bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
                 <LineChart className="w-6 h-6 mr-3 text-blue-500" />
                 {t.charts.economicLoss.title}
@@ -931,8 +1108,54 @@ export default function FoodPage() {
           </div>
 
           {/* Water Statistics Dashboard - Enhanced with Mission Context */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white rounded-3xl p-8 shadow-2xl text-center border border-blue-100">
+          <div className="md:grid md:grid-cols-3 md:gap-8 mb-12 sm:mb-16">
+            {/* Mobile horizontal scroll */}
+            <div className="md:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+              <div className="flex-none w-64 snap-start bg-white rounded-2xl p-6 shadow-2xl text-center border border-blue-100">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
+                  <Users className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                </div>
+                <div className="text-3xl sm:text-4xl font-bold text-blue-600 mb-2">200M</div>
+                <div className="text-gray-800 font-semibold mb-2 text-sm">{t.waterStats.cleanWater.title}</div>
+                <div className="text-xs sm:text-sm text-gray-600 bg-blue-50 rounded-lg px-3 py-2">{t.waterStats.cleanWater.subtitle}</div>
+                <div className="mt-3 p-2 bg-blue-100 rounded-lg">
+                  <p className="text-xs text-blue-800 font-medium">
+                    {t.waterStats.cleanWater.target}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex-none w-64 snap-start bg-white rounded-2xl p-6 shadow-2xl text-center border border-red-100">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
+                  <AlertTriangle className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                </div>
+                <div className="text-3xl sm:text-4xl font-bold text-red-600 mb-2">1000</div>
+                <div className="text-gray-800 font-semibold mb-2 text-sm">{t.waterStats.waterDeaths.title}</div>
+                <div className="text-xs sm:text-sm text-gray-600 bg-red-50 rounded-lg px-3 py-2">{t.waterStats.waterDeaths.subtitle}</div>
+                <div className="mt-3 p-2 bg-red-100 rounded-lg">
+                  <p className="text-xs text-red-800 font-medium">
+                    {t.waterStats.waterDeaths.goal}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex-none w-64 snap-start bg-white rounded-2xl p-6 shadow-2xl text-center border border-orange-100">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
+                  <Globe className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                </div>
+                <div className="text-3xl sm:text-4xl font-bold text-orange-600 mb-2">4000</div>
+                <div className="text-gray-800 font-semibold mb-2 text-sm">{t.waterStats.waterScarcity.title}</div>
+                <div className="text-xs sm:text-sm text-gray-600 bg-orange-50 rounded-lg px-3 py-2">{t.waterStats.waterScarcity.subtitle}</div>
+                <div className="mt-3 p-2 bg-orange-100 rounded-lg">
+                  <p className="text-xs text-orange-800 font-medium">
+                    {t.waterStats.waterScarcity.target}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop grid */}
+            <div className="hidden md:block bg-white rounded-3xl p-8 shadow-2xl text-center border border-blue-100">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <Users className="w-8 h-8 text-white" />
               </div>
@@ -946,7 +1169,7 @@ export default function FoodPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 shadow-2xl text-center border border-red-100">
+            <div className="hidden md:block bg-white rounded-3xl p-8 shadow-2xl text-center border border-red-100">
               <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <AlertTriangle className="w-8 h-8 text-white" />
               </div>
@@ -960,7 +1183,7 @@ export default function FoodPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 shadow-2xl text-center border border-orange-100">
+            <div className="hidden md:block bg-white rounded-3xl p-8 shadow-2xl text-center border border-orange-100">
               <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <Globe className="w-8 h-8 text-white" />
               </div>
@@ -1135,23 +1358,196 @@ export default function FoodPage() {
       </section>
 
       {/* Investment Focus Areas - Professional Section */}
-      <section className="py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-extralight text-gray-900 mb-8">
+      <section className="py-24 sm:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-16 sm:mb-24">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight text-gray-900 mb-6 sm:mb-8">
               {t.investmentFocus.title}
             </h2>
-            <p className="text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
               {t.investmentFocus.subtitle}
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          {/* Investment Cards - Mobile horizontal scroll, Desktop grid */}
+          <div className="xl:grid xl:grid-cols-2 xl:gap-12 mb-16 sm:mb-24">
+            {/* Mobile horizontal scroll container */}
+            <div className="xl:hidden flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory">
+              {/* AgTech & Precision Farming - Mobile Version */}
+              <div className="flex-none w-80 snap-start bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mr-3">
+                    <Wheat className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-lg font-light text-gray-900">{t.investmentFocus.agTech.title}</h3>
+                </div>
+                
+                <div className="space-y-4 text-gray-700">
+                  <div className="bg-gray-50 rounded-xl p-3">
+                    <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.agTech.marketOpportunity.title}</h4>
+                    <p className="text-xs leading-relaxed">
+                      {t.investmentFocus.agTech.marketOpportunity.description.slice(0, 120)}...
+                    </p>
+                  </div>
+                  
+                  <div className="bg-green-50 rounded-xl p-3">
+                    <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.agTech.investmentPriorities.title}</h4>
+                    <ul className="space-y-1 text-xs">
+                      {t.investmentFocus.agTech.investmentPriorities.items.slice(0, 3).map((item, index) => (
+                        <li key={index}>• {item.slice(0, 40)}...</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bg-blue-50 rounded-xl p-3">
+                    <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.agTech.successMetrics.title}</h4>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="text-center bg-white rounded-lg p-2 shadow-sm border border-gray-100">
+                        <div className="text-base font-bold text-green-600 mb-1">{t.investmentFocus.agTech.successMetrics.yieldIncrease}</div>
+                        <div className="text-xs font-medium text-gray-700">{t.investmentFocus.agTech.successMetrics.yieldIncreaseLabel}</div>
+                      </div>
+                      <div className="text-center bg-white rounded-lg p-2 shadow-sm border border-gray-100">
+                        <div className="text-base font-bold text-blue-600 mb-1">{t.investmentFocus.agTech.successMetrics.resourceEfficiency}</div>
+                        <div className="text-xs font-medium text-gray-700">{t.investmentFocus.agTech.successMetrics.resourceEfficiencyLabel}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Alternative Protein Systems - Mobile Version */}
+              <div className="flex-none w-80 snap-start bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mr-3">
+                    <Microscope className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-lg font-light text-gray-900">{t.investmentFocus.alternativeProtein.title}</h3>
+                </div>
+                
+                <div className="space-y-4 text-gray-700">
+                  <div className="bg-gray-50 rounded-xl p-3">
+                    <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.alternativeProtein.marketOpportunity.title}</h4>
+                    <p className="text-xs leading-relaxed">
+                      {t.investmentFocus.alternativeProtein.marketOpportunity.description.slice(0, 120)}...
+                    </p>
+                  </div>
+                  
+                  <div className="bg-blue-50 rounded-xl p-3">
+                    <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.alternativeProtein.investmentPriorities.title}</h4>
+                    <ul className="space-y-1 text-xs">
+                      {t.investmentFocus.alternativeProtein.investmentPriorities.items.slice(0, 3).map((item, index) => (
+                        <li key={index}>• {item.slice(0, 40)}...</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bg-purple-50 rounded-xl p-3">
+                    <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.alternativeProtein.impactProjections.title}</h4>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="text-center bg-white rounded-lg p-2 shadow-sm border border-gray-100">
+                        <div className="text-base font-bold text-blue-600 mb-1">{t.investmentFocus.alternativeProtein.impactProjections.landUse}</div>
+                        <div className="text-xs font-medium text-gray-700">{t.investmentFocus.alternativeProtein.impactProjections.landUseLabel}</div>
+                      </div>
+                      <div className="text-center bg-white rounded-lg p-2 shadow-sm border border-gray-100">
+                        <div className="text-base font-bold text-green-600 mb-1">{t.investmentFocus.alternativeProtein.impactProjections.emissions}</div>
+                        <div className="text-xs font-medium text-gray-700">{t.investmentFocus.alternativeProtein.impactProjections.emissionsLabel}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Supply Chain Intelligence - Mobile Version */}
+              <div className="flex-none w-80 snap-start bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center mr-3">
+                    <Globe className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-lg font-light text-gray-900">{t.investmentFocus.supplyChain.title}</h3>
+                </div>
+                
+                <div className="space-y-4 text-gray-700">
+                  <div className="bg-gray-50 rounded-xl p-3">
+                    <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.supplyChain.marketOpportunity.title}</h4>
+                    <p className="text-xs leading-relaxed">
+                      {t.investmentFocus.supplyChain.marketOpportunity.description.slice(0, 120)}...
+                    </p>
+                  </div>
+                  
+                  <div className="bg-orange-50 rounded-xl p-3">
+                    <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.supplyChain.investmentPriorities.title}</h4>
+                    <ul className="space-y-1 text-xs">
+                      {t.investmentFocus.supplyChain.investmentPriorities.items.slice(0, 3).map((item, index) => (
+                        <li key={index}>• {item.slice(0, 40)}...</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bg-green-50 rounded-xl p-3">
+                    <h4 className="text-gray-900 font-medium mb-2 text-sm">Technology ROI</h4>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between p-2 bg-white rounded border">
+                        <span className="text-xs font-medium text-gray-900">Hassas Tarım</span>
+                        <span className="text-xs text-green-600 font-bold">350%</span>
+                      </div>
+                      <div className="flex items-center justify-between p-2 bg-white rounded border">
+                        <span className="text-xs font-medium text-gray-900">Akıllı Sulama</span>
+                        <span className="text-xs text-purple-600 font-bold">425%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Water-Food Nexus Solutions - Mobile Version */}
+              <div className="flex-none w-80 snap-start bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mr-3">
+                    <Droplets className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-lg font-light text-gray-900">{t.investmentFocus.waterFood.title}</h3>
+                </div>
+                
+                <div className="space-y-4 text-gray-700">
+                  <div className="bg-gray-50 rounded-xl p-3">
+                    <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.waterFood.marketOpportunity.title}</h4>
+                    <p className="text-xs leading-relaxed">
+                      {t.investmentFocus.waterFood.marketOpportunity.description.slice(0, 120)}...
+                    </p>
+                  </div>
+                  
+                  <div className="bg-cyan-50 rounded-xl p-3">
+                    <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.waterFood.investmentPriorities.title}</h4>
+                    <ul className="space-y-1 text-xs">
+                      {t.investmentFocus.waterFood.investmentPriorities.items.slice(0, 3).map((item, index) => (
+                        <li key={index}>• {item.slice(0, 40)}...</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bg-blue-50 rounded-xl p-3">
+                    <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.waterFood.efficiencyGains.title}</h4>
+                    <div className="grid grid-cols-2 gap-2 text-xs">
+                      <div className="text-center bg-white rounded-lg p-2 shadow-sm border border-cyan-200">
+                        <div className="text-sm font-bold text-cyan-600">{t.investmentFocus.waterFood.efficiencyGains.waterSavings}</div>
+                        <div className="text-xs">{t.investmentFocus.waterFood.efficiencyGains.waterSavingsLabel}</div>
+                      </div>
+                      <div className="text-center bg-white rounded-lg p-2 shadow-sm border border-blue-200">
+                        <div className="text-sm font-bold text-blue-600">{t.investmentFocus.waterFood.efficiencyGains.yieldIncrease}</div>
+                        <div className="text-xs">{t.investmentFocus.waterFood.efficiencyGains.yieldIncreaseLabel}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop version - keep existing */}
             {/* AgTech & Precision Farming */}
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
+            <div className="hidden xl:block bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mr-4">
-                  <Activity className="w-6 h-6 text-white" />
+                  <Wheat className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-2xl font-light text-gray-900">{t.investmentFocus.agTech.title}</h3>
               </div>
@@ -1208,249 +1604,94 @@ export default function FoodPage() {
                 </div>
               </div>
             </div>
-
-            {/* Alternative Protein Systems */}
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mr-4">
-                  <Microscope className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-light text-gray-900">{t.investmentFocus.alternativeProtein.title}</h3>
-              </div>
-              
-              <div className="space-y-6 text-gray-700">
-                <div className="bg-gray-50 rounded-xl p-4">
-                  <h4 className="text-gray-900 font-medium mb-3">{t.investmentFocus.alternativeProtein.marketOpportunity.title}</h4>
-                  <p className="text-sm leading-relaxed">
-                    {t.investmentFocus.alternativeProtein.marketOpportunity.description}
-                  </p>
-                </div>
-                
-                <div className="bg-blue-50 rounded-xl p-4">
-                  <h4 className="text-gray-900 font-medium mb-3">{t.investmentFocus.alternativeProtein.investmentPriorities.title}</h4>
-                  <ul className="space-y-2 text-sm">
-                    {t.investmentFocus.alternativeProtein.investmentPriorities.items.map((item, index) => (
-                      <li key={index}>• {item}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="bg-purple-50 rounded-xl p-4">
-                  <h4 className="text-gray-900 font-medium mb-3">{t.investmentFocus.alternativeProtein.impactProjections.title}</h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-                      <div className="text-2xl font-bold text-blue-600 mb-2">{t.investmentFocus.alternativeProtein.impactProjections.landUse}</div>
-                      <div className="text-sm font-medium text-gray-700">{t.investmentFocus.alternativeProtein.impactProjections.landUseLabel}</div>
-                      <div className="w-full bg-blue-100 rounded-full h-2 mt-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{width: '95%'}}></div>
-                      </div>
-                    </div>
-                    <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-                      <div className="text-2xl font-bold text-green-600 mb-2">{t.investmentFocus.alternativeProtein.impactProjections.emissions}</div>
-                      <div className="text-sm font-medium text-gray-700">{t.investmentFocus.alternativeProtein.impactProjections.emissionsLabel}</div>
-                      <div className="w-full bg-green-100 rounded-full h-2 mt-2">
-                        <div className="bg-green-500 h-2 rounded-full" style={{width: '78%'}}></div>
-                      </div>
-                    </div>
-                    <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-                      <div className="text-2xl font-bold text-cyan-600 mb-2">{t.investmentFocus.alternativeProtein.impactProjections.water}</div>
-                      <div className="text-sm font-medium text-gray-700">{t.investmentFocus.alternativeProtein.impactProjections.waterLabel}</div>
-                      <div className="w-full bg-cyan-100 rounded-full h-2 mt-2">
-                        <div className="bg-cyan-500 h-2 rounded-full" style={{width: '96%'}}></div>
-                      </div>
-                    </div>
-                    <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-                      <div className="text-2xl font-bold text-purple-600 mb-2">{t.investmentFocus.alternativeProtein.impactProjections.cost}</div>
-                      <div className="text-sm font-medium text-gray-700">{t.investmentFocus.alternativeProtein.impactProjections.costLabel}</div>
-                      <div className="w-full bg-purple-100 rounded-full h-2 mt-2">
-                        <div className="bg-purple-500 h-2 rounded-full" style={{width: '50%'}}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Supply Chain Intelligence */}
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center mr-4">
-                  <Globe className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-light text-gray-900">{t.investmentFocus.supplyChain.title}</h3>
-              </div>
-              
-              <div className="space-y-6 text-gray-700">
-                <div className="bg-gray-50 rounded-xl p-4">
-                  <h4 className="text-gray-900 font-medium mb-3">{t.investmentFocus.supplyChain.marketOpportunity.title}</h4>
-                  <p className="text-sm leading-relaxed">
-                    {t.investmentFocus.supplyChain.marketOpportunity.description}
-                  </p>
-                </div>
-                
-                <div className="bg-orange-50 rounded-xl p-4">
-                  <h4 className="text-gray-900 font-medium mb-3">{t.investmentFocus.supplyChain.investmentPriorities.title}</h4>
-                  <ul className="space-y-2 text-sm">
-                    {t.investmentFocus.supplyChain.investmentPriorities.items.map((item, index) => (
-                      <li key={index}>• {item}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="bg-green-50 rounded-xl p-4">
-                  <h4 className="text-gray-900 font-medium mb-3">Technology ROI Matrix</h4>
-                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                    <div className="space-y-3">
-                      {/* ROI Matrix - İyileştirilmiş tablo görünümü */}
-                      <div className="grid grid-cols-4 gap-2 text-xs font-semibold text-gray-600 pb-2 border-b border-gray-200">
-                        <div>Teknoloji</div>
-                        <div className="text-center">ROI</div>
-                        <div className="text-center">Risk</div>
-                        <div className="text-center">Durum</div>
-                      </div>
-                      
-                      <div className="grid grid-cols-4 gap-2 items-center p-3 bg-green-50 rounded-lg border border-green-200">
-                        <span className="font-medium text-gray-900 text-sm">Hassas Tarım</span>
-                        <div className="text-center">
-                          <span className="text-green-600 font-bold text-sm">350%</span>
-                        </div>
-                        <div className="text-center">
-                          <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">Düşük</span>
-                        </div>
-                        <div className="text-center">
-                          <span className="bg-green-500 text-white px-2 py-1 rounded text-xs">Aktif</span>
-                        </div>
-                      </div>
-                      
-                      <div className="grid grid-cols-4 gap-2 items-center p-3 bg-blue-50 rounded-lg border border-blue-200">
-                        <span className="font-medium text-gray-900 text-sm">{t.investmentFocus.supplyChain.technologyRoi.verticalFarming}</span>
-                        <div className="text-center">
-                          <span className="text-blue-600 font-bold text-sm">275%</span>
-                        </div>
-                        <div className="text-center">
-                          <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs">Orta</span>
-                        </div>
-                        <div className="text-center">
-                          <span className="bg-blue-500 text-white px-2 py-1 rounded text-xs">Pilot</span>
-                        </div>
-                      </div>
-                      
-                      <div className="grid grid-cols-4 gap-2 items-center p-3 bg-purple-50 rounded-lg border border-purple-200">
-                        <span className="font-medium text-gray-900 text-sm">{t.investmentFocus.supplyChain.technologyRoi.smartIrrigation}</span>
-                        <div className="text-center">
-                          <span className="text-purple-600 font-bold text-sm">425%</span>
-                        </div>
-                        <div className="text-center">
-                          <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">Düşük</span>
-                        </div>
-                        <div className="text-center">
-                          <span className="bg-purple-500 text-white px-2 py-1 rounded text-xs">Dağıtım</span>
-                        </div>
-                      </div>
-                      
-                      <div className="grid grid-cols-4 gap-2 items-center p-3 bg-orange-50 rounded-lg border border-orange-200">
-                        <span className="font-medium text-gray-900 text-sm">{t.investmentFocus.supplyChain.technologyRoi.blockchainSupply}</span>
-                        <div className="text-center">
-                          <span className="text-orange-600 font-bold text-sm">180%</span>
-                        </div>
-                        <div className="text-center">
-                          <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs">Orta</span>
-                        </div>
-                        <div className="text-center">
-                          <span className="bg-orange-500 text-white px-2 py-1 rounded text-xs">Test</span>
-                        </div>
-                      </div>
-                      
-                      <div className="grid grid-cols-4 gap-2 items-center p-3 bg-indigo-50 rounded-lg border border-indigo-200">
-                        <span className="font-medium text-gray-900 text-sm">{t.investmentFocus.supplyChain.technologyRoi.alternativeProteins}</span>
-                        <div className="text-center">
-                          <span className="text-indigo-600 font-bold text-sm">520%</span>
-                        </div>
-                        <div className="text-center">
-                          <span className="bg-red-100 text-red-700 px-2 py-1 rounded text-xs">Yüksek</span>
-                        </div>
-                        <div className="text-center">
-                          <span className="bg-indigo-500 text-white px-2 py-1 rounded text-xs">R&D</span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="mt-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400">
-                      <p className="text-sm text-gray-700">
-                        {t.investmentFocus.supplyChain.technologyRoi.foundationDescription}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Water-Food Nexus Solutions */}
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mr-4">
-                  <Droplets className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-light text-gray-900">{t.investmentFocus.waterFood.title}</h3>
-              </div>
-              
-              <div className="space-y-6 text-gray-700">
-                <div className="bg-gray-50 rounded-xl p-4">
-                  <h4 className="text-gray-900 font-medium mb-3">{t.investmentFocus.waterFood.marketOpportunity.title}</h4>
-                  <p className="text-sm leading-relaxed">
-                    {t.investmentFocus.waterFood.marketOpportunity.description}
-                  </p>
-                </div>
-                
-                <div className="bg-cyan-50 rounded-xl p-4">
-                  <h4 className="text-gray-900 font-medium mb-3">{t.investmentFocus.waterFood.investmentPriorities.title}</h4>
-                  <ul className="space-y-2 text-sm">
-                    {t.investmentFocus.waterFood.investmentPriorities.items.map((item, index) => (
-                      <li key={index}>• {item}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="bg-blue-50 rounded-xl p-4">
-                  <h4 className="text-gray-900 font-medium mb-3">{t.investmentFocus.waterFood.efficiencyGains.title}</h4>
-                  <div className="grid grid-cols-2 gap-3 text-xs">
-                    <div className="text-center bg-white rounded-lg p-3 shadow-sm border border-cyan-200">
-                      <div className="text-lg font-bold text-cyan-600">{t.investmentFocus.waterFood.efficiencyGains.waterSavings}</div>
-                      <div>{t.investmentFocus.waterFood.efficiencyGains.waterSavingsLabel}</div>
-                    </div>
-                    <div className="text-center bg-white rounded-lg p-3 shadow-sm border border-blue-200">
-                      <div className="text-lg font-bold text-blue-600">{t.investmentFocus.waterFood.efficiencyGains.yieldIncrease}</div>
-                      <div>{t.investmentFocus.waterFood.efficiencyGains.yieldIncreaseLabel}</div>
-                    </div>
-                    <div className="text-center bg-white rounded-lg p-3 shadow-sm border border-green-200">
-                      <div className="text-lg font-bold text-green-600">{t.investmentFocus.waterFood.efficiencyGains.energyReduction}</div>
-                      <div>{t.investmentFocus.waterFood.efficiencyGains.energyReductionLabel}</div>
-                    </div>
-                    <div className="text-center bg-white rounded-lg p-3 shadow-sm border border-purple-200">
-                      <div className="text-lg font-bold text-purple-600">{t.investmentFocus.waterFood.efficiencyGains.paybackPeriod}</div>
-                      <div>{t.investmentFocus.waterFood.efficiencyGains.paybackPeriodLabel}</div>
-                    </div>
-                  </div>
-                  <div className="mt-4 p-3 bg-cyan-100 rounded-lg border-l-4 border-cyan-400">
-                    <p className="text-sm text-cyan-800">
-                      {t.investmentFocus.waterFood.efficiencyGains.foundationNote}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Investment Philosophy & Portfolio Allocation */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 text-center text-white">
-            <h3 className="text-3xl font-light mb-6">{t.investmentFocus.investmentPhilosophy.title}</h3>
-            <p className="text-xl font-light leading-relaxed mb-8 text-gray-200 max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center text-white">
+            <h3 className="text-2xl sm:text-3xl font-light mb-4 sm:mb-6">{t.investmentFocus.investmentPhilosophy.title}</h3>
+            <p className="text-base sm:text-xl font-light leading-relaxed mb-6 sm:mb-8 text-gray-200 max-w-4xl mx-auto">
               {t.investmentFocus.investmentPhilosophy.subtitle}
             </p>
             
-            {/* Portfolio Allocation Matrix - İyileştirilmiş */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 mb-12">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+            {/* Portfolio Allocation Matrix - Mobile horizontal scroll */}
+            <div className="md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6 mt-8 sm:mt-12 mb-8 sm:mb-12">
+              {/* Mobile horizontal scroll */}
+              <div className="md:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+                <div className="flex-none w-64 snap-start bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-light text-green-400 mb-2 sm:mb-3">$75M</div>
+                    <div className="text-sm text-gray-300 mb-3 sm:mb-4 min-h-[30px] flex items-center justify-center">
+                      {t.investmentFocus.investmentPhilosophy.portfolioAllocation.agTech}
+                    </div>
+                    <div className="relative">
+                      <div className="w-full bg-gray-700 rounded-full h-2 sm:h-3 shadow-inner">
+                        <div 
+                          className="bg-gradient-to-r from-green-400 to-green-500 h-2 sm:h-3 rounded-full shadow-sm transition-all duration-1000 ease-out" 
+                          style={{width: '50%'}}
+                        ></div>
+                      </div>
+                      <div className="text-xs text-green-300 mt-1 font-medium">50% Portfolio</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="flex-none w-64 snap-start bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-light text-blue-400 mb-2 sm:mb-3">$45M</div>
+                    <div className="text-sm text-gray-300 mb-3 sm:mb-4 min-h-[30px] flex items-center justify-center">
+                      {t.investmentFocus.investmentPhilosophy.portfolioAllocation.alternativeProteins}
+                    </div>
+                    <div className="relative">
+                      <div className="w-full bg-gray-700 rounded-full h-2 sm:h-3 shadow-inner">
+                        <div 
+                          className="bg-gradient-to-r from-blue-400 to-blue-500 h-2 sm:h-3 rounded-full shadow-sm transition-all duration-1000 ease-out" 
+                          style={{width: '30%'}}
+                        ></div>
+                      </div>
+                      <div className="text-xs text-blue-300 mt-1 font-medium">30% Portfolio</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="flex-none w-64 snap-start bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-light text-orange-400 mb-2 sm:mb-3">$20M</div>
+                    <div className="text-sm text-gray-300 mb-3 sm:mb-4 min-h-[30px] flex items-center justify-center">
+                      {t.investmentFocus.investmentPhilosophy.portfolioAllocation.supplyChainTech}
+                    </div>
+                    <div className="relative">
+                      <div className="w-full bg-gray-700 rounded-full h-2 sm:h-3 shadow-inner">
+                        <div 
+                          className="bg-gradient-to-r from-orange-400 to-orange-500 h-2 sm:h-3 rounded-full shadow-sm transition-all duration-1000 ease-out" 
+                          style={{width: '13.3%'}}
+                        ></div>
+                      </div>
+                      <div className="text-xs text-orange-300 mt-1 font-medium">13.3% Portfolio</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="flex-none w-64 snap-start bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-light text-cyan-400 mb-2 sm:mb-3">$10M</div>
+                    <div className="text-sm text-gray-300 mb-3 sm:mb-4 min-h-[30px] flex items-center justify-center">
+                      {t.investmentFocus.investmentPhilosophy.portfolioAllocation.waterFoodNexus}
+                    </div>
+                    <div className="relative">
+                      <div className="w-full bg-gray-700 rounded-full h-2 sm:h-3 shadow-inner">
+                        <div 
+                          className="bg-gradient-to-r from-cyan-400 to-cyan-500 h-2 sm:h-3 rounded-full shadow-sm transition-all duration-1000 ease-out" 
+                          style={{width: '6.7%'}}
+                        ></div>
+                      </div>
+                      <div className="text-xs text-cyan-300 mt-1 font-medium">6.7% Portfolio</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Desktop grid */}
+              <div className="hidden md:block bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
                 <div className="text-center">
                   <div className="text-3xl font-light text-green-400 mb-3">$75M</div>
                   <div className="text-sm text-gray-300 mb-4 min-h-[40px] flex items-center justify-center">
@@ -1468,7 +1709,7 @@ export default function FoodPage() {
                 </div>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+              <div className="hidden md:block bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
                 <div className="text-center">
                   <div className="text-3xl font-light text-blue-400 mb-3">$45M</div>
                   <div className="text-sm text-gray-300 mb-4 min-h-[40px] flex items-center justify-center">
@@ -1486,7 +1727,7 @@ export default function FoodPage() {
                 </div>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+              <div className="hidden md:block bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
                 <div className="text-center">
                   <div className="text-3xl font-light text-orange-400 mb-3">$20M</div>
                   <div className="text-sm text-gray-300 mb-4 min-h-[40px] flex items-center justify-center">
@@ -1504,7 +1745,7 @@ export default function FoodPage() {
                 </div>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+              <div className="hidden md:block bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
                 <div className="text-center">
                   <div className="text-3xl font-light text-cyan-400 mb-3">$10M</div>
                   <div className="text-sm text-gray-300 mb-4 min-h-[40px] flex items-center justify-center">
@@ -1523,23 +1764,49 @@ export default function FoodPage() {
               </div>
             </div>
 
-            {/* Investment Metrics - İyileştirilmiş */}
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="text-center bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+            {/* Investment Metrics - Mobile horizontal scroll */}
+            <div className="md:grid md:grid-cols-3 md:gap-8 mb-8 sm:mb-12">
+              {/* Mobile horizontal scroll */}
+              <div className="md:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+                <div className="flex-none w-64 snap-start text-center bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                  <div className="text-3xl sm:text-4xl font-light text-green-400 mb-2 sm:mb-3">{t.investmentFocus.investmentPhilosophy.metrics.expectedIrr}</div>
+                  <div className="text-sm text-gray-300 mb-2">{t.investmentFocus.investmentPhilosophy.metrics.expectedIrrLabel}</div>
+                  <div className="w-full bg-gray-700 rounded-full h-2 mt-3">
+                    <div className="bg-green-400 h-2 rounded-full" style={{width: '75%'}}></div>
+                  </div>
+                </div>
+                <div className="flex-none w-64 snap-start text-center bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                  <div className="text-3xl sm:text-4xl font-light text-blue-400 mb-2 sm:mb-3">{t.investmentFocus.investmentPhilosophy.metrics.peopleImpacted}</div>
+                  <div className="text-sm text-gray-300 mb-2">{t.investmentFocus.investmentPhilosophy.metrics.peopleImpactedLabel}</div>
+                  <div className="w-full bg-gray-700 rounded-full h-2 mt-3">
+                    <div className="bg-blue-400 h-2 rounded-full" style={{width: '90%'}}></div>
+                  </div>
+                </div>
+                <div className="flex-none w-64 snap-start text-center bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                  <div className="text-3xl sm:text-4xl font-light text-purple-400 mb-2 sm:mb-3">{t.investmentFocus.investmentPhilosophy.metrics.totalMarket}</div>
+                  <div className="text-sm text-gray-300 mb-2">{t.investmentFocus.investmentPhilosophy.metrics.totalMarketLabel}</div>
+                  <div className="w-full bg-gray-700 rounded-full h-2 mt-3">
+                    <div className="bg-purple-400 h-2 rounded-full" style={{width: '65%'}}></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Desktop grid */}
+              <div className="hidden md:block text-center bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                 <div className="text-4xl font-light text-green-400 mb-3">{t.investmentFocus.investmentPhilosophy.metrics.expectedIrr}</div>
                 <div className="text-sm text-gray-300 mb-2">{t.investmentFocus.investmentPhilosophy.metrics.expectedIrrLabel}</div>
                 <div className="w-full bg-gray-700 rounded-full h-2 mt-3">
                   <div className="bg-green-400 h-2 rounded-full" style={{width: '75%'}}></div>
                 </div>
               </div>
-              <div className="text-center bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+              <div className="hidden md:block text-center bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                 <div className="text-4xl font-light text-blue-400 mb-3">{t.investmentFocus.investmentPhilosophy.metrics.peopleImpacted}</div>
                 <div className="text-sm text-gray-300 mb-2">{t.investmentFocus.investmentPhilosophy.metrics.peopleImpactedLabel}</div>
                 <div className="w-full bg-gray-700 rounded-full h-2 mt-3">
                   <div className="bg-blue-400 h-2 rounded-full" style={{width: '90%'}}></div>
                 </div>
               </div>
-              <div className="text-center bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+              <div className="hidden md:block text-center bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                 <div className="text-4xl font-light text-purple-400 mb-3">{t.investmentFocus.investmentPhilosophy.metrics.totalMarket}</div>
                 <div className="text-sm text-gray-300 mb-2">{t.investmentFocus.investmentPhilosophy.metrics.totalMarketLabel}</div>
                 <div className="w-full bg-gray-700 rounded-full h-2 mt-3">
@@ -1548,17 +1815,17 @@ export default function FoodPage() {
               </div>
             </div>
             
-            <div className="mt-12 pt-8 border-t border-gray-700">
-              <p className="text-lg font-light text-gray-300 italic mb-8">
+            <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-700">
+              <p className="text-base sm:text-lg font-light text-gray-300 italic mb-6 sm:mb-8">
                 {t.investmentFocus.investmentPhilosophy.quote}
               </p>
               
               {/* CTA Button for Funding Application */}
               <Link 
                 href="/funding"
-                className="inline-flex items-center px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-medium rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-green-600 hover:bg-green-700 text-white font-medium rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base"
               >
-                <Leaf className="w-5 h-5 mr-3" />
+                <Leaf className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
                 {t.investmentFocus.investmentPhilosophy.ctaButton}
               </Link>
             </div>
@@ -1567,20 +1834,111 @@ export default function FoodPage() {
       </section>
 
       {/* Water Scarcity Scientific Deep Dive - Foundation Focus */}
-      <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-12 mb-16">
-        <div className="text-center mb-12">
-          <Droplets className="w-16 h-16 text-blue-500 mx-auto mb-6" />
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+      <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl sm:rounded-3xl p-8 sm:p-12 mb-12 sm:mb-16">
+        <div className="text-center mb-8 sm:mb-12">
+          <Droplets className="w-12 h-12 sm:w-16 sm:h-16 text-blue-500 mx-auto mb-4 sm:mb-6" />
+          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
             {t.waterStats.waterScarcityDeepDive.title}
           </h2>
-          <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
             {t.waterStats.waterScarcityDeepDive.subtitle}
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        {/* Mobile horizontal scroll, Desktop grid */}
+        <div className="lg:grid lg:grid-cols-3 lg:gap-8">
+          {/* Mobile horizontal scroll container */}
+          <div className="lg:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+            {/* Breakthrough Technologies - Mobile */}
+            <div className="flex-none w-72 snap-start bg-white rounded-xl p-4 shadow-lg border border-blue-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                <Microscope className="w-5 h-5 mr-2 text-green-500" />
+                {t.waterStats.waterScarcityDeepDive.technologiesWeSupport.title}
+              </h3>
+              <div className="space-y-3">
+                <div className="border-l-4 border-green-500 pl-2 bg-green-50 rounded-r-lg p-2">
+                  <h4 className="font-bold text-green-700 text-sm">{t.waterStats.waterScarcityDeepDive.technologiesWeSupport.atmosphericWater.title}</h4>
+                  <p className="text-xs text-gray-600 mt-1">
+                    {t.waterStats.waterScarcityDeepDive.technologiesWeSupport.atmosphericWater.description.slice(0, 80)}...
+                  </p>
+                  <div className="text-xs text-green-600 mt-1 font-medium">{t.waterStats.waterScarcityDeepDive.technologiesWeSupport.atmosphericWater.status}</div>
+                </div>
+                <div className="border-l-4 border-blue-500 pl-2 bg-blue-50 rounded-r-lg p-2">
+                  <h4 className="font-bold text-blue-700 text-sm">{t.waterStats.waterScarcityDeepDive.technologiesWeSupport.grapheneMembranes.title}</h4>
+                  <p className="text-xs text-gray-600 mt-1">
+                    {t.waterStats.waterScarcityDeepDive.technologiesWeSupport.grapheneMembranes.description.slice(0, 80)}...
+                  </p>
+                  <div className="text-xs text-blue-600 mt-1 font-medium">{t.waterStats.waterScarcityDeepDive.technologiesWeSupport.grapheneMembranes.status}</div>
+                </div>
+                <div className="border-l-4 border-purple-500 pl-2 bg-purple-50 rounded-r-lg p-2">
+                  <h4 className="font-bold text-purple-700 text-sm">{t.waterStats.waterScarcityDeepDive.technologiesWeSupport.aiAquifer.title}</h4>
+                  <p className="text-xs text-gray-600 mt-1">
+                    {t.waterStats.waterScarcityDeepDive.technologiesWeSupport.aiAquifer.description.slice(0, 80)}...
+                  </p>
+                  <div className="text-xs text-purple-600 mt-1 font-medium">{t.waterStats.waterScarcityDeepDive.technologiesWeSupport.aiAquifer.status}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Thermodynamic Analysis - Mobile */}
+            <div className="flex-none w-72 snap-start bg-gradient-to-br from-indigo-100 to-blue-100 rounded-xl p-4 shadow-lg border border-indigo-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                <Beaker className="w-5 h-5 mr-2 text-indigo-500" />
+                {t.waterStats.waterScarcityDeepDive.scientificResearch.title}
+              </h3>
+              <div className="space-y-2">
+                <div className="bg-white/80 rounded-lg p-2">
+                  <h4 className="font-bold text-indigo-700 text-sm">{t.waterStats.waterScarcityDeepDive.scientificResearch.gibbsFreeEnergy.title}</h4>
+                  <p className="text-xs text-gray-700">
+                    {t.waterStats.waterScarcityDeepDive.scientificResearch.gibbsFreeEnergy.description.slice(0, 80)}...
+                  </p>
+                </div>
+                <div className="bg-white/80 rounded-lg p-2">
+                  <h4 className="font-bold text-blue-700 text-sm">{t.waterStats.waterScarcityDeepDive.scientificResearch.osmoticPressure.title}</h4>
+                  <p className="text-xs text-gray-700">
+                    {t.waterStats.waterScarcityDeepDive.scientificResearch.osmoticPressure.description.slice(0, 80)}...
+                  </p>
+                </div>
+                <div className="bg-white/80 rounded-lg p-2">
+                  <h4 className="font-bold text-cyan-700 text-sm">{t.waterStats.waterScarcityDeepDive.scientificResearch.quantumSolutions.title}</h4>
+                  <p className="text-xs text-gray-700">
+                    {t.waterStats.waterScarcityDeepDive.scientificResearch.quantumSolutions.description.slice(0, 80)}...
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Implementation Matrix - Mobile */}
+            <div className="flex-none w-72 snap-start bg-white rounded-xl p-4 shadow-lg border border-orange-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                <Factory className="w-5 h-5 mr-2 text-orange-500" />
+                {t.waterStats.waterScarcityDeepDive.investmentStatus.title}
+              </h3>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center p-2 bg-green-50 rounded-lg border border-green-200">
+                  <span className="text-xs font-medium text-gray-800">{t.waterStats.waterScarcityDeepDive.investmentStatus.solarDesalination.name}</span>
+                  <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold">{t.waterStats.waterScarcityDeepDive.investmentStatus.solarDesalination.status}</span>
+                </div>
+                <div className="flex justify-between items-center p-2 bg-blue-50 rounded-lg border border-blue-200">
+                  <span className="text-xs font-medium text-gray-800">{t.waterStats.waterScarcityDeepDive.investmentStatus.smartWells.name}</span>
+                  <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-bold">{t.waterStats.waterScarcityDeepDive.investmentStatus.smartWells.status}</span>
+                </div>
+                <div className="flex justify-between items-center p-2 bg-purple-50 rounded-lg border border-purple-200">
+                  <span className="text-xs font-medium text-gray-800">{t.waterStats.waterScarcityDeepDive.investmentStatus.waterAtms.name}</span>
+                  <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-bold">{t.waterStats.waterScarcityDeepDive.investmentStatus.waterAtms.status}</span>
+                </div>
+              </div>
+              <div className="mt-3 p-2 bg-orange-50 rounded-lg border-l-4 border-orange-400">
+                <p className="text-xs text-orange-800">
+                  <strong>{t.waterStats.waterScarcityDeepDive.investmentStatus.goal2030}</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop version - keep existing */}
           {/* Breakthrough Technologies */}
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-blue-200">
+          <div className="hidden lg:block bg-white rounded-2xl p-6 shadow-lg border border-blue-200">
             <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
               <Microscope className="w-6 h-6 mr-3 text-green-500" />
               {t.waterStats.waterScarcityDeepDive.technologiesWeSupport.title}
@@ -1611,7 +1969,7 @@ export default function FoodPage() {
           </div>
 
           {/* Thermodynamic Analysis */}
-          <div className="bg-gradient-to-br from-indigo-100 to-blue-100 rounded-2xl p-6 shadow-lg border border-indigo-200">
+          <div className="hidden lg:block bg-gradient-to-br from-indigo-100 to-blue-100 rounded-2xl p-6 shadow-lg border border-indigo-200">
             <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
               <Beaker className="w-6 h-6 mr-3 text-indigo-500" />
               {t.waterStats.waterScarcityDeepDive.scientificResearch.title}
@@ -1639,7 +1997,7 @@ export default function FoodPage() {
           </div>
 
           {/* Implementation Matrix */}
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-orange-200">
+          <div className="hidden lg:block bg-white rounded-2xl p-6 shadow-lg border border-orange-200">
             <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
               <Factory className="w-6 h-6 mr-3 text-orange-500" />
               {t.waterStats.waterScarcityDeepDive.investmentStatus.title}
