@@ -258,7 +258,7 @@ const ScrollExpandMedia = ({
       {/* Content Container */}
       <div ref={containerRef} className="relative z-30">
         {/* Hero Section */}
-        <div className="min-h-screen flex flex-col items-center justify-center px-4 relative overflow-hidden">
+        <div className="min-h-screen flex flex-col items-center justify-center px-8 md:px-6 relative overflow-hidden">
           {/* Background Image - Now absolute within hero section */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-300"
@@ -364,29 +364,31 @@ const ScrollExpandMedia = ({
           
           {/* Text Content - Video'nun üzerine ortalanmış */}
           <div 
-            className={`absolute inset-0 flex flex-col items-center justify-center text-center text-white transition-opacity duration-300 z-10 ${
+            className={`absolute inset-0 flex flex-col items-center justify-center text-center text-white transition-opacity duration-300 z-10 px-8 ${
               textBlend ? 'mix-blend-difference' : ''
             }`}
             style={{ opacity: opacity }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-              {title}
-            </h1>
-            <p className="text-xl md:text-2xl mb-2 opacity-80 drop-shadow-lg">
-              {date}
-            </p>
-            <p className="text-lg opacity-60 drop-shadow-lg mb-6">
-              {scrollToExpand}
-            </p>
-            
-            {/* Manifesto Butonu - Scroll yazısının altında */}
-            <button
-              onClick={handleManifestoClick}
-              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl font-medium tracking-wide"
-              style={{ opacity: opacity }}
-            >
-              {manifestoButtonText}
-            </button>
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-3xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+                {title}
+              </h1>
+              <p className="text-lg md:text-2xl mb-2 opacity-80 drop-shadow-lg">
+                {date}
+              </p>
+              <p className="text-base opacity-60 drop-shadow-lg mb-6">
+                {scrollToExpand}
+              </p>
+              
+              {/* Manifesto Butonu - Scroll yazısının altında */}
+              <button
+                onClick={handleManifestoClick}
+                className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl font-medium tracking-wide"
+                style={{ opacity: opacity }}
+              >
+                {manifestoButtonText}
+              </button>
+            </div>
           </div>
           
           {/* Scroll Indicator */}

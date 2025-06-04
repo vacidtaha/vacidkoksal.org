@@ -533,20 +533,20 @@ export default function FAQPage() {
       {/* Main content */}
       <main className="flex-1">
         <section className="py-24 md:py-32">
-          <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+          <div className="container mx-auto px-6 md:px-6 lg:px-8 max-w-7xl">
             {/* Header Section */}
             <div className="text-center mb-20">
               <Badge className="text-sm font-medium mb-6 px-6 py-2">{currentContent.badge}</Badge>
-              <h1 className="text-5xl md:text-7xl font-bold mb-8 font-[family-name:var(--font-inter)] text-gray-900 leading-tight">
+              <h1 className="text-4xl md:text-7xl font-bold mb-8 font-[family-name:var(--font-inter)] text-gray-900 leading-tight px-4">
                 {currentContent.title}
               </h1>
-              <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-[family-name:var(--font-inter)]">
+              <p className="text-lg md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-[family-name:var(--font-inter)] px-4">
                 {currentContent.subtitle}
               </p>
             </div>
 
             {/* Category Tabs */}
-            <div className="flex flex-wrap justify-center gap-4 mb-16">
+            <div className="flex flex-wrap justify-center gap-4 mb-16 px-4">
               {faqCategories.map((category) => (
                 <button
                   key={category.id}
@@ -554,7 +554,7 @@ export default function FAQPage() {
                     setSelectedCategory(category.id);
                     setExpandedQuestion(null); // Reset expanded question when changing category
                   }}
-                  className={`px-6 py-3 rounded-full transition-all duration-300 font-medium ${
+                  className={`px-4 md:px-6 py-3 rounded-full transition-all duration-300 font-medium text-sm md:text-base ${
                     selectedCategory === category.id
                       ? 'bg-blue-600 text-white shadow-lg'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -566,7 +566,7 @@ export default function FAQPage() {
             </div>
 
             {/* FAQ Content */}
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto px-4">
               {faqCategories
                 .filter(category => category.id === selectedCategory)
                 .map((category) => (
@@ -575,20 +575,20 @@ export default function FAQPage() {
                       <div key={index} className="border border-gray-200 rounded-2xl overflow-hidden">
                         <button
                           onClick={() => toggleQuestion(index)}
-                          className="w-full px-8 py-6 text-left hover:bg-gray-50 transition-colors duration-200 flex justify-between items-start"
+                          className="w-full px-6 md:px-8 py-6 text-left hover:bg-gray-50 transition-colors duration-200 flex justify-between items-start"
                         >
-                          <h3 className="text-lg font-semibold text-gray-900 leading-tight pr-4">
+                          <h3 className="text-base md:text-lg font-semibold text-gray-900 leading-tight pr-4">
                             {faq.question}
                           </h3>
-                          <span className={`flex-shrink-0 text-2xl text-blue-600 transition-transform duration-200 ${
+                          <span className={`flex-shrink-0 text-xl md:text-2xl text-blue-600 transition-transform duration-200 ${
                             expandedQuestion === index ? 'rotate-45' : ''
                           }`}>
                             +
                           </span>
                         </button>
                         {expandedQuestion === index && (
-                          <div className="px-8 pb-6 border-t border-gray-100">
-                            <p className="text-gray-700 leading-relaxed pt-4">
+                          <div className="px-6 md:px-8 pb-6 border-t border-gray-100">
+                            <p className="text-sm md:text-base text-gray-700 leading-relaxed pt-4">
                               {faq.answer}
                             </p>
                           </div>
@@ -601,23 +601,23 @@ export default function FAQPage() {
             </div>
 
             {/* Contact CTA */}
-            <div className="text-center mt-20 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-12 border border-blue-100">
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">
+            <div className="text-center mt-16 md:mt-20 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-6 md:p-12 border border-blue-100 mx-4">
+              <h3 className="text-xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 px-4">
                 {currentContent.notFound}
               </h3>
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              <p className="text-sm md:text-xl text-gray-600 mb-6 md:mb-8 max-w-2xl mx-auto px-4">
                 {currentContent.notFoundDesc}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
                 <Link 
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors font-semibold"
+                  className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors font-semibold text-sm md:text-base"
                 >
                   {currentContent.getInTouch}
                 </Link>
                 <Link 
                   href="/funding"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 border-2 border-blue-600 rounded-xl hover:bg-blue-50 transition-colors font-semibold"
+                  className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-white text-blue-600 border-2 border-blue-600 rounded-xl hover:bg-blue-50 transition-colors font-semibold text-sm md:text-base"
                 >
                   {currentContent.submitProject}
                 </Link>

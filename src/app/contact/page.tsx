@@ -121,54 +121,32 @@ const countries = [
 ];
 
 function CountrySelector({ selectedCountry, onCountryChange, isTurkish }: CountrySelectorProps) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleSelect = (country: Country) => {
-    onCountryChange(country);
-    setIsOpen(false);
+  const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedCode = event.target.value;
+    const country = countries.find(c => c.code === selectedCode);
+    if (country) {
+      onCountryChange(country);
+    }
   };
 
   return (
     <div className="relative">
-      <button
-        type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full px-6 py-4 bg-white border-0 rounded-2xl text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm min-w-[200px] hover:bg-gray-50"
+      <select
+        value={selectedCountry.code}
+        onChange={handleSelect}
+        className="w-full px-2 md:px-6 py-2 md:py-4 bg-white border-0 rounded-xl md:rounded-2xl text-sm md:text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm appearance-none cursor-pointer"
       >
-        <div className="flex items-center space-x-3">
-          <span className="text-2xl">{selectedCountry.flag}</span>
-          <span className="font-medium">{selectedCountry.code}</span>
-        </div>
-        <svg 
-          className={`w-5 h-5 text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
+        {countries.map((country) => (
+          <option key={`${country.code}-${country.name}`} value={country.code}>
+            {country.flag} {country.code}
+          </option>
+        ))}
+      </select>
+      <div className="absolute inset-y-0 right-2 md:right-6 flex items-center pointer-events-none">
+        <svg className="w-3 h-3 md:w-6 md:h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
         </svg>
-      </button>
-
-      {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-xl border border-gray-100 z-50 max-h-80 overflow-hidden">
-          <div className="max-h-80 overflow-y-auto">
-            {countries.map((country) => (
-              <button
-                key={`${country.code}-${country.name}`}
-                type="button"
-                onClick={() => handleSelect(country)}
-                className="w-full flex items-center space-x-4 px-6 py-3 hover:bg-gray-50 transition-colors text-left"
-              >
-                <span className="text-2xl">{country.flag}</span>
-                <div className="flex-1">
-                  <div className="font-medium text-gray-900">{country.name}</div>
-                  <div className="text-sm text-gray-500">{country.code}</div>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
+      </div>
     </div>
   );
 }
@@ -365,13 +343,13 @@ export default function Contact() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* Contact Hero Section */}
-      <section className="w-full py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 font-[family-name:var(--font-inter)]">
+      <section className="w-full py-12 md:py-24 bg-white">
+        <div className="container mx-auto px-6 md:px-6 lg:px-8 max-w-6xl">
+          <div className="text-center mb-8 md:mb-16">
+            <h1 className="text-2xl md:text-6xl font-bold mb-3 md:mb-6 font-[family-name:var(--font-inter)] px-4">
               {currentContent.hero.title}
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
               {currentContent.hero.subtitle}
             </p>
           </div>
@@ -379,81 +357,83 @@ export default function Contact() {
       </section>
 
       {/* Contact Cards */}
-      <section className="w-full py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl space-y-12">
+      <section className="w-full py-8 md:py-16">
+        <div className="container mx-auto px-6 md:px-6 lg:px-8 max-w-7xl space-y-6 md:space-y-12">
           
           {/* Contact Form Card */}
-          <div className="rounded-3xl overflow-hidden bg-gray-100 shadow-sm">
-            <div className="p-12 md:p-16">
+          <div className="rounded-2xl md:rounded-3xl overflow-hidden bg-gray-100 shadow-sm mx-4">
+            <div className="p-4 md:p-16">
               <div className="max-w-3xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 font-[family-name:var(--font-inter)] text-center">
+                <h2 className="text-lg md:text-4xl font-bold mb-4 md:mb-8 font-[family-name:var(--font-inter)] text-center">
                   {currentContent.form.title}
                 </h2>
                 
-                <form className="space-y-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <form className="space-y-4 md:space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                     <div>
-                      <label className="block text-lg font-medium text-gray-900 mb-3">
+                      <label className="block text-sm md:text-lg font-medium text-gray-900 mb-1 md:mb-3">
                         {currentContent.form.firstName}
                       </label>
                       <input
                         type="text"
                         required
-                        className="w-full px-6 py-4 bg-white border-0 rounded-2xl text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm"
+                        className="w-full px-3 md:px-6 py-2 md:py-4 bg-white border-0 rounded-xl md:rounded-2xl text-sm md:text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm"
                         placeholder={currentContent.form.firstNamePlaceholder}
                       />
                     </div>
                     <div>
-                      <label className="block text-lg font-medium text-gray-900 mb-3">
+                      <label className="block text-sm md:text-lg font-medium text-gray-900 mb-1 md:mb-3">
                         {currentContent.form.lastName}
                       </label>
                       <input
                         type="text"
                         required
-                        className="w-full px-6 py-4 bg-white border-0 rounded-2xl text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm"
+                        className="w-full px-3 md:px-6 py-2 md:py-4 bg-white border-0 rounded-xl md:rounded-2xl text-sm md:text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm"
                         placeholder={currentContent.form.lastNamePlaceholder}
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-lg font-medium text-gray-900 mb-3">
+                    <label className="block text-sm md:text-lg font-medium text-gray-900 mb-1 md:mb-3">
                       {currentContent.form.email}
                     </label>
                     <input
                       type="email"
                       required
-                      className="w-full px-6 py-4 bg-white border-0 rounded-2xl text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm"
+                      className="w-full px-3 md:px-6 py-2 md:py-4 bg-white border-0 rounded-xl md:rounded-2xl text-sm md:text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm"
                       placeholder={currentContent.form.emailPlaceholder}
                     />
                   </div>
 
                   <div>
-                    <label className="block text-lg font-medium text-gray-900 mb-3">
+                    <label className="block text-sm md:text-lg font-medium text-gray-900 mb-1 md:mb-3">
                       {currentContent.form.phone}
                     </label>
-                    <div className="flex space-x-4">
-                      <CountrySelector 
-                        selectedCountry={selectedCountry}
-                        onCountryChange={setSelectedCountry}
-                        isTurkish={isTurkish}
-                      />
+                    <div className="flex space-x-2 md:space-x-4">
+                      <div className="w-28 md:w-auto flex-shrink-0">
+                        <CountrySelector 
+                          selectedCountry={selectedCountry}
+                          onCountryChange={setSelectedCountry}
+                          isTurkish={isTurkish}
+                        />
+                      </div>
                       <input
                         type="tel"
-                        className="flex-1 px-6 py-4 bg-white border-0 rounded-2xl text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm"
+                        className="flex-1 px-2 md:px-6 py-2 md:py-4 bg-white border-0 rounded-xl md:rounded-2xl text-sm md:text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm"
                         placeholder={currentContent.form.phonePlaceholder}
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-lg font-medium text-gray-900 mb-3">
+                    <label className="block text-sm md:text-lg font-medium text-gray-900 mb-1 md:mb-3">
                       {currentContent.form.subject}
                     </label>
                     <div className="relative">
                       <select
                         required
-                        className="w-full px-6 py-4 bg-white border-0 rounded-2xl text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm appearance-none cursor-pointer"
+                        className="w-full px-3 md:px-6 py-2 md:py-4 bg-white border-0 rounded-xl md:rounded-2xl text-sm md:text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm appearance-none cursor-pointer"
                       >
                         <option value="" className="text-gray-400">{currentContent.form.subjectPlaceholder}</option>
                         <option value="general">{currentContent.form.subjectOptions.general}</option>
@@ -467,8 +447,8 @@ export default function Contact() {
                         <option value="donation">{currentContent.form.subjectOptions.donation}</option>
                         <option value="career">{currentContent.form.subjectOptions.career}</option>
                       </select>
-                      <div className="absolute inset-y-0 right-6 flex items-center pointer-events-none">
-                        <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="absolute inset-y-0 right-3 md:right-6 flex items-center pointer-events-none">
+                        <svg className="w-4 h-4 md:w-6 md:h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                         </svg>
                       </div>
@@ -476,21 +456,21 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-lg font-medium text-gray-900 mb-3">
+                    <label className="block text-sm md:text-lg font-medium text-gray-900 mb-1 md:mb-3">
                       {currentContent.form.message}
                     </label>
                     <textarea
-                      rows={6}
+                      rows={4}
                       required
-                      className="w-full px-6 py-4 bg-white border-0 rounded-2xl text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm resize-none"
+                      className="w-full px-3 md:px-6 py-2 md:py-4 bg-white border-0 rounded-xl md:rounded-2xl text-sm md:text-lg focus:ring-2 focus:ring-gray-400 transition-all shadow-sm resize-none"
                       placeholder={currentContent.form.messagePlaceholder}
                     ></textarea>
                   </div>
 
-                  <div className="text-center pt-4">
+                  <div className="text-center pt-2 md:pt-4">
                     <button
                       type="submit"
-                      className="bg-gray-900 text-white py-4 px-12 rounded-2xl text-lg font-medium hover:bg-gray-800 transition-colors shadow-lg"
+                      className="bg-gray-900 text-white py-2 md:py-4 px-6 md:px-12 rounded-xl md:rounded-2xl text-sm md:text-lg font-medium hover:bg-gray-800 transition-colors shadow-lg"
                     >
                       {currentContent.form.submit}
                     </button>
@@ -501,67 +481,67 @@ export default function Contact() {
           </div>
 
           {/* Contact Information Card */}
-          <div className="rounded-3xl overflow-hidden bg-gray-100 shadow-sm">
-            <div className="p-12 md:p-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 font-[family-name:var(--font-inter)] text-center">
+          <div className="rounded-2xl md:rounded-3xl overflow-hidden bg-gray-100 shadow-sm mx-4">
+            <div className="p-4 md:p-16">
+              <h2 className="text-lg md:text-4xl font-bold mb-4 md:mb-12 font-[family-name:var(--font-inter)] text-center">
                 {currentContent.contactInfo.title}
               </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-12">
                 {/* Email */}
-                <div className="flex items-start space-x-6">
-                  <div className="w-16 h-16 bg-blue-100 rounded-3xl flex items-center justify-center flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8 text-blue-600">
+                <div className="flex flex-col md:flex-row items-start space-y-2 md:space-y-0 md:space-x-6">
+                  <div className="w-8 h-8 md:w-16 md:h-16 bg-blue-100 rounded-2xl md:rounded-3xl flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 md:w-8 md:h-8 text-blue-600">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{currentContent.contactInfo.email}</h3>
-                    <p className="text-lg text-gray-700 mb-1">info@vacidkoksal.org</p>
-                    <p className="text-lg text-gray-700">contact@vacidkoksal.org</p>
+                    <h3 className="text-sm md:text-xl font-bold text-gray-900 mb-1 md:mb-3">{currentContent.contactInfo.email}</h3>
+                    <p className="text-xs md:text-lg text-gray-700 mb-1 break-all">info@vacidkoksal.org</p>
+                    <p className="text-xs md:text-lg text-gray-700 break-all">contact@vacidkoksal.org</p>
                   </div>
                 </div>
 
                 {/* Phone */}
-                <div className="flex items-start space-x-6">
-                  <div className="w-16 h-16 bg-green-100 rounded-3xl flex items-center justify-center flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8 text-green-600">
+                <div className="flex flex-col md:flex-row items-start space-y-2 md:space-y-0 md:space-x-6">
+                  <div className="w-8 h-8 md:w-16 md:h-16 bg-green-100 rounded-2xl md:rounded-3xl flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 md:w-8 md:h-8 text-green-600">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{currentContent.contactInfo.phone}</h3>
-                    <p className="text-lg text-gray-700 mb-1">+90 532 241 1739</p>
-                    <p className="text-lg text-gray-700">+90 534 731 91 99</p>
+                    <h3 className="text-sm md:text-xl font-bold text-gray-900 mb-1 md:mb-3">{currentContent.contactInfo.phone}</h3>
+                    <p className="text-xs md:text-lg text-gray-700 mb-1">+90 532 241 1739</p>
+                    <p className="text-xs md:text-lg text-gray-700">+90 534 731 91 99</p>
                   </div>
                 </div>
 
                 {/* Office */}
-                <div className="flex items-start space-x-6">
-                  <div className="w-16 h-16 bg-purple-100 rounded-3xl flex items-center justify-center flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8 text-purple-600">
+                <div className="flex flex-col md:flex-row items-start space-y-2 md:space-y-0 md:space-x-6">
+                  <div className="w-8 h-8 md:w-16 md:h-16 bg-purple-100 rounded-2xl md:rounded-3xl flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 md:w-8 md:h-8 text-purple-600">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{currentContent.contactInfo.office}</h3>
-                    <p className="text-lg text-gray-700 whitespace-pre-line">
+                    <h3 className="text-sm md:text-xl font-bold text-gray-900 mb-1 md:mb-3">{currentContent.contactInfo.office}</h3>
+                    <p className="text-xs md:text-lg text-gray-700 whitespace-pre-line leading-tight">
                       {currentContent.contactInfo.address}
                     </p>
                   </div>
                 </div>
 
                 {/* Business Hours */}
-                <div className="flex items-start space-x-6">
-                  <div className="w-16 h-16 bg-orange-100 rounded-3xl flex items-center justify-center flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8 text-orange-600">
+                <div className="flex flex-col md:flex-row items-start space-y-2 md:space-y-0 md:space-x-6">
+                  <div className="w-8 h-8 md:w-16 md:h-16 bg-orange-100 rounded-2xl md:rounded-3xl flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 md:w-8 md:h-8 text-orange-600">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{currentContent.contactInfo.businessHours}</h3>
-                    <p className="text-lg text-gray-700 whitespace-pre-line">
+                    <h3 className="text-sm md:text-xl font-bold text-gray-900 mb-1 md:mb-3">{currentContent.contactInfo.businessHours}</h3>
+                    <p className="text-xs md:text-lg text-gray-700 whitespace-pre-line leading-tight">
                       {currentContent.contactInfo.hours}
                     </p>
                   </div>
@@ -571,29 +551,29 @@ export default function Contact() {
           </div>
 
           {/* Quick Contact Card */}
-          <div className="rounded-3xl overflow-hidden bg-gray-100 shadow-sm">
-            <div className="p-12 md:p-16 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 font-[family-name:var(--font-inter)]">
+          <div className="rounded-2xl md:rounded-3xl overflow-hidden bg-gray-100 shadow-sm mx-4">
+            <div className="p-4 md:p-16 text-center">
+              <h2 className="text-lg md:text-4xl font-bold mb-3 md:mb-8 font-[family-name:var(--font-inter)]">
                 {currentContent.quickContact.title}
               </h2>
-              <p className="text-xl text-gray-700 mb-12 max-w-2xl mx-auto">
+              <p className="text-sm md:text-xl text-gray-700 mb-6 md:mb-12 max-w-2xl mx-auto">
                 {currentContent.quickContact.subtitle}
               </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-6 justify-center">
                 <a 
                   href="tel:+905322411739"
-                  className="bg-gray-900 text-white px-8 py-4 rounded-2xl text-lg font-medium hover:bg-gray-800 transition-colors shadow-lg inline-flex items-center justify-center space-x-3"
+                  className="bg-gray-900 text-white px-4 md:px-8 py-2 md:py-4 rounded-xl md:rounded-2xl text-sm md:text-lg font-medium hover:bg-gray-800 transition-colors shadow-lg inline-flex items-center justify-center space-x-2 md:space-x-3"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 md:w-6 md:h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                   </svg>
                   <span>{currentContent.quickContact.callNow}</span>
                 </a>
                 <a 
                   href="mailto:urgent@vacidkoksal.org"
-                  className="bg-white text-gray-900 px-8 py-4 rounded-2xl text-lg font-medium hover:bg-gray-50 transition-colors shadow-lg border-2 border-gray-200 inline-flex items-center justify-center space-x-3"
+                  className="bg-white text-gray-900 px-4 md:px-8 py-2 md:py-4 rounded-xl md:rounded-2xl text-sm md:text-lg font-medium hover:bg-gray-50 transition-colors shadow-lg border-2 border-gray-200 inline-flex items-center justify-center space-x-2 md:space-x-3"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 md:w-6 md:h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                   </svg>
                   <span>{currentContent.quickContact.sendEmail}</span>
