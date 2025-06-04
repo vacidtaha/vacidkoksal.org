@@ -595,21 +595,21 @@ export default function KnowledgePage() {
         </div>
         
         {/* Hero Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <div className="mb-12">
-            <BookOpen className="w-12 h-12 mx-auto text-indigo-400 mb-8" />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+          <div className="mb-6 sm:mb-12">
+            <BookOpen className="w-8 h-8 sm:w-12 sm:h-12 mx-auto text-indigo-400 mb-4 sm:mb-8" />
           </div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extralight mb-12 leading-tight text-gray-900">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight mb-6 sm:mb-12 leading-tight text-gray-900">
             {t.hero.title1}
-            <span className="block font-light text-indigo-600 mt-4">
+            <span className="block font-light text-indigo-600 mt-2 sm:mt-4">
               {t.hero.title2}
             </span>
           </h1>
           <div className="max-w-4xl mx-auto">
-            <p className="text-2xl md:text-3xl font-light text-gray-600 leading-relaxed mb-8">
+            <p className="text-lg sm:text-2xl md:text-3xl font-light text-gray-600 leading-relaxed mb-4 sm:mb-8">
               {t.hero.subtitle1}
             </p>
-            <p className="text-xl md:text-2xl font-light text-gray-500 leading-relaxed">
+            <p className="text-base sm:text-xl md:text-2xl font-light text-gray-500 leading-relaxed">
               {t.hero.subtitle2}
             </p>
           </div>
@@ -617,57 +617,57 @@ export default function KnowledgePage() {
       </section>
 
       {/* Mission Statement */}
-      <section className="py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-extralight text-gray-900 mb-12 leading-tight">
+      <section className="py-16 sm:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-20">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight text-gray-900 mb-6 sm:mb-12 leading-tight">
               {t.mission.title}
-              <span className="block text-3xl md:text-4xl font-light text-indigo-600 mt-6">
+              <span className="block text-xl sm:text-3xl md:text-4xl font-light text-indigo-600 mt-3 sm:mt-6">
                 {t.mission.subtitle}
               </span>
             </h2>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-20 items-start">
-            <div className="space-y-10">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-20 items-start">
+            <div className="space-y-6 sm:space-y-10">
               <div>
-                <h3 className="text-2xl font-light text-gray-900 mb-6">{t.mission.section1.title}</h3>
-                <p className="text-lg font-light text-gray-600 leading-relaxed">
+                <h3 className="text-lg sm:text-2xl font-light text-gray-900 mb-3 sm:mb-6">{t.mission.section1.title}</h3>
+                <p className="text-sm sm:text-lg font-light text-gray-600 leading-relaxed">
                   {t.mission.section1.content}
                 </p>
               </div>
               
               <div>
-                <h3 className="text-2xl font-light text-gray-900 mb-6">{t.mission.section2.title}</h3>
-                <p className="text-lg font-light text-gray-600 leading-relaxed">
+                <h3 className="text-lg sm:text-2xl font-light text-gray-900 mb-3 sm:mb-6">{t.mission.section2.title}</h3>
+                <p className="text-sm sm:text-lg font-light text-gray-600 leading-relaxed">
                   {t.mission.section2.content}
                 </p>
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl p-12 border border-indigo-100">
-              <div className="space-y-8">
-                <div className="flex items-start space-x-4">
-                  <Brain className="w-6 h-6 text-indigo-500 mt-1 flex-shrink-0" />
+            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl sm:rounded-3xl p-6 sm:p-12 border border-indigo-100">
+              <div className="space-y-4 sm:space-y-8">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-normal text-gray-900 mb-2">{t.mission.features.ai.title}</h4>
-                    <p className="text-gray-600 font-light">{t.mission.features.ai.description}</p>
+                    <h4 className="text-base sm:text-lg font-normal text-gray-900 mb-1 sm:mb-2">{t.mission.features.ai.title}</h4>
+                    <p className="text-sm sm:text-base text-gray-600 font-light">{t.mission.features.ai.description}</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <Globe className="w-6 h-6 text-purple-500 mt-1 flex-shrink-0" />
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-purple-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-normal text-gray-900 mb-2">{t.mission.features.network.title}</h4>
-                    <p className="text-gray-600 font-light">{t.mission.features.network.description}</p>
+                    <h4 className="text-base sm:text-lg font-normal text-gray-900 mb-1 sm:mb-2">{t.mission.features.network.title}</h4>
+                    <p className="text-sm sm:text-base text-gray-600 font-light">{t.mission.features.network.description}</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <Monitor className="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" />
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <Monitor className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-normal text-gray-900 mb-2">{t.mission.features.equity.title}</h4>
-                    <p className="text-gray-600 font-light">{t.mission.features.equity.description}</p>
+                    <h4 className="text-base sm:text-lg font-normal text-gray-900 mb-1 sm:mb-2">{t.mission.features.equity.title}</h4>
+                    <p className="text-sm sm:text-base text-gray-600 font-light">{t.mission.features.equity.description}</p>
                   </div>
                 </div>
               </div>
@@ -677,19 +677,69 @@ export default function KnowledgePage() {
       </section>
 
       {/* Support Framework */}
-      <section className="py-32 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-5xl font-extralight text-gray-900 mb-8">
+      <section className="py-16 sm:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-24">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight text-gray-900 mb-4 sm:mb-8">
               {t.support.title}
             </h2>
-            <p className="text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
               {t.support.subtitle}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12 mb-20">
-            <div className="text-center">
+          {/* Mobil için horizontal scroll, desktop için grid */}
+          <div className="md:grid md:grid-cols-3 md:gap-12 mb-12 sm:mb-20">
+            {/* Mobile horizontal scroll container */}
+            <div className="md:hidden flex gap-6 overflow-x-auto pb-4 px-1 -mx-1 snap-x snap-mandatory">
+              <div className="flex-none w-[280px] snap-start text-center bg-white rounded-2xl p-6 border border-gray-100">
+                <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Building className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-light text-gray-900 mb-3">{t.support.institutions.title}</h3>
+                <p className="text-gray-600 font-light leading-relaxed mb-4 text-sm">
+                  {t.support.institutions.description}
+                </p>
+                <div className="space-y-2 text-xs text-gray-500 font-light">
+                  {t.support.institutions.features.map((feature, index) => (
+                    <p key={index}>• {feature}</p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex-none w-[280px] snap-start text-center bg-white rounded-2xl p-6 border border-gray-100">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Lightbulb className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-light text-gray-900 mb-3">{t.support.innovators.title}</h3>
+                <p className="text-gray-600 font-light leading-relaxed mb-4 text-sm">
+                  {t.support.innovators.description}
+                </p>
+                <div className="space-y-2 text-xs text-gray-500 font-light">
+                  {t.support.innovators.features.map((feature, index) => (
+                    <p key={index}>• {feature}</p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex-none w-[280px] snap-start text-center bg-white rounded-2xl p-6 border border-gray-100">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <HandHeart className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-light text-gray-900 mb-3">{t.support.activists.title}</h3>
+                <p className="text-gray-600 font-light leading-relaxed mb-4 text-sm">
+                  {t.support.activists.description}
+                </p>
+                <div className="space-y-2 text-xs text-gray-500 font-light">
+                  {t.support.activists.features.map((feature, index) => (
+                    <p key={index}>• {feature}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop grid layout */}
+            <div className="hidden md:block text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg">
                 <Building className="w-8 h-8 text-white" />
               </div>
@@ -704,7 +754,7 @@ export default function KnowledgePage() {
               </div>
             </div>
 
-            <div className="text-center">
+            <div className="hidden md:block text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg">
                 <Lightbulb className="w-8 h-8 text-white" />
               </div>
@@ -719,7 +769,7 @@ export default function KnowledgePage() {
               </div>
             </div>
 
-            <div className="text-center">
+            <div className="hidden md:block text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg">
                 <HandHeart className="w-8 h-8 text-white" />
               </div>
@@ -736,10 +786,65 @@ export default function KnowledgePage() {
           </div>
 
           {/* Additional Support Types */}
-          <div className="bg-white rounded-3xl p-12 border border-gray-100">
-            <h3 className="text-3xl font-light text-gray-900 mb-12 text-center">{t.support.initiatives.title}</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div>
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-12 border border-gray-100">
+            <h3 className="text-xl sm:text-3xl font-light text-gray-900 mb-6 sm:mb-12 text-center">
+              {t.support.initiatives.title}
+            </h3>
+            
+            {/* Mobile horizontal scroll for initiatives */}
+            <div className="md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8">
+              <div className="md:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+                <div className="flex-none w-64 snap-start">
+                  <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mb-3">
+                    <Target className="w-4 h-4 text-orange-600" />
+                  </div>
+                  <h4 className="text-base font-normal text-gray-900 mb-3">
+                    {t.support.initiatives.emergency.title}
+                  </h4>
+                  <p className="text-gray-600 font-light text-xs leading-relaxed">
+                    {t.support.initiatives.emergency.description}
+                  </p>
+                </div>
+                
+                <div className="flex-none w-64 snap-start">
+                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mb-3">
+                    <Globe className="w-4 h-4 text-green-600" />
+                  </div>
+                  <h4 className="text-base font-normal text-gray-900 mb-3">
+                    {t.support.initiatives.additionalPrograms.digitalEquity.title}
+                  </h4>
+                  <p className="text-gray-600 font-light text-xs leading-relaxed">
+                    {t.support.initiatives.additionalPrograms.digitalEquity.description}
+                  </p>
+                </div>
+                
+                <div className="flex-none w-64 snap-start">
+                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                    <Brain className="w-4 h-4 text-blue-600" />
+                  </div>
+                  <h4 className="text-base font-normal text-gray-900 mb-3">
+                    {t.support.initiatives.additionalPrograms.aiIntegration.title}
+                  </h4>
+                  <p className="text-gray-600 font-light text-xs leading-relaxed">
+                    {t.support.initiatives.additionalPrograms.aiIntegration.description}
+                  </p>
+                </div>
+                
+                <div className="flex-none w-64 snap-start">
+                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
+                    <BookOpen className="w-4 h-4 text-purple-600" />
+                  </div>
+                  <h4 className="text-base font-normal text-gray-900 mb-3">
+                    {t.support.initiatives.additionalPrograms.openCommons.title}
+                  </h4>
+                  <p className="text-gray-600 font-light text-xs leading-relaxed">
+                    {t.support.initiatives.additionalPrograms.openCommons.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Desktop grid */}
+              <div className="hidden md:block">
                 <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                   <Target className="w-5 h-5 text-orange-600" />
                 </div>
@@ -749,7 +854,7 @@ export default function KnowledgePage() {
                 </p>
               </div>
               
-              <div>
+              <div className="hidden md:block">
                 <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <Globe className="w-5 h-5 text-green-600" />
                 </div>
@@ -759,7 +864,7 @@ export default function KnowledgePage() {
                 </p>
               </div>
               
-              <div>
+              <div className="hidden md:block">
                 <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Brain className="w-5 h-5 text-blue-600" />
                 </div>
@@ -769,7 +874,7 @@ export default function KnowledgePage() {
                 </p>
               </div>
               
-              <div>
+              <div className="hidden md:block">
                 <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <BookOpen className="w-5 h-5 text-purple-600" />
                 </div>
@@ -784,405 +889,284 @@ export default function KnowledgePage() {
       </section>
 
       {/* Revolutionary Educational Technologies - Deep Dive */}
-      <section className="py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-extralight text-gray-900 mb-8">
+      <section className="py-16 sm:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-20">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight text-gray-900 mb-4 sm:mb-8">
               {t.support.initiatives.democracy.title}
             </h2>
-            <p className="text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
               {t.support.initiatives.democracy.subtitle}
             </p>
           </div>
 
-          {/* AI-Powered Education Revolution */}
-          <div className="mb-24">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <div className="flex items-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                    <Brain className="w-8 h-8 text-white" />
+          {/* Technology Cards - Mobile Horizontal Scroll */}
+          <div className="lg:space-y-24">
+            {/* Mobile horizontal scroll container */}
+            <div className="lg:hidden flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory">
+              {/* AI Education Card */}
+              <div className="flex-none w-[320px] snap-start bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-200">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                    <Brain className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-3xl font-light text-gray-900">{t.support.initiatives.aiEducation.subtitle}</h3>
+                  <h3 className="text-lg font-light text-gray-900">{t.support.initiatives.aiEducation.subtitle}</h3>
                 </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                  {t.support.initiatives.aiEducation.description}
+                <p className="text-sm font-light text-gray-600 leading-relaxed mb-4">
+                  {t.support.initiatives.aiEducation.description.slice(0, 150)}...
                 </p>
                 
-                <div className="bg-blue-50 rounded-xl p-6 border-l-4 border-blue-400 mb-8">
-                  <h4 className="font-medium text-blue-800 mb-3">{t.support.initiatives.aiEducation.breakthrough.title}</h4>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {t.support.initiatives.aiEducation.breakthrough.description}
+                <div className="bg-blue-100 rounded-lg p-4 border-l-4 border-blue-400 mb-4">
+                  <h4 className="font-medium text-blue-800 mb-2 text-sm">{t.support.initiatives.aiEducation.breakthrough.title}</h4>
+                  <p className="text-xs text-gray-700 leading-relaxed">
+                    {t.support.initiatives.aiEducation.breakthrough.description.slice(0, 120)}...
                   </p>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mt-1">
-                      <Cpu className="w-4 h-4 text-blue-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{t.support.initiatives.aiEducation.features.adaptive.title}</h5>
-                      <p className="text-sm text-gray-600">{t.support.initiatives.aiEducation.features.adaptive.description}</p>
-                    </div>
+                <div className="bg-white rounded-lg p-3 border border-blue-200">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-medium text-gray-900 text-sm">{t.support.initiatives.aiEducation.metrics.learning}</span>
+                    <span className="text-blue-700 font-bold text-sm">{t.support.initiatives.aiEducation.metrics.learningValue}</span>
                   </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mt-1">
-                      <Globe className="w-4 h-4 text-blue-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{t.support.initiatives.aiEducation.features.multilingual.title}</h5>
-                      <p className="text-sm text-gray-600">{t.support.initiatives.aiEducation.features.multilingual.description}</p>
-                    </div>
+                  <div className="w-full bg-blue-200 rounded-full h-1.5">
+                    <div className="bg-blue-600 h-1.5 rounded-full" style={{width: '80%'}}></div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 border border-blue-200">
-                <h4 className="text-xl font-medium text-gray-900 mb-6">{t.support.initiatives.aiEducation.metrics.title}</h4>
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-blue-200">
-                    <span className="font-medium text-gray-900">{t.support.initiatives.aiEducation.metrics.learning}</span>
-                    <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded text-sm font-medium">{t.support.initiatives.aiEducation.metrics.learningValue}</span>
+              {/* Digital Divide Card */}
+              <div className="flex-none w-[320px] snap-start bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl p-6 border border-red-200">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                    <Monitor className="w-6 h-6 text-white" />
                   </div>
-                  <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-blue-200">
-                    <span className="font-medium text-gray-900">{t.support.initiatives.aiEducation.metrics.retention}</span>
-                    <span className="bg-green-100 text-green-700 px-3 py-1 rounded text-sm font-medium">{t.support.initiatives.aiEducation.metrics.retentionValue}</span>
+                  <h3 className="text-lg font-light text-gray-900">{t.support.initiatives.digitalDivide.title}</h3>
+                </div>
+                <p className="text-sm font-light text-gray-600 leading-relaxed mb-4">
+                  {t.support.initiatives.digitalDivide.description.slice(0, 150)}...
+                </p>
+                
+                <div className="bg-red-100 rounded-lg p-4 border-l-4 border-red-400 mb-4">
+                  <h4 className="font-medium text-red-800 mb-2 text-sm">{t.support.initiatives.digitalDivide.crisis.title}</h4>
+                  <p className="text-xs text-gray-700 leading-relaxed">
+                    {t.support.initiatives.digitalDivide.crisis.description.slice(0, 120)}...
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-lg p-3 border border-red-200">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-medium text-gray-900 text-sm">{t.support.initiatives.digitalDivide.progress.internet}</span>
+                    <span className="text-red-700 font-bold text-sm">{t.support.initiatives.digitalDivide.progress.internetValue}</span>
                   </div>
-                  <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-blue-200">
-                    <span className="font-medium text-gray-900">{t.support.initiatives.aiEducation.metrics.accessibility}</span>
-                    <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm font-medium">{t.support.initiatives.aiEducation.metrics.accessibilityValue}</span>
-                  </div>
-                  <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-blue-200">
-                    <span className="font-medium text-gray-900">{t.support.initiatives.aiEducation.metrics.cost}</span>
-                    <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded text-sm font-medium">{t.support.initiatives.aiEducation.metrics.costValue}</span>
+                  <div className="w-full bg-red-200 rounded-full h-1.5">
+                    <div className="bg-red-500 h-1.5 rounded-full" style={{width: '63%'}}></div>
                   </div>
                 </div>
+              </div>
+
+              {/* Quantum Education Card */}
+              <div className="flex-none w-[320px] snap-start bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-6 border border-purple-200">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                    <Cpu className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-light text-gray-900">{t.support.initiatives.quantum.title}</h3>
+                </div>
+                <p className="text-sm font-light text-gray-600 leading-relaxed mb-4">
+                  {t.support.initiatives.quantum.description.slice(0, 150)}...
+                </p>
                 
-                <div className="mt-8 p-4 bg-blue-100 rounded-lg">
-                  <h5 className="font-medium text-blue-800 mb-2">{t.support.initiatives.aiEducation.metrics.deployment.title}</h5>
-                  <p className="text-sm text-blue-700">
-                    {t.support.initiatives.aiEducation.metrics.deployment.description}
+                <div className="bg-purple-100 rounded-lg p-4 border-l-4 border-purple-400 mb-4">
+                  <h4 className="font-medium text-purple-800 mb-2 text-sm">{t.support.initiatives.quantum.innovation.title}</h4>
+                  <p className="text-xs text-gray-700 leading-relaxed">
+                    {t.support.initiatives.quantum.innovation.description.slice(0, 120)}...
                   </p>
+                </div>
+
+                <div className="bg-white rounded-lg p-3 border border-purple-200">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-medium text-gray-900 text-sm">{t.support.initiatives.quantum.pipeline.university}</span>
+                    <span className="text-purple-700 font-bold text-sm">{t.support.initiatives.quantum.pipeline.universityValue}</span>
+                  </div>
+                  <div className="w-full bg-purple-200 rounded-full h-1.5">
+                    <div className="bg-purple-600 h-1.5 rounded-full" style={{width: '75%'}}></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Immersive Learning Card */}
+              <div className="flex-none w-[320px] snap-start bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-200">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                    <Monitor className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-light text-gray-900">{t.support.initiatives.immersive.title}</h3>
+                </div>
+                <p className="text-sm font-light text-gray-600 leading-relaxed mb-4">
+                  {t.support.initiatives.immersive.description.slice(0, 150)}...
+                </p>
+                
+                <div className="bg-green-100 rounded-lg p-4 border-l-4 border-green-400 mb-4">
+                  <h4 className="font-medium text-green-800 mb-2 text-sm">{t.support.initiatives.immersive.breakthrough.title}</h4>
+                  <p className="text-xs text-gray-700 leading-relaxed">
+                    {t.support.initiatives.immersive.breakthrough.description.slice(0, 120)}...
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-lg p-3 border border-green-200">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-medium text-gray-900 text-sm">{t.support.initiatives.immersiveMetrics.retention}</span>
+                    <span className="text-green-700 font-bold text-sm">{t.support.initiatives.immersiveMetrics.retentionValue}</span>
+                  </div>
+                  <div className="w-full bg-green-200 rounded-full h-1.5">
+                    <div className="bg-green-600 h-1.5 rounded-full" style={{width: '90%'}}></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Digital Divide: The Modern Inequality */}
-          <div className="mb-24">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div className="lg:order-2">
-                <div className="flex items-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                    <Monitor className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-light text-gray-900">{t.support.initiatives.digitalDivide.title}</h3>
-                </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                  {t.support.initiatives.digitalDivide.description}
-                </p>
-                
-                <div className="bg-red-50 rounded-xl p-6 border-l-4 border-red-400 mb-8">
-                  <h4 className="font-medium text-red-800 mb-3">{t.support.initiatives.digitalDivide.crisis.title}</h4>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {t.support.initiatives.digitalDivide.crisis.description}
-                  </p>
-                </div>
+            {/* Desktop version - keep original large layouts but optimize */}
+            <div className="hidden lg:block">
+              {/* AI-Powered Education Revolution */}
+              <div className="mb-16 sm:mb-24">
+                <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-start">
+                  <div>
+                    <div className="flex items-center mb-6 sm:mb-8">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center mr-4 sm:mr-6 shadow-lg">
+                        <Brain className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                      </div>
+                      <h3 className="text-2xl sm:text-3xl font-light text-gray-900">{t.support.initiatives.aiEducation.subtitle}</h3>
+                    </div>
+                    <p className="text-base sm:text-lg font-light text-gray-600 leading-relaxed mb-6 sm:mb-8">
+                      {t.support.initiatives.aiEducation.description}
+                    </p>
+                    
+                    <div className="bg-blue-50 rounded-xl p-4 sm:p-6 border-l-4 border-blue-400 mb-6 sm:mb-8">
+                      <h4 className="font-medium text-blue-800 mb-2 sm:mb-3">{t.support.initiatives.aiEducation.breakthrough.title}</h4>
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        {t.support.initiatives.aiEducation.breakthrough.description}
+                      </p>
+                    </div>
 
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mt-1">
-                      <Zap className="w-4 h-4 text-red-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{t.support.initiatives.digitalDivide.features.satellite.title}</h5>
-                      <p className="text-sm text-gray-600">{t.support.initiatives.digitalDivide.features.satellite.description}</p>
+                    <div className="space-y-4">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mt-1">
+                          <Cpu className="w-4 h-4 text-blue-600" />
+                        </div>
+                        <div>
+                          <h5 className="font-medium text-gray-900 mb-1">{t.support.initiatives.aiEducation.features.adaptive.title}</h5>
+                          <p className="text-sm text-gray-600">{t.support.initiatives.aiEducation.features.adaptive.description}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-4">
+                        <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mt-1">
+                          <Globe className="w-4 h-4 text-blue-600" />
+                        </div>
+                        <div>
+                          <h5 className="font-medium text-gray-900 mb-1">{t.support.initiatives.aiEducation.features.multilingual.title}</h5>
+                          <p className="text-sm text-gray-600">{t.support.initiatives.aiEducation.features.multilingual.description}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mt-1">
-                      <Target className="w-4 h-4 text-red-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{t.support.initiatives.digitalDivide.features.offline.title}</h5>
-                      <p className="text-sm text-gray-600">{t.support.initiatives.digitalDivide.features.offline.description}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <div className="bg-gradient-to-br from-red-50 to-pink-50 rounded-3xl p-8 border border-red-200 lg:order-1">
-                <h4 className="text-xl font-medium text-gray-900 mb-6">{t.support.initiatives.digitalDivide.progress.title}</h4>
-                <div className="space-y-4">
-                  <div className="bg-white rounded-lg p-4 border border-red-200">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{t.support.initiatives.digitalDivide.progress.internet}</span>
-                      <span className="text-red-700 font-bold">{t.support.initiatives.digitalDivide.progress.internetValue}</span>
+                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-blue-200">
+                    <h4 className="text-lg sm:text-xl font-medium text-gray-900 mb-4 sm:mb-6">{t.support.initiatives.aiEducation.metrics.title}</h4>
+                    <div className="space-y-4 sm:space-y-6">
+                      <div className="flex items-center justify-between p-3 sm:p-4 bg-white rounded-lg border border-blue-200">
+                        <span className="font-medium text-gray-900 text-sm sm:text-base">{t.support.initiatives.aiEducation.metrics.learning}</span>
+                        <span className="bg-blue-100 text-blue-700 px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-medium">{t.support.initiatives.aiEducation.metrics.learningValue}</span>
+                      </div>
+                      <div className="flex items-center justify-between p-3 sm:p-4 bg-white rounded-lg border border-blue-200">
+                        <span className="font-medium text-gray-900 text-sm sm:text-base">{t.support.initiatives.aiEducation.metrics.retention}</span>
+                        <span className="bg-green-100 text-green-700 px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-medium">{t.support.initiatives.aiEducation.metrics.retentionValue}</span>
+                      </div>
+                      <div className="flex items-center justify-between p-3 sm:p-4 bg-white rounded-lg border border-blue-200">
+                        <span className="font-medium text-gray-900 text-sm sm:text-base">{t.support.initiatives.aiEducation.metrics.accessibility}</span>
+                        <span className="bg-purple-100 text-purple-700 px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-medium">{t.support.initiatives.aiEducation.metrics.accessibilityValue}</span>
+                      </div>
+                      <div className="flex items-center justify-between p-3 sm:p-4 bg-white rounded-lg border border-blue-200">
+                        <span className="font-medium text-gray-900 text-sm sm:text-base">{t.support.initiatives.aiEducation.metrics.cost}</span>
+                        <span className="bg-orange-100 text-orange-700 px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-medium">{t.support.initiatives.aiEducation.metrics.costValue}</span>
+                      </div>
                     </div>
-                    <div className="w-full bg-red-200 rounded-full h-2">
-                      <div className="bg-red-500 h-2 rounded-full" style={{width: '63%'}}></div>
+                    
+                    <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-blue-100 rounded-lg">
+                      <h5 className="font-medium text-blue-800 mb-2">{t.support.initiatives.aiEducation.metrics.deployment.title}</h5>
+                      <p className="text-xs sm:text-sm text-blue-700">
+                        {t.support.initiatives.aiEducation.metrics.deployment.description}
+                      </p>
                     </div>
-                    <div className="text-xs text-gray-600 mt-1">{t.support.initiatives.digitalDivide.progress.internetNote}</div>
-                  </div>
-                  <div className="bg-white rounded-lg p-4 border border-red-200">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{t.support.initiatives.digitalDivide.progress.devices}</span>
-                      <span className="text-red-700 font-bold">{t.support.initiatives.digitalDivide.progress.devicesValue}</span>
-                    </div>
-                    <div className="w-full bg-red-200 rounded-full h-2">
-                      <div className="bg-orange-500 h-2 rounded-full" style={{width: '45%'}}></div>
-                    </div>
-                    <div className="text-xs text-gray-600 mt-1">{t.support.initiatives.digitalDivide.progress.devicesNote}</div>
-                  </div>
-                  <div className="bg-white rounded-lg p-4 border border-red-200">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{t.support.initiatives.digitalDivide.progress.literacy}</span>
-                      <span className="text-red-700 font-bold">{t.support.initiatives.digitalDivide.progress.literacyValue}</span>
-                    </div>
-                    <div className="w-full bg-red-200 rounded-full h-2">
-                      <div className="bg-yellow-500 h-2 rounded-full" style={{width: '38%'}}></div>
-                    </div>
-                    <div className="text-xs text-gray-600 mt-1">{t.support.initiatives.digitalDivide.progress.literacyNote}</div>
-                  </div>
-                </div>
-
-                <div className="mt-8 p-4 bg-red-100 rounded-lg">
-                  <h5 className="font-medium text-red-800 mb-2">{t.support.initiatives.digitalDivide.progress.mission.title}</h5>
-                  <p className="text-sm text-red-700">
-                    {t.support.initiatives.digitalDivide.progress.mission.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Quantum Computing Education */}
-          <div className="mb-24">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <div className="flex items-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                    <Cpu className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-light text-gray-900">{t.support.initiatives.quantum.title}</h3>
-                </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                  {t.support.initiatives.quantum.description}
-                </p>
-                
-                <div className="bg-purple-50 rounded-xl p-6 border-l-4 border-purple-400 mb-8">
-                  <h4 className="font-medium text-purple-800 mb-3">{t.support.initiatives.quantum.innovation.title}</h4>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {t.support.initiatives.quantum.innovation.description}
-                  </p>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mt-1">
-                      <Microscope className="w-4 h-4 text-purple-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{t.support.initiatives.quantum.features.visual.title}</h5>
-                      <p className="text-sm text-gray-600">{t.support.initiatives.quantum.features.visual.description}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mt-1">
-                      <Brain className="w-4 h-4 text-purple-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{t.support.initiatives.quantum.features.gamified.title}</h5>
-                      <p className="text-sm text-gray-600">{t.support.initiatives.quantum.features.gamified.description}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-8 border border-purple-200">
-                <h4 className="text-xl font-medium text-gray-900 mb-6">{t.support.initiatives.quantum.pipeline.title}</h4>
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-purple-200">
-                    <span className="font-medium text-gray-900">{t.support.initiatives.quantum.pipeline.k12}</span>
-                    <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm font-medium">{t.support.initiatives.quantum.pipeline.k12Value}</span>
-                  </div>
-                  <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-purple-200">
-                    <span className="font-medium text-gray-900">{t.support.initiatives.quantum.pipeline.university}</span>
-                    <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm font-medium">{t.support.initiatives.quantum.pipeline.universityValue}</span>
-                  </div>
-                  <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-purple-200">
-                    <span className="font-medium text-gray-900">{t.support.initiatives.quantum.pipeline.professional}</span>
-                    <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded text-sm font-medium">{t.support.initiatives.quantum.pipeline.professionalValue}</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Immersive Learning Revolution */}
-          <div className="mb-24">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div className="lg:order-2">
-                <div className="flex items-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                    <Monitor className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-light text-gray-900">{t.support.initiatives.immersive.title}</h3>
+          {/* Promise Section */}
+          <div className="mt-16 sm:mt-24 bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center text-white">
+            <h3 className="text-xl sm:text-3xl font-light mb-4 sm:mb-6">{t.support.initiatives.promise.title}</h3>
+            <p className="text-sm sm:text-lg font-light text-gray-200 max-w-4xl mx-auto mb-8 sm:mb-12 leading-relaxed">
+              {t.support.initiatives.promise.description}
+            </p>
+            
+            {/* Mobile horizontal scroll for promise items */}
+            <div className="md:grid md:grid-cols-3 md:gap-8">
+              <div className="md:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+                <div className="flex-none w-64 snap-start text-center p-4 bg-white/10 rounded-xl">
+                  <h4 className="text-base font-medium text-white mb-2">{t.support.initiatives.promise.adaptiveIntelligence.title}</h4>
+                  <p className="text-xs text-gray-300">{t.support.initiatives.promise.adaptiveIntelligence.description}</p>
                 </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                  {t.support.initiatives.immersive.description}
-                </p>
-                
-                <div className="bg-green-50 rounded-xl p-6 border-l-4 border-green-400 mb-8">
-                  <h4 className="font-medium text-green-800 mb-3">{t.support.initiatives.immersive.breakthrough.title}</h4>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {t.support.initiatives.immersive.breakthrough.description}
-                  </p>
+                <div className="flex-none w-64 snap-start text-center p-4 bg-white/10 rounded-xl">
+                  <h4 className="text-base font-medium text-white mb-2">{t.support.initiatives.promise.universalAccess.title}</h4>
+                  <p className="text-xs text-gray-300">{t.support.initiatives.promise.universalAccess.description}</p>
                 </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mt-1">
-                      <Globe className="w-4 h-4 text-green-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{t.support.initiatives.immersive.features.historical.title}</h5>
-                      <p className="text-sm text-gray-600">{t.support.initiatives.immersive.features.historical.description}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mt-1">
-                      <Microscope className="w-4 h-4 text-green-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{t.support.initiatives.immersive.features.scientific.title}</h5>
-                      <p className="text-sm text-gray-600">{t.support.initiatives.immersive.features.scientific.description}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mt-1">
-                      <Users className="w-4 h-4 text-green-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{t.support.initiatives.immersive.features.language.title}</h5>
-                      <p className="text-sm text-gray-600">{t.support.initiatives.immersive.features.language.description}</p>
-                    </div>
-                  </div>
+                <div className="flex-none w-64 snap-start text-center p-4 bg-white/10 rounded-xl">
+                  <h4 className="text-base font-medium text-white mb-2">{t.support.initiatives.promise.openKnowledge.title}</h4>
+                  <p className="text-xs text-gray-300">{t.support.initiatives.promise.openKnowledge.description}</p>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-200 lg:order-1">
-                <h4 className="text-xl font-medium text-gray-900 mb-6">{t.support.initiatives.immersiveMetrics.title}</h4>
-                <div className="space-y-4">
-                  <div className="bg-white rounded-lg p-4 border border-green-200">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{t.support.initiatives.immersiveMetrics.retention}</span>
-                      <span className="text-green-700 font-bold">{t.support.initiatives.immersiveMetrics.retentionValue}</span>
-                    </div>
-                    <div className="w-full bg-green-200 rounded-full h-2">
-                      <div className="bg-green-600 h-2 rounded-full" style={{width: '90%'}}></div>
-                    </div>
-                    <div className="text-xs text-gray-600 mt-1">{t.support.initiatives.immersiveMetrics.retentionNote}</div>
-                  </div>
-                  <div className="bg-white rounded-lg p-4 border border-green-200">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{t.support.initiatives.immersiveMetrics.speed}</span>
-                      <span className="text-green-700 font-bold">{t.support.initiatives.immersiveMetrics.speedValue}</span>
-                    </div>
-                    <div className="w-full bg-green-200 rounded-full h-2">
-                      <div className="bg-green-600 h-2 rounded-full" style={{width: '80%'}}></div>
-                    </div>
-                    <div className="text-xs text-gray-600 mt-1">{t.support.initiatives.immersiveMetrics.speedNote}</div>
-                  </div>
-                  <div className="bg-white rounded-lg p-4 border border-green-200">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{t.support.initiatives.immersiveMetrics.engagement}</span>
-                      <span className="text-green-700 font-bold">{t.support.initiatives.immersiveMetrics.engagementValue}</span>
-                    </div>
-                    <div className="w-full bg-green-200 rounded-full h-2">
-                      <div className="bg-green-600 h-2 rounded-full" style={{width: '95%'}}></div>
-                    </div>
-                    <div className="text-xs text-gray-600 mt-1">{t.support.initiatives.immersiveMetrics.engagementNote}</div>
-                  </div>
-                </div>
-
-                <div className="mt-8 p-4 bg-green-100 rounded-lg">
-                  <h5 className="font-medium text-green-800 mb-2">{t.support.initiatives.immersiveMetrics.investment.title}</h5>
-                  <p className="text-sm text-green-700">
-                    {t.support.initiatives.immersiveMetrics.investment.description}
-                  </p>
-                </div>
+              {/* Desktop grid */}
+              <div className="hidden md:block text-center">
+                <h4 className="text-xl font-medium text-white mb-4">{t.support.initiatives.promise.adaptiveIntelligence.title}</h4>
+                <p className="text-gray-300">{t.support.initiatives.promise.adaptiveIntelligence.description}</p>
+              </div>
+              <div className="hidden md:block text-center">
+                <h4 className="text-xl font-medium text-white mb-4">{t.support.initiatives.promise.universalAccess.title}</h4>
+                <p className="text-gray-300">{t.support.initiatives.promise.universalAccess.description}</p>
+              </div>
+              <div className="hidden md:block text-center">
+                <h4 className="text-xl font-medium text-white mb-4">{t.support.initiatives.promise.openKnowledge.title}</h4>
+                <p className="text-gray-300">{t.support.initiatives.promise.openKnowledge.description}</p>
               </div>
             </div>
-          </div>
 
-          {/* The Sacred Promise of Universal Knowledge */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-light text-white mb-6">{t.support.initiatives.promise.title}</h3>
-              <p className="text-lg font-light text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                {t.support.initiatives.promise.description}
+            <div className="mt-8 sm:mt-12 p-4 sm:p-6 bg-white/10 rounded-xl border border-white/20">
+              <p className="text-sm sm:text-lg font-light italic text-indigo-300">
+                {t.support.initiatives.promise.quote}
               </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Brain className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-lg font-medium text-white mb-4">{t.support.initiatives.promise.adaptiveIntelligence.title}</h4>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {t.support.initiatives.promise.adaptiveIntelligence.description}
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Globe className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-lg font-medium text-white mb-4">{t.support.initiatives.promise.universalAccess.title}</h4>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {t.support.initiatives.promise.universalAccess.description}
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <BookOpen className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-lg font-medium text-white mb-4">{t.support.initiatives.promise.openKnowledge.title}</h4>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {t.support.initiatives.promise.openKnowledge.description}
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-12 text-center">
-              <div className="bg-white/10 rounded-2xl p-6 inline-block">
-                <p className="text-white font-light italic text-lg">
-                  "{t.support.initiatives.promise.quote}"
-                </p>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Closing Vision */}
-      <section className="py-32 bg-gradient-to-br from-gray-900 via-indigo-900 to-gray-900 text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-extralight mb-12 leading-tight">
+      <section className="py-16 sm:py-32 bg-gradient-to-br from-gray-900 via-indigo-900 to-gray-900 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight mb-6 sm:mb-12 leading-tight">
             {t.closing.title}
           </h2>
-          <div className="space-y-8 text-lg md:text-xl font-light leading-relaxed text-gray-300">
+          <div className="space-y-4 sm:space-y-8 text-base sm:text-lg md:text-xl font-light leading-relaxed text-gray-300">
             <p>
               {t.closing.text1}
             </p>
             <p>
               {t.closing.text2}
             </p>
-            <p className="text-2xl md:text-3xl font-light text-white pt-8">
+            <p className="text-lg sm:text-2xl md:text-3xl font-light text-white pt-4 sm:pt-8">
               {t.closing.text3}
-              <span className="block mt-4 text-indigo-300">
+              <span className="block mt-2 sm:mt-4 text-indigo-300">
                 {t.closing.text4}
               </span>
             </p>

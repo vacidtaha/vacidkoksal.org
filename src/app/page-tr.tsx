@@ -449,33 +449,33 @@ export default function HomeTurkish() {
           </div>
 
           {/* Foundation Philosophy */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 text-center text-white">
-            <h3 className="text-3xl font-light mb-6">Vakıf Felsefesi</h3>
-            <p className="text-xl font-light leading-relaxed mb-8 text-gray-200 max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-6 sm:p-12 text-center text-white">
+            <h3 className="text-2xl sm:text-3xl font-light mb-4 sm:mb-6">Vakıf Felsefesi</h3>
+            <p className="text-base sm:text-xl font-light leading-relaxed mb-6 sm:mb-8 text-gray-200 max-w-4xl mx-auto">
               İnsanlığın temel ihtiyaçlarına hizmet eden dönüştürücü teknolojilere kaynak yönlendiriyoruz. 
               Başarımızı finansal getirilerle değil, insan yaşamları ve küresel refah üzerindeki somut etkiyle ölçüyoruz.
             </p>
-            <div className="grid md:grid-cols-4 gap-8 mt-8 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mt-6 sm:mt-8 mb-8 sm:mb-12">
               <div>
-                <div className="text-3xl font-light text-blue-400 mb-2">$500M+</div>
-                <div className="text-sm text-gray-300">Taahhüt edilen kaynaklar</div>
+                <div className="text-2xl sm:text-3xl font-light text-blue-400 mb-2">$500M+</div>
+                <div className="text-xs sm:text-sm text-gray-300">Taahhüt edilen kaynaklar</div>
               </div>
               <div>
-                <div className="text-3xl font-light text-green-400 mb-2">Açık Erişim</div>
-                <div className="text-sm text-gray-300">Teknoloji erişilebilirliği</div>
+                <div className="text-2xl sm:text-3xl font-light text-green-400 mb-2">Açık Erişim</div>
+                <div className="text-xs sm:text-sm text-gray-300">Teknoloji erişilebilirliği</div>
               </div>
               <div>
-                <div className="text-3xl font-light text-purple-400 mb-2">Uzun Vadeli</div>
-                <div className="text-sm text-gray-300">Sürdürülebilir etki odağı</div>
+                <div className="text-2xl sm:text-3xl font-light text-purple-400 mb-2">Uzun Vadeli</div>
+                <div className="text-xs sm:text-sm text-gray-300">Sürdürülebilir etki odağı</div>
               </div>
               <div>
-                <div className="text-3xl font-light text-red-400 mb-2">Küresel</div>
-                <div className="text-sm text-gray-300">İnsan merkezli yaklaşım</div>
+                <div className="text-2xl sm:text-3xl font-light text-red-400 mb-2">Küresel</div>
+                <div className="text-xs sm:text-sm text-gray-300">İnsan merkezli yaklaşım</div>
               </div>
             </div>
             
-            <div className="mt-12 pt-8 border-t border-gray-700">
-              <p className="text-lg font-light text-gray-300 italic mb-8">
+            <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-700">
+              <p className="text-sm sm:text-lg font-light text-gray-300 italic mb-6 sm:mb-8">
                 "Başarı ölçümüz alkış değildir: boş hastane yatakları, dolu tabaklar, 
                 karbonu tarihin sayfalarına sürgün eden ufuk çizgileri ve küçük hayalperestlerin 
                 parmaklarının ilk kez açık bir ekrana uzanmasıdır."
@@ -484,9 +484,9 @@ export default function HomeTurkish() {
               {/* CTA Button for Funding Application */}
               <Link 
                 href="/funding"
-                className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm sm:text-base rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3">
                   <path d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" />
                 </svg>
                 Fon Başvurusu Yap

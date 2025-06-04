@@ -1378,26 +1378,26 @@ export default function FoodPage() {
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mr-3">
                     <Wheat className="w-5 h-5 text-white" />
-                  </div>
-                  <h3 className="text-lg font-light text-gray-900">{t.investmentFocus.agTech.title}</h3>
                 </div>
-                
+                  <h3 className="text-lg font-light text-gray-900">{t.investmentFocus.agTech.title}</h3>
+              </div>
+              
                 <div className="space-y-4 text-gray-700">
                   <div className="bg-gray-50 rounded-xl p-3">
                     <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.agTech.marketOpportunity.title}</h4>
                     <p className="text-xs leading-relaxed">
                       {t.investmentFocus.agTech.marketOpportunity.description.slice(0, 120)}...
-                    </p>
-                  </div>
-                  
+                  </p>
+                </div>
+                
                   <div className="bg-green-50 rounded-xl p-3">
                     <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.agTech.investmentPriorities.title}</h4>
                     <ul className="space-y-1 text-xs">
                       {t.investmentFocus.agTech.investmentPriorities.items.slice(0, 3).map((item, index) => (
                         <li key={index}>• {item.slice(0, 40)}...</li>
-                      ))}
-                    </ul>
-                  </div>
+                    ))}
+                  </ul>
+                </div>
 
                   <div className="bg-blue-50 rounded-xl p-3">
                     <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.agTech.successMetrics.title}</h4>
@@ -1409,20 +1409,20 @@ export default function FoodPage() {
                       <div className="text-center bg-white rounded-lg p-2 shadow-sm border border-gray-100">
                         <div className="text-base font-bold text-blue-600 mb-1">{t.investmentFocus.agTech.successMetrics.resourceEfficiency}</div>
                         <div className="text-xs font-medium text-gray-700">{t.investmentFocus.agTech.successMetrics.resourceEfficiencyLabel}</div>
+                    </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
+                      </div>
+                    </div>
 
               {/* Alternative Protein Systems - Mobile Version */}
               <div className="flex-none w-80 snap-start bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mr-3">
                     <Microscope className="w-5 h-5 text-white" />
-                  </div>
+                      </div>
                   <h3 className="text-lg font-light text-gray-900">{t.investmentFocus.alternativeProtein.title}</h3>
-                </div>
+                    </div>
                 
                 <div className="space-y-4 text-gray-700">
                   <div className="bg-gray-50 rounded-xl p-3">
@@ -1439,7 +1439,7 @@ export default function FoodPage() {
                         <li key={index}>• {item.slice(0, 40)}...</li>
                       ))}
                     </ul>
-                  </div>
+                </div>
 
                   <div className="bg-purple-50 rounded-xl p-3">
                     <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.alternativeProtein.impactProjections.title}</h4>
@@ -1454,34 +1454,34 @@ export default function FoodPage() {
                       </div>
                     </div>
                   </div>
-                </div>
               </div>
+            </div>
 
               {/* Supply Chain Intelligence - Mobile Version */}
               <div className="flex-none w-80 snap-start bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center mr-3">
                     <Globe className="w-5 h-5 text-white" />
-                  </div>
-                  <h3 className="text-lg font-light text-gray-900">{t.investmentFocus.supplyChain.title}</h3>
                 </div>
-                
+                  <h3 className="text-lg font-light text-gray-900">{t.investmentFocus.supplyChain.title}</h3>
+              </div>
+              
                 <div className="space-y-4 text-gray-700">
                   <div className="bg-gray-50 rounded-xl p-3">
                     <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.supplyChain.marketOpportunity.title}</h4>
                     <p className="text-xs leading-relaxed">
                       {t.investmentFocus.supplyChain.marketOpportunity.description.slice(0, 120)}...
-                    </p>
-                  </div>
-                  
+                  </p>
+                </div>
+                
                   <div className="bg-orange-50 rounded-xl p-3">
                     <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.supplyChain.investmentPriorities.title}</h4>
                     <ul className="space-y-1 text-xs">
                       {t.investmentFocus.supplyChain.investmentPriorities.items.slice(0, 3).map((item, index) => (
                         <li key={index}>• {item.slice(0, 40)}...</li>
-                      ))}
-                    </ul>
-                  </div>
+                    ))}
+                  </ul>
+                </div>
 
                   <div className="bg-green-50 rounded-xl p-3">
                     <h4 className="text-gray-900 font-medium mb-2 text-sm">Technology ROI</h4>
@@ -1493,20 +1493,20 @@ export default function FoodPage() {
                       <div className="flex items-center justify-between p-2 bg-white rounded border">
                         <span className="text-xs font-medium text-gray-900">Akıllı Sulama</span>
                         <span className="text-xs text-purple-600 font-bold">425%</span>
+                    </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
+                      </div>
+                    </div>
 
               {/* Water-Food Nexus Solutions - Mobile Version */}
               <div className="flex-none w-80 snap-start bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mr-3">
                     <Droplets className="w-5 h-5 text-white" />
-                  </div>
+                      </div>
                   <h3 className="text-lg font-light text-gray-900">{t.investmentFocus.waterFood.title}</h3>
-                </div>
+                    </div>
                 
                 <div className="space-y-4 text-gray-700">
                   <div className="bg-gray-50 rounded-xl p-3">
@@ -1523,7 +1523,7 @@ export default function FoodPage() {
                         <li key={index}>• {item.slice(0, 40)}...</li>
                       ))}
                     </ul>
-                  </div>
+                </div>
 
                   <div className="bg-blue-50 rounded-xl p-3">
                     <h4 className="text-gray-900 font-medium mb-2 text-sm">{t.investmentFocus.waterFood.efficiencyGains.title}</h4>
@@ -1578,34 +1578,34 @@ export default function FoodPage() {
                       <div className="w-full bg-green-100 rounded-full h-2 mt-2">
                         <div className="bg-green-500 h-2 rounded-full" style={{width: '75%'}}></div>
                       </div>
-                    </div>
+                        </div>
                     <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
                       <div className="text-2xl font-bold text-blue-600 mb-2">{t.investmentFocus.agTech.successMetrics.resourceEfficiency}</div>
                       <div className="text-sm font-medium text-gray-700">{t.investmentFocus.agTech.successMetrics.resourceEfficiencyLabel}</div>
                       <div className="w-full bg-blue-100 rounded-full h-2 mt-2">
                         <div className="bg-blue-500 h-2 rounded-full" style={{width: '85%'}}></div>
-                      </div>
-                    </div>
+                        </div>
+                        </div>
                     <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
                       <div className="text-2xl font-bold text-purple-600 mb-2">{t.investmentFocus.agTech.successMetrics.roiTimeline}</div>
                       <div className="text-sm font-medium text-gray-700">{t.investmentFocus.agTech.successMetrics.roiTimelineLabel}</div>
                       <div className="w-full bg-purple-100 rounded-full h-2 mt-2">
                         <div className="bg-purple-500 h-2 rounded-full" style={{width: '60%'}}></div>
                       </div>
-                    </div>
+                        </div>
                     <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
                       <div className="text-2xl font-bold text-orange-600 mb-2">{t.investmentFocus.agTech.successMetrics.expectedReturns}</div>
                       <div className="text-sm font-medium text-gray-700">{t.investmentFocus.agTech.successMetrics.expectedReturnsLabel}</div>
                       <div className="w-full bg-orange-100 rounded-full h-2 mt-2">
                         <div className="bg-orange-500 h-2 rounded-full" style={{width: '90%'}}></div>
+                        </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+                        </div>
+                        </div>
+                        </div>
+                      </div>
+                      
           {/* Investment Philosophy & Portfolio Allocation */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center text-white">
             <h3 className="text-2xl sm:text-3xl font-light mb-4 sm:mb-6">{t.investmentFocus.investmentPhilosophy.title}</h3>
@@ -1618,41 +1618,41 @@ export default function FoodPage() {
               {/* Mobile horizontal scroll */}
               <div className="md:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
                 <div className="flex-none w-64 snap-start bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
-                  <div className="text-center">
+                        <div className="text-center">
                     <div className="text-2xl sm:text-3xl font-light text-green-400 mb-2 sm:mb-3">$75M</div>
                     <div className="text-sm text-gray-300 mb-3 sm:mb-4 min-h-[30px] flex items-center justify-center">
                       {t.investmentFocus.investmentPhilosophy.portfolioAllocation.agTech}
-                    </div>
+                        </div>
                     <div className="relative">
                       <div className="w-full bg-gray-700 rounded-full h-2 sm:h-3 shadow-inner">
                         <div 
                           className="bg-gradient-to-r from-green-400 to-green-500 h-2 sm:h-3 rounded-full shadow-sm transition-all duration-1000 ease-out" 
                           style={{width: '50%'}}
                         ></div>
-                      </div>
+                        </div>
                       <div className="text-xs text-green-300 mt-1 font-medium">50% Portfolio</div>
                     </div>
-                  </div>
-                </div>
-                
+                        </div>
+                      </div>
+                      
                 <div className="flex-none w-64 snap-start bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
-                  <div className="text-center">
+                        <div className="text-center">
                     <div className="text-2xl sm:text-3xl font-light text-blue-400 mb-2 sm:mb-3">$45M</div>
                     <div className="text-sm text-gray-300 mb-3 sm:mb-4 min-h-[30px] flex items-center justify-center">
                       {t.investmentFocus.investmentPhilosophy.portfolioAllocation.alternativeProteins}
-                    </div>
+                        </div>
                     <div className="relative">
                       <div className="w-full bg-gray-700 rounded-full h-2 sm:h-3 shadow-inner">
                         <div 
                           className="bg-gradient-to-r from-blue-400 to-blue-500 h-2 sm:h-3 rounded-full shadow-sm transition-all duration-1000 ease-out" 
                           style={{width: '30%'}}
                         ></div>
-                      </div>
+                        </div>
                       <div className="text-xs text-blue-300 mt-1 font-medium">30% Portfolio</div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                
+                    
                 <div className="flex-none w-64 snap-start bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
                   <div className="text-center">
                     <div className="text-2xl sm:text-3xl font-light text-orange-400 mb-2 sm:mb-3">$20M</div>
@@ -1665,30 +1665,30 @@ export default function FoodPage() {
                           className="bg-gradient-to-r from-orange-400 to-orange-500 h-2 sm:h-3 rounded-full shadow-sm transition-all duration-1000 ease-out" 
                           style={{width: '13.3%'}}
                         ></div>
-                      </div>
-                      <div className="text-xs text-orange-300 mt-1 font-medium">13.3% Portfolio</div>
-                    </div>
                   </div>
+                      <div className="text-xs text-orange-300 mt-1 font-medium">13.3% Portfolio</div>
                 </div>
-                
+              </div>
+            </div>
+
                 <div className="flex-none w-64 snap-start bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
                   <div className="text-center">
                     <div className="text-2xl sm:text-3xl font-light text-cyan-400 mb-2 sm:mb-3">$10M</div>
                     <div className="text-sm text-gray-300 mb-3 sm:mb-4 min-h-[30px] flex items-center justify-center">
                       {t.investmentFocus.investmentPhilosophy.portfolioAllocation.waterFoodNexus}
-                    </div>
+                </div>
                     <div className="relative">
                       <div className="w-full bg-gray-700 rounded-full h-2 sm:h-3 shadow-inner">
                         <div 
                           className="bg-gradient-to-r from-cyan-400 to-cyan-500 h-2 sm:h-3 rounded-full shadow-sm transition-all duration-1000 ease-out" 
                           style={{width: '6.7%'}}
                         ></div>
-                      </div>
-                      <div className="text-xs text-cyan-300 mt-1 font-medium">6.7% Portfolio</div>
-                    </div>
-                  </div>
-                </div>
               </div>
+                      <div className="text-xs text-cyan-300 mt-1 font-medium">6.7% Portfolio</div>
+                </div>
+                </div>
+            </div>
+          </div>
 
               {/* Desktop grid */}
               <div className="hidden md:block bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">

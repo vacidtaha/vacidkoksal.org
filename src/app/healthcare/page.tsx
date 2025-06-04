@@ -743,21 +743,21 @@ export default function HealthcarePage() {
         </div>
         
         {/* Hero Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <div className="mb-12">
-            <Heart className="w-12 h-12 mx-auto text-blue-400 mb-8" />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+          <div className="mb-6 sm:mb-12">
+            <Heart className="w-8 h-8 sm:w-12 sm:h-12 mx-auto text-blue-400 mb-4 sm:mb-8" />
           </div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extralight mb-12 leading-tight text-gray-900">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight mb-6 sm:mb-12 leading-tight text-gray-900">
             {currentContent.hero.title1}
-            <span className="block font-light text-blue-600 mt-4">
+            <span className="block font-light text-blue-600 mt-2 sm:mt-4">
               {currentContent.hero.title2}
             </span>
           </h1>
           <div className="max-w-4xl mx-auto">
-            <p className="text-2xl md:text-3xl font-light text-gray-600 leading-relaxed mb-8">
+            <p className="text-lg sm:text-2xl md:text-3xl font-light text-gray-600 leading-relaxed mb-4 sm:mb-8">
               {currentContent.hero.subtitle1}
             </p>
-            <p className="text-xl md:text-2xl font-light text-gray-500 leading-relaxed">
+            <p className="text-base sm:text-xl md:text-2xl font-light text-gray-500 leading-relaxed">
               {currentContent.hero.subtitle2}
             </p>
           </div>
@@ -765,57 +765,57 @@ export default function HealthcarePage() {
       </section>
 
       {/* Mission Statement */}
-      <section className="py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-extralight text-gray-900 mb-12 leading-tight">
+      <section className="py-16 sm:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-20">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight text-gray-900 mb-6 sm:mb-12 leading-tight">
               {currentContent.mission.title}
-              <span className="block text-3xl md:text-4xl font-light text-blue-600 mt-6">
+              <span className="block text-xl sm:text-3xl md:text-4xl font-light text-blue-600 mt-3 sm:mt-6">
                 {currentContent.mission.subtitle}
               </span>
             </h2>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-20 items-start">
-            <div className="space-y-10">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-20 items-start">
+            <div className="space-y-6 sm:space-y-10">
               <div>
-                <h3 className="text-2xl font-light text-gray-900 mb-6">{currentContent.mission.fromDiagnosis.title}</h3>
-                <p className="text-lg font-light text-gray-600 leading-relaxed">
+                <h3 className="text-lg sm:text-2xl font-light text-gray-900 mb-3 sm:mb-6">{currentContent.mission.fromDiagnosis.title}</h3>
+                <p className="text-sm sm:text-lg font-light text-gray-600 leading-relaxed">
                   {currentContent.mission.fromDiagnosis.content}
                 </p>
               </div>
               
               <div>
-                <h3 className="text-2xl font-light text-gray-900 mb-6">{currentContent.mission.cellularRegeneration.title}</h3>
-                <p className="text-lg font-light text-gray-600 leading-relaxed">
+                <h3 className="text-lg sm:text-2xl font-light text-gray-900 mb-3 sm:mb-6">{currentContent.mission.cellularRegeneration.title}</h3>
+                <p className="text-sm sm:text-lg font-light text-gray-600 leading-relaxed">
                   {currentContent.mission.cellularRegeneration.content}
                 </p>
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-12 border border-blue-100">
-              <div className="space-y-8">
-                <div className="flex items-start space-x-4">
-                  <Microscope className="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" />
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl sm:rounded-3xl p-6 sm:p-12 border border-blue-100">
+              <div className="space-y-4 sm:space-y-8">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <Microscope className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-normal text-gray-900 mb-2">{currentContent.mission.features.precisionMedicine.title}</h4>
-                    <p className="text-gray-600 font-light">{currentContent.mission.features.precisionMedicine.description}</p>
+                    <h4 className="text-base sm:text-lg font-normal text-gray-900 mb-1 sm:mb-2">{currentContent.mission.features.precisionMedicine.title}</h4>
+                    <p className="text-sm sm:text-base text-gray-600 font-light">{currentContent.mission.features.precisionMedicine.description}</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <Dna className="w-6 h-6 text-purple-500 mt-1 flex-shrink-0" />
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <Dna className="w-5 h-5 sm:w-6 sm:h-6 text-purple-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-normal text-gray-900 mb-2">{currentContent.mission.features.geneEditing.title}</h4>
-                    <p className="text-gray-600 font-light">{currentContent.mission.features.geneEditing.description}</p>
+                    <h4 className="text-base sm:text-lg font-normal text-gray-900 mb-1 sm:mb-2">{currentContent.mission.features.geneEditing.title}</h4>
+                    <p className="text-sm sm:text-base text-gray-600 font-light">{currentContent.mission.features.geneEditing.description}</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <Heart className="w-6 h-6 text-red-500 mt-1 flex-shrink-0" />
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-red-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-normal text-gray-900 mb-2">{currentContent.mission.features.regenerativeTherapies.title}</h4>
-                    <p className="text-gray-600 font-light">{currentContent.mission.features.regenerativeTherapies.description}</p>
+                    <h4 className="text-base sm:text-lg font-normal text-gray-900 mb-1 sm:mb-2">{currentContent.mission.features.regenerativeTherapies.title}</h4>
+                    <p className="text-sm sm:text-base text-gray-600 font-light">{currentContent.mission.features.regenerativeTherapies.description}</p>
                   </div>
                 </div>
               </div>
@@ -825,19 +825,69 @@ export default function HealthcarePage() {
       </section>
 
       {/* Support Framework */}
-      <section className="py-32 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-5xl font-extralight text-gray-900 mb-8">
+      <section className="py-16 sm:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-24">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight text-gray-900 mb-4 sm:mb-8">
               {currentContent.supportFramework.title}
             </h2>
-            <p className="text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
               {currentContent.supportFramework.subtitle}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12 mb-20">
-            <div className="text-center">
+          {/* Mobil için horizontal scroll, desktop için grid */}
+          <div className="md:grid md:grid-cols-3 md:gap-12 mb-12 sm:mb-20">
+            {/* Mobile horizontal scroll container */}
+            <div className="md:hidden flex gap-6 overflow-x-auto pb-4 px-1 -mx-1 snap-x snap-mandatory">
+              <div className="flex-none w-[280px] snap-start text-center bg-white rounded-2xl p-6 border border-gray-100">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Building className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-light text-gray-900 mb-3">{currentContent.supportFramework.researchInstitutions.title}</h3>
+                <p className="text-gray-600 font-light leading-relaxed mb-4 text-sm">
+                  {currentContent.supportFramework.researchInstitutions.description}
+                </p>
+                <div className="space-y-2 text-xs text-gray-500 font-light">
+                  {currentContent.supportFramework.researchInstitutions.features.map((feature, index) => (
+                    <p key={index}>• {feature}</p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex-none w-[280px] snap-start text-center bg-white rounded-2xl p-6 border border-gray-100">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Lightbulb className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-light text-gray-900 mb-3">{currentContent.supportFramework.biotechStartups.title}</h3>
+                <p className="text-gray-600 font-light leading-relaxed mb-4 text-sm">
+                  {currentContent.supportFramework.biotechStartups.description}
+                </p>
+                <div className="space-y-2 text-xs text-gray-500 font-light">
+                  {currentContent.supportFramework.biotechStartups.features.map((feature, index) => (
+                    <p key={index}>• {feature}</p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex-none w-[280px] snap-start text-center bg-white rounded-2xl p-6 border border-gray-100">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <HandHeart className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-light text-gray-900 mb-3">{currentContent.supportFramework.individualResearchers.title}</h3>
+                <p className="text-gray-600 font-light leading-relaxed mb-4 text-sm">
+                  {currentContent.supportFramework.individualResearchers.description}
+                </p>
+                <div className="space-y-2 text-xs text-gray-500 font-light">
+                  {currentContent.supportFramework.individualResearchers.features.map((feature, index) => (
+                    <p key={index}>• {feature}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop grid layout */}
+            <div className="hidden md:block text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg">
                 <Building className="w-8 h-8 text-white" />
               </div>
@@ -852,7 +902,7 @@ export default function HealthcarePage() {
               </div>
             </div>
 
-            <div className="text-center">
+            <div className="hidden md:block text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg">
                 <Lightbulb className="w-8 h-8 text-white" />
               </div>
@@ -867,7 +917,7 @@ export default function HealthcarePage() {
               </div>
             </div>
 
-            <div className="text-center">
+            <div className="hidden md:block text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg">
                 <HandHeart className="w-8 h-8 text-white" />
               </div>
@@ -884,12 +934,65 @@ export default function HealthcarePage() {
           </div>
 
           {/* Additional Support Types */}
-          <div className="bg-white rounded-3xl p-12 border border-gray-100">
-            <h3 className="text-3xl font-light text-gray-900 mb-12 text-center">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-12 border border-gray-100">
+            <h3 className="text-xl sm:text-3xl font-light text-gray-900 mb-6 sm:mb-12 text-center">
               {currentContent.supportFramework.additionalSupport.title}
             </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div>
+            
+            {/* Mobile horizontal scroll for additional support */}
+            <div className="md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8">
+              <div className="md:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+                <div className="flex-none w-64 snap-start">
+                  <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mb-3">
+                    <Target className="w-4 h-4 text-orange-600" />
+                  </div>
+                  <h4 className="text-base font-normal text-gray-900 mb-3">
+                    {currentContent.supportFramework.additionalSupport.emergencyFunding.title}
+                  </h4>
+                  <p className="text-gray-600 font-light text-xs leading-relaxed">
+                    {currentContent.supportFramework.additionalSupport.emergencyFunding.description}
+                  </p>
+                </div>
+                
+                <div className="flex-none w-64 snap-start">
+                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mb-3">
+                    <Heart className="w-4 h-4 text-green-600" />
+                  </div>
+                  <h4 className="text-base font-normal text-gray-900 mb-3">
+                    {currentContent.supportFramework.additionalSupport.humanitarianHealth.title}
+                  </h4>
+                  <p className="text-gray-600 font-light text-xs leading-relaxed">
+                    {currentContent.supportFramework.additionalSupport.humanitarianHealth.description}
+                  </p>
+                </div>
+                
+                <div className="flex-none w-64 snap-start">
+                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                    <Building className="w-4 h-4 text-blue-600" />
+                  </div>
+                  <h4 className="text-base font-normal text-gray-900 mb-3">
+                    {currentContent.supportFramework.additionalSupport.technologyTransfer.title}
+                  </h4>
+                  <p className="text-gray-600 font-light text-xs leading-relaxed">
+                    {currentContent.supportFramework.additionalSupport.technologyTransfer.description}
+                  </p>
+                </div>
+                
+                <div className="flex-none w-64 snap-start">
+                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
+                    <Globe className="w-4 h-4 text-purple-600" />
+                  </div>
+                  <h4 className="text-base font-normal text-gray-900 mb-3">
+                    {currentContent.supportFramework.additionalSupport.globalCollaboration.title}
+                  </h4>
+                  <p className="text-gray-600 font-light text-xs leading-relaxed">
+                    {currentContent.supportFramework.additionalSupport.globalCollaboration.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Desktop grid */}
+              <div className="hidden md:block">
                 <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                   <Target className="w-5 h-5 text-orange-600" />
                 </div>
@@ -901,7 +1004,7 @@ export default function HealthcarePage() {
                 </p>
               </div>
               
-              <div>
+              <div className="hidden md:block">
                 <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <Heart className="w-5 h-5 text-green-600" />
                 </div>
@@ -913,7 +1016,7 @@ export default function HealthcarePage() {
                 </p>
               </div>
               
-              <div>
+              <div className="hidden md:block">
                 <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Building className="w-5 h-5 text-blue-600" />
                 </div>
@@ -925,7 +1028,7 @@ export default function HealthcarePage() {
                 </p>
               </div>
               
-              <div>
+              <div className="hidden md:block">
                 <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <Globe className="w-5 h-5 text-purple-600" />
                 </div>
@@ -942,39 +1045,39 @@ export default function HealthcarePage() {
       </section>
 
       {/* Global Implementation Strategy */}
-      <section className="py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-extralight text-gray-900 mb-8">
+      <section className="py-16 sm:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-20">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight text-gray-900 mb-4 sm:mb-8">
               {currentContent.globalStrategy.title}
             </h2>
-            <p className="text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            <p className="text-base sm:text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-8">
               {currentContent.globalStrategy.subtitle1}
             </p>
-            <p className="text-lg font-light text-red-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-lg font-light text-red-600 max-w-3xl mx-auto leading-relaxed">
               {currentContent.globalStrategy.subtitle2}
             </p>
           </div>
 
-          <div className="space-y-20">
+          <div className="space-y-12 sm:space-y-20">
             {/* Phase 1 */}
-            <div className="grid lg:grid-cols-3 gap-12 items-center">
+            <div className="grid lg:grid-cols-3 gap-6 sm:gap-12 items-center">
               <div className="lg:col-span-2">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mr-6 shadow-lg">
-                    <span className="text-lg font-light text-white">01</span>
+                <div className="flex items-center mb-4 sm:mb-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mr-4 sm:mr-6 shadow-lg">
+                    <span className="text-base sm:text-lg font-light text-white">01</span>
                   </div>
-                  <h3 className="text-3xl font-light text-gray-900">Regulatory-Independent Zones</h3>
+                  <h3 className="text-xl sm:text-3xl font-light text-gray-900">Regulatory-Independent Zones</h3>
                 </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-6">
+                <p className="text-sm sm:text-lg font-light text-gray-600 leading-relaxed mb-4 sm:mb-6">
                   {currentContent.globalStrategy.phase1.description}
                 </p>
-                <div className="bg-red-50 border-l-4 border-red-400 p-6 mb-6">
-                  <p className="text-red-800 font-light italic">
+                <div className="bg-red-50 border-l-4 border-red-400 p-4 sm:p-6 mb-4 sm:mb-6">
+                  <p className="text-red-800 font-light italic text-sm sm:text-base">
                     {currentContent.globalStrategy.phase1.quote}
                   </p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-6 text-sm font-light text-gray-500">
+                <div className="grid md:grid-cols-2 gap-3 sm:gap-6 text-xs sm:text-sm font-light text-gray-500">
                   <div>
                     {currentContent.globalStrategy.phase1.features.left.map((feature, index) => (
                       <p key={index}>• {feature}</p>
@@ -987,42 +1090,34 @@ export default function HealthcarePage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-red-50 to-orange-100 rounded-3xl p-8 text-center border border-red-200">
-                <Target className="w-16 h-16 text-red-500 mx-auto mb-6" />
-                <h4 className="text-lg font-normal text-gray-900 mb-2">2028-2030</h4>
-                <p className="text-gray-600 font-light">Breaking regulatory bottlenecks</p>
-                <div className="mt-4 text-xs text-red-600 font-medium">
+              <div className="bg-gradient-to-br from-red-50 to-orange-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center border border-red-200">
+                <Target className="w-12 h-12 sm:w-16 sm:h-16 text-red-500 mx-auto mb-4 sm:mb-6" />
+                <h4 className="text-base sm:text-lg font-normal text-gray-900 mb-1 sm:mb-2">2028-2030</h4>
+                <p className="text-gray-600 font-light text-sm">Breaking regulatory bottlenecks</p>
+                <div className="mt-3 sm:mt-4 text-xs text-red-600 font-medium">
                   {currentContent.globalStrategy.phase1.phase}
                 </div>
               </div>
             </div>
 
             {/* Phase 2 */}
-            <div className="grid lg:grid-cols-3 gap-12 items-center">
-              <div className="bg-gradient-to-br from-purple-50 to-indigo-100 rounded-3xl p-8 text-center lg:order-1 border border-purple-200">
-                <Globe className="w-16 h-16 text-purple-500 mx-auto mb-6" />
-                <h4 className="text-lg font-normal text-gray-900 mb-2">2030-2032</h4>
-                <p className="text-gray-600 font-light">Proving superiority at scale</p>
-                <div className="mt-4 text-xs text-purple-600 font-medium">
-                  {currentContent.globalStrategy.phase2.phase}
-                </div>
-              </div>
-              <div className="lg:col-span-2 lg:order-2">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mr-6 shadow-lg">
-                    <span className="text-lg font-light text-white">02</span>
+            <div className="grid lg:grid-cols-3 gap-6 sm:gap-12 items-center">
+              <div className="lg:col-span-2">
+                <div className="flex items-center mb-4 sm:mb-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4 sm:mr-6 shadow-lg">
+                    <span className="text-base sm:text-lg font-light text-white">02</span>
                   </div>
-                  <h3 className="text-3xl font-light text-gray-900">Demonstrating Superiority</h3>
+                  <h3 className="text-xl sm:text-3xl font-light text-gray-900">Demonstrating Superiority</h3>
                 </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-6">
+                <p className="text-sm sm:text-lg font-light text-gray-600 leading-relaxed mb-4 sm:mb-6">
                   {currentContent.globalStrategy.phase2.description}
                 </p>
-                <div className="bg-purple-50 border-l-4 border-purple-400 p-6 mb-6">
-                  <p className="text-purple-800 font-light italic">
+                <div className="bg-blue-50 border-l-4 border-blue-400 p-4 sm:p-6 mb-4 sm:mb-6">
+                  <p className="text-blue-800 font-light italic text-sm sm:text-base">
                     {currentContent.globalStrategy.phase2.quote}
                   </p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-6 text-sm font-light text-gray-500">
+                <div className="grid md:grid-cols-2 gap-3 sm:gap-6 text-xs sm:text-sm font-light text-gray-500">
                   <div>
                     {currentContent.globalStrategy.phase2.features.left.map((feature, index) => (
                       <p key={index}>• {feature}</p>
@@ -1035,26 +1130,34 @@ export default function HealthcarePage() {
                   </div>
                 </div>
               </div>
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center border border-blue-200">
+                <Microscope className="w-12 h-12 sm:w-16 sm:h-16 text-blue-500 mx-auto mb-4 sm:mb-6" />
+                <h4 className="text-base sm:text-lg font-normal text-gray-900 mb-1 sm:mb-2">2030-2032</h4>
+                <p className="text-gray-600 font-light text-sm">Proving superiority through results</p>
+                <div className="mt-3 sm:mt-4 text-xs text-blue-600 font-medium">
+                  {currentContent.globalStrategy.phase2.phase}
+                </div>
+              </div>
             </div>
 
             {/* Phase 3 */}
-            <div className="grid lg:grid-cols-3 gap-12 items-center">
+            <div className="grid lg:grid-cols-3 gap-6 sm:gap-12 items-center">
               <div className="lg:col-span-2">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-6 shadow-lg">
-                    <span className="text-lg font-light text-white">03</span>
+                <div className="flex items-center mb-4 sm:mb-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-4 sm:mr-6 shadow-lg">
+                    <span className="text-base sm:text-lg font-light text-white">03</span>
                   </div>
-                  <h3 className="text-3xl font-light text-gray-900">Global System Replacement</h3>
+                  <h3 className="text-xl sm:text-3xl font-light text-gray-900">Global System Replacement</h3>
                 </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-6">
+                <p className="text-sm sm:text-lg font-light text-gray-600 leading-relaxed mb-4 sm:mb-6">
                   {currentContent.globalStrategy.phase3.description}
                 </p>
-                <div className="bg-green-50 border-l-4 border-green-400 p-6 mb-6">
-                  <p className="text-green-800 font-light italic">
+                <div className="bg-green-50 border-l-4 border-green-400 p-4 sm:p-6 mb-4 sm:mb-6">
+                  <p className="text-green-800 font-light italic text-sm sm:text-base">
                     {currentContent.globalStrategy.phase3.quote}
                   </p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-6 text-sm font-light text-gray-500">
+                <div className="grid md:grid-cols-2 gap-3 sm:gap-6 text-xs sm:text-sm font-light text-gray-500">
                   <div>
                     {currentContent.globalStrategy.phase3.features.left.map((feature, index) => (
                       <p key={index}>• {feature}</p>
@@ -1067,35 +1170,35 @@ export default function HealthcarePage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-3xl p-8 text-center border border-green-200">
-                <Users className="w-16 h-16 text-green-500 mx-auto mb-6" />
-                <h4 className="text-lg font-normal text-gray-900 mb-2">2032-2035</h4>
-                <p className="text-gray-600 font-light">New healthcare paradigm</p>
-                <div className="mt-4 text-xs text-green-600 font-medium">
+              <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center border border-green-200">
+                <Globe className="w-12 h-12 sm:w-16 sm:h-16 text-green-500 mx-auto mb-4 sm:mb-6" />
+                <h4 className="text-base sm:text-lg font-normal text-gray-900 mb-1 sm:mb-2">2032-2035</h4>
+                <p className="text-gray-600 font-light text-sm">Complete system transformation</p>
+                <div className="mt-3 sm:mt-4 text-xs text-green-600 font-medium">
                   {currentContent.globalStrategy.phase3.phase}
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Bold Statement */}
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 text-center text-white">
-              <h3 className="text-3xl font-light mb-6">{currentContent.globalStrategy.promise.title}</h3>
-              <p className="text-xl font-light leading-relaxed mb-6 text-gray-200">
-                {currentContent.globalStrategy.promise.description}
-              </p>
-              <div className="grid md:grid-cols-3 gap-8 mt-8">
-                <div>
-                  <div className="text-3xl font-light text-blue-400 mb-2">{currentContent.globalStrategy.promise.metrics.treatable.value}</div>
-                  <div className="text-sm text-gray-300">{currentContent.globalStrategy.promise.metrics.treatable.label}</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-light text-purple-400 mb-2">{currentContent.globalStrategy.promise.metrics.reduction.value}</div>
-                  <div className="text-sm text-gray-300">{currentContent.globalStrategy.promise.metrics.reduction.label}</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-light text-green-400 mb-2">{currentContent.globalStrategy.promise.metrics.improvement.value}</div>
-                  <div className="text-sm text-gray-300">{currentContent.globalStrategy.promise.metrics.improvement.label}</div>
-                </div>
+          {/* Promise Section */}
+          <div className="mt-16 sm:mt-20 bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center text-white">
+            <h3 className="text-xl sm:text-3xl font-light mb-4 sm:mb-6">{currentContent.globalStrategy.promise.title}</h3>
+            <p className="text-sm sm:text-lg font-light text-gray-200 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
+              {currentContent.globalStrategy.promise.description}
+            </p>
+            <div className="grid grid-cols-3 gap-4 sm:gap-8">
+              <div>
+                <div className="text-xl sm:text-3xl font-light text-blue-400 mb-2">{currentContent.globalStrategy.promise.metrics.treatable.value}</div>
+                <div className="text-xs sm:text-sm text-gray-300">{currentContent.globalStrategy.promise.metrics.treatable.label}</div>
+              </div>
+              <div>
+                <div className="text-xl sm:text-3xl font-light text-green-400 mb-2">{currentContent.globalStrategy.promise.metrics.reduction.value}</div>
+                <div className="text-xs sm:text-sm text-gray-300">{currentContent.globalStrategy.promise.metrics.reduction.label}</div>
+              </div>
+              <div>
+                <div className="text-xl sm:text-3xl font-light text-purple-400 mb-2">{currentContent.globalStrategy.promise.metrics.improvement.value}</div>
+                <div className="text-xs sm:text-sm text-gray-300">{currentContent.globalStrategy.promise.metrics.improvement.label}</div>
               </div>
             </div>
           </div>
@@ -1103,427 +1206,290 @@ export default function HealthcarePage() {
       </section>
 
       {/* Revolutionary Medical Technologies - Deep Dive */}
-      <section className="py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-extralight text-gray-900 mb-8">
+      <section className="py-16 sm:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-20">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight text-gray-900 mb-4 sm:mb-8">
               {currentContent.revolutionaryTech.title}
             </h2>
-            <p className="text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
               {currentContent.revolutionaryTech.subtitle}
             </p>
           </div>
 
-          {/* Genetic Therapies: The Sacred Domain */}
-          <div className="mb-24">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <div className="flex items-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                    <Dna className="w-8 h-8 text-white" />
+          {/* Technology Cards - Mobile Horizontal Scroll */}
+          <div className="lg:space-y-24">
+            {/* Mobile horizontal scroll container */}
+            <div className="lg:hidden flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory">
+              {/* Genetic Therapies Card */}
+              <div className="flex-none w-[320px] snap-start bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 border border-purple-200">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                    <Dna className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-3xl font-light text-gray-900">{currentContent.revolutionaryTech.geneticTherapies.title}</h3>
+                  <h3 className="text-lg font-light text-gray-900">{currentContent.revolutionaryTech.geneticTherapies.title}</h3>
                 </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                  {currentContent.revolutionaryTech.geneticTherapies.description}
+                <p className="text-sm font-light text-gray-600 leading-relaxed mb-4">
+                  {currentContent.revolutionaryTech.geneticTherapies.description.slice(0, 150)}...
                 </p>
                 
-                <div className="bg-purple-50 rounded-xl p-6 border-l-4 border-purple-400 mb-8">
-                  <h4 className="font-medium text-purple-800 mb-3">{currentContent.revolutionaryTech.geneticTherapies.breakthrough.title}</h4>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {currentContent.revolutionaryTech.geneticTherapies.breakthrough.description}
+                <div className="bg-purple-100 rounded-lg p-4 border-l-4 border-purple-400 mb-4">
+                  <h4 className="font-medium text-purple-800 mb-2 text-sm">{currentContent.revolutionaryTech.geneticTherapies.breakthrough.title}</h4>
+                  <p className="text-xs text-gray-700 leading-relaxed">
+                    {currentContent.revolutionaryTech.geneticTherapies.breakthrough.description.slice(0, 120)}...
                   </p>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mt-1">
-                      <Heart className="w-4 h-4 text-purple-600" />
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-purple-100 rounded-md flex items-center justify-center mt-0.5">
+                      <Heart className="w-3 h-3 text-purple-600" />
                     </div>
                     <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{currentContent.revolutionaryTech.geneticTherapies.features.monogenic.title}</h5>
-                      <p className="text-sm text-gray-600">{currentContent.revolutionaryTech.geneticTherapies.features.monogenic.description}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mt-1">
-                      <Lightbulb className="w-4 h-4 text-purple-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{currentContent.revolutionaryTech.geneticTherapies.features.delivery.title}</h5>
-                      <p className="text-sm text-gray-600">{currentContent.revolutionaryTech.geneticTherapies.features.delivery.description}</p>
+                      <h5 className="font-medium text-gray-900 mb-1 text-sm">{currentContent.revolutionaryTech.geneticTherapies.features.monogenic.title}</h5>
+                      <p className="text-xs text-gray-600">{currentContent.revolutionaryTech.geneticTherapies.features.monogenic.description.slice(0, 80)}...</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl p-8 border border-purple-200">
-                <h4 className="text-xl font-medium text-gray-900 mb-6">{currentContent.revolutionaryTech.geneticTherapies.timeline.title}</h4>
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-purple-200">
-                    <span className="font-medium text-gray-900">{currentContent.revolutionaryTech.geneticTherapies.timeline.sickleCell}</span>
-                    <span className="bg-green-100 text-green-700 px-3 py-1 rounded text-sm font-medium">{currentContent.revolutionaryTech.geneticTherapies.timeline.cured2024}</span>
+              {/* Multiple Sclerosis Card */}
+              <div className="flex-none w-[320px] snap-start bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-200">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                    <Microscope className="w-6 h-6 text-white" />
                   </div>
-                  <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-purple-200">
-                    <span className="font-medium text-gray-900">{currentContent.revolutionaryTech.geneticTherapies.timeline.duchenne}</span>
-                    <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm font-medium">{currentContent.revolutionaryTech.geneticTherapies.timeline.year2026}</span>
-                  </div>
-                  <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-purple-200">
-                    <span className="font-medium text-gray-900">{currentContent.revolutionaryTech.geneticTherapies.timeline.huntington}</span>
-                    <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm font-medium">{currentContent.revolutionaryTech.geneticTherapies.timeline.year2028}</span>
-                  </div>
-                  <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-purple-200">
-                    <span className="font-medium text-gray-900">{currentContent.revolutionaryTech.geneticTherapies.timeline.allMonogenic}</span>
-                    <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded text-sm font-medium">{currentContent.revolutionaryTech.geneticTherapies.timeline.year2030}</span>
-                  </div>
+                  <h3 className="text-lg font-light text-gray-900">{currentContent.revolutionaryTech.multipleSclerosis.title}</h3>
                 </div>
-                
-                <div className="mt-8 p-4 bg-purple-100 rounded-lg">
-                  <h5 className="font-medium text-purple-800 mb-2">{currentContent.revolutionaryTech.geneticTherapies.promise.title}</h5>
-                  <p className="text-sm text-purple-700">
-                    {currentContent.revolutionaryTech.geneticTherapies.promise.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Multiple Sclerosis: Regenerating the Sacred Network */}
-          <div className="mb-24">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div className="lg:order-2">
-                <div className="flex items-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                    <Microscope className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-light text-gray-900">{currentContent.revolutionaryTech.multipleSclerosis.title}</h3>
-                </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                  {currentContent.revolutionaryTech.multipleSclerosis.description}
+                <p className="text-sm font-light text-gray-600 leading-relaxed mb-4">
+                  {currentContent.revolutionaryTech.multipleSclerosis.description.slice(0, 150)}...
                 </p>
                 
-                <div className="bg-blue-50 rounded-xl p-6 border-l-4 border-blue-400 mb-8">
-                  <h4 className="font-medium text-blue-800 mb-3">{currentContent.revolutionaryTech.multipleSclerosis.breakthrough.title}</h4>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {currentContent.revolutionaryTech.multipleSclerosis.breakthrough.description}
+                <div className="bg-blue-100 rounded-lg p-4 border-l-4 border-blue-400 mb-4">
+                  <h4 className="font-medium text-blue-800 mb-2 text-sm">{currentContent.revolutionaryTech.multipleSclerosis.breakthrough.title}</h4>
+                  <p className="text-xs text-gray-700 leading-relaxed">
+                    {currentContent.revolutionaryTech.multipleSclerosis.breakthrough.description.slice(0, 120)}...
                   </p>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mt-1">
-                      <Target className="w-4 h-4 text-blue-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{currentContent.revolutionaryTech.multipleSclerosis.features.reprogramming.title}</h5>
-                      <p className="text-sm text-gray-600">{currentContent.revolutionaryTech.multipleSclerosis.features.reprogramming.description}</p>
-                    </div>
+                <div className="bg-white rounded-lg p-3 border border-blue-200">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-medium text-gray-900 text-sm">{currentContent.revolutionaryTech.multipleSclerosis.evolution.complete}</span>
+                    <span className="text-blue-700 font-bold text-sm">{currentContent.revolutionaryTech.multipleSclerosis.evolution.fullRecovery}</span>
                   </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mt-1">
-                      <Globe className="w-4 h-4 text-blue-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{currentContent.revolutionaryTech.multipleSclerosis.features.matrices.title}</h5>
-                      <p className="text-sm text-gray-600">{currentContent.revolutionaryTech.multipleSclerosis.features.matrices.description}</p>
-                    </div>
+                  <div className="w-full bg-blue-200 rounded-full h-1.5">
+                    <div className="bg-green-500 h-1.5 rounded-full" style={{width: '95%'}}></div>
                   </div>
+                  <div className="text-xs text-gray-600 mt-1">{currentContent.revolutionaryTech.multipleSclerosis.evolution.function95}</div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 border border-blue-200 lg:order-1">
-                <h4 className="text-xl font-medium text-gray-900 mb-6">{currentContent.revolutionaryTech.multipleSclerosis.evolution.title}</h4>
-                <div className="space-y-4">
-                  <div className="bg-white rounded-lg p-4 border border-blue-200">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{currentContent.revolutionaryTech.multipleSclerosis.evolution.current}</span>
-                      <span className="text-blue-700 font-bold">{currentContent.revolutionaryTech.multipleSclerosis.evolution.slowProgression}</span>
-                    </div>
-                    <div className="w-full bg-blue-200 rounded-full h-2">
-                      <div className="bg-red-500 h-2 rounded-full" style={{width: '30%'}}></div>
-                    </div>
-                    <div className="text-xs text-gray-600 mt-1">{currentContent.revolutionaryTech.multipleSclerosis.evolution.efficacy30}</div>
+              {/* Cancer Card */}
+              <div className="flex-none w-[320px] snap-start bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl p-6 border border-red-200">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                    <Target className="w-6 h-6 text-white" />
                   </div>
-                  <div className="bg-white rounded-lg p-4 border border-blue-200">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{currentContent.revolutionaryTech.multipleSclerosis.evolution.remyelination}</span>
-                      <span className="text-blue-700 font-bold">{currentContent.revolutionaryTech.multipleSclerosis.evolution.repairDamage}</span>
-                    </div>
-                    <div className="w-full bg-blue-200 rounded-full h-2">
-                      <div className="bg-yellow-500 h-2 rounded-full" style={{width: '75%'}}></div>
-                    </div>
-                    <div className="text-xs text-gray-600 mt-1">{currentContent.revolutionaryTech.multipleSclerosis.evolution.restoration75}</div>
-                  </div>
-                  <div className="bg-white rounded-lg p-4 border border-blue-200">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{currentContent.revolutionaryTech.multipleSclerosis.evolution.complete}</span>
-                      <span className="text-blue-700 font-bold">{currentContent.revolutionaryTech.multipleSclerosis.evolution.fullRecovery}</span>
-                    </div>
-                    <div className="w-full bg-blue-200 rounded-full h-2">
-                      <div className="bg-green-500 h-2 rounded-full" style={{width: '95%'}}></div>
-                    </div>
-                    <div className="text-xs text-gray-600 mt-1">{currentContent.revolutionaryTech.multipleSclerosis.evolution.function95}</div>
-                  </div>
+                  <h3 className="text-lg font-light text-gray-900">{currentContent.revolutionaryTech.cancer.title}</h3>
                 </div>
-
-                <div className="mt-8 p-4 bg-blue-100 rounded-lg">
-                  <h5 className="font-medium text-blue-800 mb-2">{currentContent.revolutionaryTech.multipleSclerosis.impact.title}</h5>
-                  <p className="text-sm text-blue-700">
-                    {currentContent.revolutionaryTech.multipleSclerosis.impact.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Cancer: The Cellular Rebellion */}
-          <div className="mb-24">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <div className="flex items-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                    <Target className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-light text-gray-900">{currentContent.revolutionaryTech.cancer.title}</h3>
-                </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                  {currentContent.revolutionaryTech.cancer.description}
+                <p className="text-sm font-light text-gray-600 leading-relaxed mb-4">
+                  {currentContent.revolutionaryTech.cancer.description.slice(0, 150)}...
                 </p>
                 
-                <div className="bg-red-50 rounded-xl p-6 border-l-4 border-red-400 mb-8">
-                  <h4 className="font-medium text-red-800 mb-3">{currentContent.revolutionaryTech.cancer.breakthrough.title}</h4>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {currentContent.revolutionaryTech.cancer.breakthrough.description}
+                <div className="bg-red-100 rounded-lg p-4 border-l-4 border-red-400 mb-4">
+                  <h4 className="font-medium text-red-800 mb-2 text-sm">{currentContent.revolutionaryTech.cancer.breakthrough.title}</h4>
+                  <p className="text-xs text-gray-700 leading-relaxed">
+                    {currentContent.revolutionaryTech.cancer.breakthrough.description.slice(0, 120)}...
                   </p>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mt-1">
-                      <Users className="w-4 h-4 text-red-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{currentContent.revolutionaryTech.cancer.features.liquidBiopsy.title}</h5>
-                      <p className="text-sm text-gray-600">{currentContent.revolutionaryTech.cancer.features.liquidBiopsy.description}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mt-1">
-                      <Lightbulb className="w-4 h-4 text-red-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{currentContent.revolutionaryTech.cancer.features.microenvironment.title}</h5>
-                      <p className="text-sm text-gray-600">{currentContent.revolutionaryTech.cancer.features.microenvironment.description}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-red-50 to-pink-50 rounded-3xl p-8 border border-red-200">
-                <h4 className="text-xl font-medium text-gray-900 mb-6">{currentContent.revolutionaryTech.cancer.progress.title}</h4>
-                <div className="space-y-6">
+                <div className="space-y-3">
                   <div>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{currentContent.revolutionaryTech.cancer.progress.bloodCancers}</span>
-                      <div className="text-right">
-                        <div className="text-red-700 font-bold">{currentContent.revolutionaryTech.cancer.progress.remission89}</div>
-                        <div className="text-xs text-gray-600">{currentContent.revolutionaryTech.cancer.progress.carTTherapy}</div>
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="font-medium text-gray-900 text-sm">{currentContent.revolutionaryTech.cancer.progress.bloodCancers}</span>
+                      <div className="text-red-700 font-bold text-sm">{currentContent.revolutionaryTech.cancer.progress.remission89}</div>
+                    </div>
+                    <div className="w-full bg-red-200 rounded-full h-1.5">
+                      <div className="bg-green-600 h-1.5 rounded-full" style={{width: '89%'}}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Aging Card */}
+              <div className="flex-none w-[320px] snap-start bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-200">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                    <Dna className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-light text-gray-900">{currentContent.revolutionaryTech.aging.title}</h3>
+                </div>
+                <p className="text-sm font-light text-gray-600 leading-relaxed mb-4">
+                  {currentContent.revolutionaryTech.aging.description.slice(0, 150)}...
+                </p>
+                
+                <div className="bg-green-100 rounded-lg p-4 border-l-4 border-green-400 mb-4">
+                  <h4 className="font-medium text-green-800 mb-2 text-sm">{currentContent.revolutionaryTech.aging.breakthrough.title}</h4>
+                  <p className="text-xs text-gray-700 leading-relaxed">
+                    {currentContent.revolutionaryTech.aging.breakthrough.description.slice(0, 120)}...
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-lg p-3 border border-green-200">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-medium text-gray-900 text-sm">{currentContent.revolutionaryTech.aging.timeline.fullRegenerative}</span>
+                    <span className="text-green-700 font-bold text-sm">{currentContent.revolutionaryTech.aging.timeline.years200}</span>
+                  </div>
+                  <div className="w-full bg-green-200 rounded-full h-1.5">
+                    <div className="bg-blue-600 h-1.5 rounded-full" style={{width: '75%'}}></div>
+                  </div>
+                  <div className="text-xs text-gray-600 mt-1">{currentContent.revolutionaryTech.aging.timeline.theoreticalMax}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop version - keep original large layouts but optimize */}
+            <div className="hidden lg:block">
+              {/* Genetic Therapies: The Sacred Domain */}
+              <div className="mb-16 sm:mb-24">
+                <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-start">
+                  <div>
+                    <div className="flex items-center mb-6 sm:mb-8">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center mr-4 sm:mr-6 shadow-lg">
+                        <Dna className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                      </div>
+                      <h3 className="text-2xl sm:text-3xl font-light text-gray-900">{currentContent.revolutionaryTech.geneticTherapies.title}</h3>
+                    </div>
+                    <p className="text-base sm:text-lg font-light text-gray-600 leading-relaxed mb-6 sm:mb-8">
+                      {currentContent.revolutionaryTech.geneticTherapies.description}
+                    </p>
+                    
+                    <div className="bg-purple-50 rounded-xl p-4 sm:p-6 border-l-4 border-purple-400 mb-6 sm:mb-8">
+                      <h4 className="font-medium text-purple-800 mb-2 sm:mb-3">{currentContent.revolutionaryTech.geneticTherapies.breakthrough.title}</h4>
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        {currentContent.revolutionaryTech.geneticTherapies.breakthrough.description}
+                      </p>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mt-1">
+                          <Heart className="w-4 h-4 text-purple-600" />
+                        </div>
+                        <div>
+                          <h5 className="font-medium text-gray-900 mb-1">{currentContent.revolutionaryTech.geneticTherapies.features.monogenic.title}</h5>
+                          <p className="text-sm text-gray-600">{currentContent.revolutionaryTech.geneticTherapies.features.monogenic.description}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-4">
+                        <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mt-1">
+                          <Lightbulb className="w-4 h-4 text-purple-600" />
+                        </div>
+                        <div>
+                          <h5 className="font-medium text-gray-900 mb-1">{currentContent.revolutionaryTech.geneticTherapies.features.delivery.title}</h5>
+                          <p className="text-sm text-gray-600">{currentContent.revolutionaryTech.geneticTherapies.features.delivery.description}</p>
+                        </div>
                       </div>
                     </div>
-                    <div className="w-full bg-red-200 rounded-full h-2">
-                      <div className="bg-green-600 h-2 rounded-full" style={{width: '89%'}}></div>
-                    </div>
                   </div>
-                  <div>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{currentContent.revolutionaryTech.cancer.progress.solidTumors}</span>
-                      <div className="text-right">
-                        <div className="text-red-700 font-bold">{currentContent.revolutionaryTech.cancer.progress.response67}</div>
-                        <div className="text-xs text-gray-600">{currentContent.revolutionaryTech.cancer.progress.combinationTherapy}</div>
-                      </div>
-                    </div>
-                    <div className="w-full bg-red-200 rounded-full h-2">
-                      <div className="bg-yellow-600 h-2 rounded-full" style={{width: '67%'}}></div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{currentContent.revolutionaryTech.cancer.progress.metastatic}</span>
-                      <div className="text-right">
-                        <div className="text-red-700 font-bold">{currentContent.revolutionaryTech.cancer.progress.control45}</div>
-                        <div className="text-xs text-gray-600">{currentContent.revolutionaryTech.cancer.progress.novelImmunotherapy}</div>
-                      </div>
-                    </div>
-                    <div className="w-full bg-red-200 rounded-full h-2">
-                      <div className="bg-orange-600 h-2 rounded-full" style={{width: '45%'}}></div>
-                    </div>
-                  </div>
-                </div>
 
-                <div className="mt-8 p-4 bg-red-100 rounded-lg">
-                  <h5 className="font-medium text-red-800 mb-2">{currentContent.revolutionaryTech.cancer.goal.title}</h5>
-                  <p className="text-sm text-red-700">
-                    {currentContent.revolutionaryTech.cancer.goal.description}
-                  </p>
+                  <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-purple-200">
+                    <h4 className="text-lg sm:text-xl font-medium text-gray-900 mb-4 sm:mb-6">{currentContent.revolutionaryTech.geneticTherapies.timeline.title}</h4>
+                    <div className="space-y-4 sm:space-y-6">
+                      <div className="flex items-center justify-between p-3 sm:p-4 bg-white rounded-lg border border-purple-200">
+                        <span className="font-medium text-gray-900 text-sm sm:text-base">{currentContent.revolutionaryTech.geneticTherapies.timeline.sickleCell}</span>
+                        <span className="bg-green-100 text-green-700 px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-medium">{currentContent.revolutionaryTech.geneticTherapies.timeline.cured2024}</span>
+                      </div>
+                      <div className="flex items-center justify-between p-3 sm:p-4 bg-white rounded-lg border border-purple-200">
+                        <span className="font-medium text-gray-900 text-sm sm:text-base">{currentContent.revolutionaryTech.geneticTherapies.timeline.duchenne}</span>
+                        <span className="bg-purple-100 text-purple-700 px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-medium">{currentContent.revolutionaryTech.geneticTherapies.timeline.year2026}</span>
+                      </div>
+                      <div className="flex items-center justify-between p-3 sm:p-4 bg-white rounded-lg border border-purple-200">
+                        <span className="font-medium text-gray-900 text-sm sm:text-base">{currentContent.revolutionaryTech.geneticTherapies.timeline.huntington}</span>
+                        <span className="bg-purple-100 text-purple-700 px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-medium">{currentContent.revolutionaryTech.geneticTherapies.timeline.year2028}</span>
+                      </div>
+                      <div className="flex items-center justify-between p-3 sm:p-4 bg-white rounded-lg border border-purple-200">
+                        <span className="font-medium text-gray-900 text-sm sm:text-base">{currentContent.revolutionaryTech.geneticTherapies.timeline.allMonogenic}</span>
+                        <span className="bg-blue-100 text-blue-700 px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-medium">{currentContent.revolutionaryTech.geneticTherapies.timeline.year2030}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-purple-100 rounded-lg">
+                      <h5 className="font-medium text-purple-800 mb-2">{currentContent.revolutionaryTech.geneticTherapies.promise.title}</h5>
+                      <p className="text-xs sm:text-sm text-purple-700">
+                        {currentContent.revolutionaryTech.geneticTherapies.promise.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Aging: The Final Frontier */}
-          <div className="mb-24">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div className="lg:order-2">
-                <div className="flex items-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                    <Dna className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-light text-gray-900">{currentContent.revolutionaryTech.aging.title}</h3>
+          {/* Convergence Section */}
+          <div className="mt-16 sm:mt-24 bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center text-white">
+            <h3 className="text-xl sm:text-3xl font-light mb-4 sm:mb-6">{currentContent.revolutionaryTech.convergence.title}</h3>
+            <p className="text-sm sm:text-lg font-light text-gray-200 max-w-4xl mx-auto mb-8 sm:mb-12 leading-relaxed">
+              {currentContent.revolutionaryTech.convergence.subtitle}
+            </p>
+            
+            {/* Mobile horizontal scroll for convergence items */}
+            <div className="md:grid md:grid-cols-3 md:gap-8">
+              <div className="md:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+                <div className="flex-none w-64 snap-start text-center p-4 bg-white/10 rounded-xl">
+                  <h4 className="text-base font-medium text-white mb-2">{currentContent.revolutionaryTech.convergence.personalizedGene.title}</h4>
+                  <p className="text-xs text-gray-300">{currentContent.revolutionaryTech.convergence.personalizedGene.description}</p>
                 </div>
-                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                  {currentContent.revolutionaryTech.aging.description}
-                </p>
-                
-                <div className="bg-green-50 rounded-xl p-6 border-l-4 border-green-400 mb-8">
-                  <h4 className="font-medium text-green-800 mb-3">{currentContent.revolutionaryTech.aging.breakthrough.title}</h4>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {currentContent.revolutionaryTech.aging.breakthrough.description}
-                  </p>
+                <div className="flex-none w-64 snap-start text-center p-4 bg-white/10 rounded-xl">
+                  <h4 className="text-base font-medium text-white mb-2">{currentContent.revolutionaryTech.convergence.regenerativeOrgans.title}</h4>
+                  <p className="text-xs text-gray-300">{currentContent.revolutionaryTech.convergence.regenerativeOrgans.description}</p>
                 </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mt-1">
-                      <Heart className="w-4 h-4 text-green-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{currentContent.revolutionaryTech.aging.features.senescent.title}</h5>
-                      <p className="text-sm text-gray-600">{currentContent.revolutionaryTech.aging.features.senescent.description}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mt-1">
-                      <Globe className="w-4 h-4 text-green-600" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-gray-900 mb-1">{currentContent.revolutionaryTech.aging.features.telomere.title}</h5>
-                      <p className="text-sm text-gray-600">{currentContent.revolutionaryTech.aging.features.telomere.description}</p>
-                    </div>
-                  </div>
+                <div className="flex-none w-64 snap-start text-center p-4 bg-white/10 rounded-xl">
+                  <h4 className="text-base font-medium text-white mb-2">{currentContent.revolutionaryTech.convergence.molecularSurgery.title}</h4>
+                  <p className="text-xs text-gray-300">{currentContent.revolutionaryTech.convergence.molecularSurgery.description}</p>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-200 lg:order-1">
-                <h4 className="text-xl font-medium text-gray-900 mb-6">{currentContent.revolutionaryTech.aging.timeline.title}</h4>
-                <div className="space-y-4">
-                  <div className="bg-white rounded-lg p-4 border border-green-200">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{currentContent.revolutionaryTech.aging.timeline.currentLifespan}</span>
-                      <span className="text-green-700 font-bold">{currentContent.revolutionaryTech.aging.timeline.years80}</span>
-                    </div>
-                    <div className="w-full bg-green-200 rounded-full h-2">
-                      <div className="bg-gray-500 h-2 rounded-full" style={{width: '100%'}}></div>
-                    </div>
-                    <div className="text-xs text-gray-600 mt-1">{currentContent.revolutionaryTech.aging.timeline.naturalAging}</div>
-                  </div>
-                  <div className="bg-white rounded-lg p-4 border border-green-200">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{currentContent.revolutionaryTech.aging.timeline.withTherapy}</span>
-                      <span className="text-green-700 font-bold">{currentContent.revolutionaryTech.aging.timeline.years120}</span>
-                    </div>
-                    <div className="w-full bg-green-200 rounded-full h-2">
-                      <div className="bg-green-500 h-2 rounded-full" style={{width: '150%'}}></div>
-                    </div>
-                    <div className="text-xs text-gray-600 mt-1">{currentContent.revolutionaryTech.aging.timeline.availableBy2030}</div>
-                  </div>
-                  <div className="bg-white rounded-lg p-4 border border-green-200">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900">{currentContent.revolutionaryTech.aging.timeline.fullRegenerative}</span>
-                      <span className="text-green-700 font-bold">{currentContent.revolutionaryTech.aging.timeline.years200}</span>
-                    </div>
-                    <div className="w-full bg-green-200 rounded-full h-2">
-                      <div className="bg-green-600 h-2 rounded-full" style={{width: '250%'}}></div>
-                    </div>
-                    <div className="text-xs text-gray-600 mt-1">{currentContent.revolutionaryTech.aging.timeline.theoreticalMax}</div>
-                  </div>
-                </div>
-
-                <div className="mt-8 p-4 bg-green-100 rounded-lg">
-                  <h5 className="font-medium text-green-800 mb-2">{currentContent.revolutionaryTech.aging.investment.title}</h5>
-                  <p className="text-sm text-green-700">
-                    {currentContent.revolutionaryTech.aging.investment.description}
-                  </p>
-                </div>
+              {/* Desktop grid */}
+              <div className="hidden md:block text-center">
+                <h4 className="text-xl font-medium text-white mb-4">{currentContent.revolutionaryTech.convergence.personalizedGene.title}</h4>
+                <p className="text-gray-300">{currentContent.revolutionaryTech.convergence.personalizedGene.description}</p>
+              </div>
+              <div className="hidden md:block text-center">
+                <h4 className="text-xl font-medium text-white mb-4">{currentContent.revolutionaryTech.convergence.regenerativeOrgans.title}</h4>
+                <p className="text-gray-300">{currentContent.revolutionaryTech.convergence.regenerativeOrgans.description}</p>
+              </div>
+              <div className="hidden md:block text-center">
+                <h4 className="text-xl font-medium text-white mb-4">{currentContent.revolutionaryTech.convergence.molecularSurgery.title}</h4>
+                <p className="text-gray-300">{currentContent.revolutionaryTech.convergence.molecularSurgery.description}</p>
               </div>
             </div>
-          </div>
 
-          {/* Revolutionary Technologies Integration */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-light text-white mb-6">{currentContent.revolutionaryTech.convergence.title}</h3>
-              <p className="text-lg font-light text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                {currentContent.revolutionaryTech.convergence.subtitle}
+            <div className="mt-8 sm:mt-12 p-4 sm:p-6 bg-white/10 rounded-xl border border-white/20">
+              <p className="text-sm sm:text-lg font-light italic text-blue-300">
+                {currentContent.revolutionaryTech.convergence.quote}
               </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Dna className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-lg font-medium text-white mb-4">{currentContent.revolutionaryTech.convergence.personalizedGene.title}</h4>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {currentContent.revolutionaryTech.convergence.personalizedGene.description}
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Microscope className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-lg font-medium text-white mb-4">{currentContent.revolutionaryTech.convergence.regenerativeOrgans.title}</h4>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {currentContent.revolutionaryTech.convergence.regenerativeOrgans.description}
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Target className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-lg font-medium text-white mb-4">{currentContent.revolutionaryTech.convergence.molecularSurgery.title}</h4>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {currentContent.revolutionaryTech.convergence.molecularSurgery.description}
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-12 text-center">
-              <div className="bg-white/10 rounded-2xl p-6 inline-block">
-                <p className="text-white font-light italic text-lg">
-                  "{currentContent.revolutionaryTech.convergence.quote}"
-                </p>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Closing Vision */}
-      <section className="py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-extralight mb-12 leading-tight">
+      <section className="py-16 sm:py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extralight mb-6 sm:mb-12 leading-tight">
             {currentContent.closing.title}
           </h2>
-          <div className="space-y-8 text-lg md:text-xl font-light leading-relaxed text-gray-300">
+          <div className="space-y-4 sm:space-y-8 text-base sm:text-lg md:text-xl font-light leading-relaxed text-gray-300">
             <p>
               {currentContent.closing.text1}
             </p>
             <p>
               {currentContent.closing.text2}
             </p>
-            <p className="text-2xl md:text-3xl font-light text-white pt-8">
+            <p className="text-lg sm:text-2xl md:text-3xl font-light text-white pt-4 sm:pt-8">
               {currentContent.closing.text3}
-              <span className="block mt-4 text-blue-300">
+              <span className="block mt-2 sm:mt-4 text-blue-300">
                 {currentContent.closing.text4}
               </span>
             </p>
