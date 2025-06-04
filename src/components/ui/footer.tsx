@@ -86,11 +86,11 @@ export default function Footer({ theme = 'light' }: FooterProps) {
             <div className="lg:col-span-1">
               <div className="mb-4 md:mb-6">
                 <Image
-                  src="/logo.png" 
+                  src="/V.png" 
                   alt="Vacid & Köksal Vakfı Logosu"
                   width={160}
-                  height={40}
-                  className="md:w-[200px] md:h-[50px] mb-3 md:mb-4"
+                  height={160}
+                  className="w-[35px] h-[35px] md:w-[45px] md:h-[45px] lg:w-[55px] lg:h-[55px] mb-3 md:mb-4"
                   style={isDark ? { filter: 'invert(1)' } : {}}
                 />
                 <p className={`text-xs md:text-sm leading-relaxed ${
@@ -274,11 +274,11 @@ export default function Footer({ theme = 'light' }: FooterProps) {
           <div className="lg:col-span-1">
             <div className="mb-4 md:mb-6">
               <Image
-                src="/logo.png" 
+                src="/V.png" 
                 alt="Vacid & Köksal Foundation Logo"
                 width={160}
-                height={40}
-                className="md:w-[200px] md:h-[50px] mb-3 md:mb-4"
+                height={160}
+                className="w-[35px] h-[35px] md:w-[45px] md:h-[45px] lg:w-[55px] lg:h-[55px] mb-3 md:mb-4"
                 style={isDark ? { filter: 'invert(1)' } : {}}
               />
               <p className={`text-xs md:text-sm leading-relaxed ${

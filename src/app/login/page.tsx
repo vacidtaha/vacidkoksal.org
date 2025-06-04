@@ -396,13 +396,13 @@ export default function Login() {
         {/* Büyük Logo */}
         <div className="relative z-10 text-center">
           <Image
-            src="/logo.png" 
+            src="/V.png" 
             alt="Vacid & Köksal Foundation Logo"
             width={500}
-            height={125}
+            height={500}
             priority
             style={{ filter: 'brightness(0) invert(1)' }}
-            className="mx-auto"
+            className="mx-auto w-[88px] h-[88px] md:w-[113px] md:h-[113px] lg:w-[125px] lg:h-[125px]"
           />
         </div>
       </div>

@@ -103,11 +103,11 @@ function SlideMenuComponent({ isOpen, onClose }: SlideMenuProps) {
             {/* Header */}
             <div className="flex justify-between items-center mb-4 md:mb-8 flex-shrink-0">
               <Image
-                src="/logo.png" 
-                alt="Vacid & Köksal Vakfı Logosu"
+                src="/V.png" 
+                alt="Vacid & Köksal Foundation Logo"
                 width={140}
-                height={35}
-                className="md:w-[180px] md:h-[45px]"
+                height={140}
+                className="w-[30px] h-[30px] md:w-[40px] md:h-[40px] lg:w-[45px] lg:h-[45px]"
                 priority
               />
               <button
@@ -298,11 +298,11 @@ function SlideMenuComponent({ isOpen, onClose }: SlideMenuProps) {
           {/* Header */}
           <div className="flex justify-between items-center mb-4 md:mb-8 flex-shrink-0">
             <Image
-              src="/logo.png" 
+              src="/V.png" 
               alt="Vacid & Köksal Foundation Logo"
               width={140}
-              height={35}
-              className="md:w-[180px] md:h-[45px]"
+              height={140}
+              className="w-[30px] h-[30px] md:w-[40px] md:h-[40px] lg:w-[45px] lg:h-[45px]"
               priority
             />
             <button
