@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Heart, Microscope, Dna, Users, Globe, Lightbulb, Target, Building, HandHeart } from 'lucide-react';
+import { TextShimmer } from '@/components/ui/text-shimmer';
 
 const content = {
   en: {
@@ -838,6 +839,16 @@ export default function HealthcarePage() {
 
           {/* Mobil için horizontal scroll, desktop için grid */}
           <div className="md:grid md:grid-cols-3 md:gap-12 mb-12 sm:mb-20">
+            {/* Shimmer Message for Support Framework */}
+            <div className="md:hidden mb-6 text-center">
+              <TextShimmer 
+                duration={2.5}
+                className="text-sm font-medium [--base-color:theme(colors.gray.500)] [--base-gradient-color:theme(colors.gray.300)] dark:[--base-color:theme(colors.gray.300)] dark:[--base-gradient-color:theme(colors.gray.200)]"
+              >
+                {selectedLanguage === 'tr' ? 'Destek türlerini görmek için kaydırın →' : 'Swipe to explore support types →'}
+              </TextShimmer>
+            </div>
+
             {/* Mobile horizontal scroll container */}
             <div className="md:hidden flex gap-6 overflow-x-auto pb-4 px-1 -mx-1 snap-x snap-mandatory">
               <div className="flex-none w-[280px] snap-start text-center bg-white rounded-2xl p-6 border border-gray-100">
@@ -941,6 +952,16 @@ export default function HealthcarePage() {
             
             {/* Mobile horizontal scroll for additional support */}
             <div className="md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8">
+              {/* Shimmer Message for Additional Support */}
+              <div className="md:hidden mb-6 text-center">
+                <TextShimmer 
+                  duration={2.5}
+                  className="text-sm font-medium [--base-color:theme(colors.gray.500)] [--base-gradient-color:theme(colors.gray.300)] dark:[--base-color:theme(colors.gray.300)] dark:[--base-gradient-color:theme(colors.gray.200)]"
+                >
+                  {selectedLanguage === 'tr' ? 'Ek destek seçeneklerini keşfedin →' : 'Discover additional support options →'}
+                </TextShimmer>
+              </div>
+
               <div className="md:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
                 <div className="flex-none w-64 snap-start">
                   <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mb-3">
@@ -1219,6 +1240,16 @@ export default function HealthcarePage() {
 
           {/* Technology Cards - Mobile Horizontal Scroll */}
           <div className="lg:space-y-24">
+            {/* Shimmer Message for Revolutionary Tech */}
+            <div className="lg:hidden mb-6 text-center">
+              <TextShimmer 
+                duration={2.5}
+                className="text-sm font-medium [--base-color:theme(colors.gray.500)] [--base-gradient-color:theme(colors.gray.300)] dark:[--base-color:theme(colors.gray.300)] dark:[--base-gradient-color:theme(colors.gray.200)]"
+              >
+                {selectedLanguage === 'tr' ? 'Devrimci teknolojileri keşfedin →' : 'Explore revolutionary technologies →'}
+              </TextShimmer>
+            </div>
+
             {/* Mobile horizontal scroll container */}
             <div className="lg:hidden flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory">
               {/* Genetic Therapies Card */}
@@ -1435,6 +1466,16 @@ export default function HealthcarePage() {
             
             {/* Mobile horizontal scroll for convergence items */}
             <div className="md:grid md:grid-cols-3 md:gap-8">
+              {/* Shimmer Message for Convergence */}
+              <div className="md:hidden mb-6 text-center">
+                <TextShimmer 
+                  duration={2.5}
+                  className="text-sm font-medium [--base-color:theme(colors.gray.500)] [--base-gradient-color:theme(colors.gray.300)] dark:[--base-color:theme(colors.gray.300)] dark:[--base-gradient-color:theme(colors.gray.200)]"
+                >
+                  {selectedLanguage === 'tr' ? 'Yakınsama teknolojilerini görün →' : 'View convergence technologies →'}
+                </TextShimmer>
+              </div>
+
               <div className="md:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
                 <div className="flex-none w-64 snap-start text-center p-4 bg-white/10 rounded-xl">
                   <h4 className="text-base font-medium text-white mb-2">{currentContent.revolutionaryTech.convergence.personalizedGene.title}</h4>
